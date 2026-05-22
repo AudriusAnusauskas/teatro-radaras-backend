@@ -47,5 +47,13 @@ module TeatroRadarasBackend
     end
 
     config.time_zone = "Vilnius"
+
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore,
+      key:           ENV.fetch("SESSION_SECRET"),
+      same_site:     :lax,
+      secure:        Rails.env.production?,
+      httponly:      true,
+      expire_after:  30.days
   end
 end

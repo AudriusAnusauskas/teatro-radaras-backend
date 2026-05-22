@@ -312,4 +312,10 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
 
   config.navigational_formats = []   # API mode — no HTML redirects, no flash
+
+  config.omniauth :google_oauth2,
+                ENV.fetch("GOOGLE_CLIENT_ID"),
+                ENV.fetch("GOOGLE_CLIENT_SECRET"),
+                scope: "email,profile",
+                prompt: "select_account"
 end
