@@ -1,0 +1,84 @@
+class ProductionSerializer
+    # Compact list view — used by /api/productions index
+    def self.list(production)
+      {
+        slug:           production.slug,
+        title:          production.title,
+        genre:          production.genre,
+        premiere_date:  production.premiere_date,
+        poster_url:     production.poster_url,
+        age_rating:     production.age_rating,
+        runtime:        production.runtime,
+  
+        theater: {
+          slug:       production.theater.slug,
+          name:       production.theater.name,
+          short_name: production.theater.short_name,
+          city:       production.theater.city
+        },
+  
+        director: {
+          slug: production.director.slug,
+          name: production.director.name
+        },
+  
+        critic_score:    production.critic_score,
+        audience_score:  production.audience_score,
+        audience_count:  production.audience_count,
+  
+        next_screening: serialize_screening(production.screenings.upcoming.first)
+      }
+    end
+  
+    # Full detail view — used by /api/productions/:slug
+    def self.detail(production)
+      list(production).merge(
+        full_title:     production.full_title,
+        author:         production.author,
+        translator:     production.translator,
+        based_on:       production.based_on,
+        runtime_minutes: production.runtime_minutes,
+        age_note:       production.age_note,
+        venue:          production.venue,
+        language:       production.language,
+        description:    production.description,
+        director_quote: production.director_quote,
+        video_url:      production.video_url,
+        source_url:     production.source_url,
+        awards:         production.awards,
+        creative_team:  production.creative_team,
+        cast:           production.cast_members,
+        ensemble_size:  production.ensemble_size,
+  
+        upcoming_showings: production.screenings.upcoming.limit(20).map { |s| serialize_screening(s) },
+        reviews:           production.reviews.matched.recent.map { |r| serialize_review(r) }
+      )
+    end
+  
+    def self.serialize_screening(screening)
+      return nil unless screening
+  
+      {
+        id:          screening.id,
+        starts_at:   screening.starts_at.iso8601,   # ISO with offset; frontend renders local
+        venue:       screening.venue,
+        city:        screening.city,
+        ticket_url:  screening.ticket_url,
+        is_premiere: screening.is_premiere
+      }
+    end
+  
+    def self.serialize_review(review)
+      {
+        author:       review.author,
+        title:        review.title,
+        publication:  review.publication,
+        issue:        review.issue,
+        published_at: review.published_at,
+        url:          review.url,
+        rating:       review.rating,
+        rating_max:   review.rating_max,
+        note:         review.note          # excerpt only — never full text
+      }
+    end
+  end
