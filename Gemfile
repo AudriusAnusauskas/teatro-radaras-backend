@@ -38,4 +38,33 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
+# --- Background jobs & cache
+gem "sidekiq", "~> 7.3"
+gem "redis", "~> 5.3"
 
+# --- Scraping
+gem "nokogiri", "~> 1.17"
+gem "ferrum", "~> 0.16"
+
+# --- Auth
+gem "devise", "~> 4.9"
+gem "omniauth", "~> 2.1"
+gem "omniauth-google-oauth2", "~> 1.2"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+
+# --- API plumbing
+gem "rack-cors", "~> 2.0"
+gem "friendly_id", "~> 5.5"
+
+# --- HTTP klientai
+gem "faraday", "~> 2.12"
+gem "faraday-retry", "~> 2.2"
+
+# --- ENV
+gem "dotenv-rails", groups: %i[development test]
+
+
+
+gem "rspec-rails", "~> 8.0", :groups => [:development, :test]
+gem "factory_bot_rails", "~> 6.5", :groups => [:development, :test]
+gem "faker", "~> 3.8", :groups => [:development, :test]

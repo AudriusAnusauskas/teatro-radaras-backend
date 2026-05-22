@@ -1,0 +1,2480 @@
+{
+  "theaters": [
+    {
+      "slug": "lietuvos-nacionalinis-dramos-teatras",
+      "name": "Lietuvos nacionalinis dramos teatras",
+      "shortName": "LNDT",
+      "city": "Vilnius",
+      "address": "Gedimino pr. 4, Vilnius LT-01103",
+      "coordinates": {
+        "lat": 54.6883,
+        "lng": 25.2778
+      },
+      "phone": "+370 645 85348",
+      "foundedYear": 1940,
+      "currentSeason": "86",
+      "websiteUrl": "https://www.teatras.lt",
+      "venues": [
+        "Didžioji salė",
+        "Mažoji salė",
+        "Naujoji salė"
+      ],
+      "description": "Lietuvos nacionalinis dramos teatras (LNDT) – seniausias profesionalus dramos teatras Lietuvoje, įkurtas 1940 m. Vilniaus centre, Gedimino prospekte. Teatras turi stiprią aktorių trupę ir bendradarbiauja su tarptautiniais režisieriais. LNDT yra svarbiausia šiuolaikinio lietuvių dramos teatro platforma.",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Nacionalinis_dramos_teatras.jpg",
+      "photoCredit": "Wikimedia Commons (CC BY-SA)",
+      "social": {
+        "facebook": "https://www.facebook.com/Teatras.lt",
+        "instagram": "https://www.instagram.com/teatras.lt/",
+        "youtube": "https://www.youtube.com/channel/UCdKqWXNUF-rHOGe3yQhHv3A"
+      }
+    },
+    {
+      "slug": "nacionalinis-kauno-dramos-teatras",
+      "name": "Nacionalinis Kauno dramos teatras",
+      "shortName": "NKDT",
+      "city": "Kaunas",
+      "address": "Laisvės al. 71, Kaunas LT-44304",
+      "coordinates": {
+        "lat": 54.8969,
+        "lng": 23.9106
+      },
+      "phone": "+370 37 224 064",
+      "foundedYear": 1920,
+      "currentSeason": "106",
+      "websiteUrl": "https://dramosteatras.lt",
+      "venues": [
+        "Didžioji scena",
+        "Mažoji scena",
+        "Rūtos salė",
+        "Ilgoji salė",
+        "Tavernos salė"
+      ],
+      "description": "Nacionalinis Kauno dramos teatras (NKDT) – seniausias profesionalus dramos teatras Lietuvoje, įkurtas 1920 m. gruodžio 19 d. Įsikūręs Art Deco stiliaus pastate buvusio kino teatro „Metropolitan“ patalpose Laisvės alėjoje. Per sezoną teatras pristato 6–8 premjeras, 30 repertuarinių spektaklių ir surengia apie 350 renginių, kuriuose apsilanko apie 60 000 žiūrovų. Nacionalinio teatro statusą gavo 2012 m.",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Drama,_teatras,_Kaunas.JPG",
+      "photoCredit": "Wikimedia Commons (CC BY-SA)",
+      "social": {
+        "facebook": "https://www.facebook.com/DramosTeatras/",
+        "instagram": "https://www.instagram.com/dramosteatras/"
+      }
+    },
+    {
+      "slug": "valstybinis-jaunimo-teatras",
+      "name": "Valstybinis jaunimo teatras",
+      "shortName": "Jaunimo teatras",
+      "city": "Vilnius",
+      "address": "Arklių g. 5, Vilnius LT-01305",
+      "coordinates": {
+        "lat": 54.6768,
+        "lng": 25.2865
+      },
+      "phone": "+370 5 262 5556",
+      "foundedYear": 1965,
+      "currentSeason": "61",
+      "websiteUrl": "https://jaunimoteatras.lt",
+      "venues": [
+        "Didžioji salė",
+        "Mažoji salė",
+        "Black Box"
+      ],
+      "description": "Valstybinis jaunimo teatras – Vilniaus dramos teatras, įsteigtas 1965 m. sausio 29 d. Pirmasis spektaklis – Williamo Shakespeare'o „Romeo ir Džuljeta\" (rež. Aurelija Ragauskaitė) – įvyko 1966 m. gegužės 27 d. Nuo 1982 m. teatras įsikūręs istoriniuose XVIII a. statytuose Oginskių rūmuose Arklių gatvėje. Teatre dirbo legendinis Eimuntas Nekrošius, debiutą profesionalioje scenoje čia atliko ir Oskaras Koršunovas. Šiandien teatras (vadovas – Audronis Liuga) tęsia tradiciją kviestis pasaulinio garso režisierius (Krystian Lupa, Árpád Schilling) bei augina jaunąją lietuvių režisierių kartą. Repertuare – pasaulinės dramaturgijos klasika ir šiuolaikiniai tekstai.",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Oginsky_Palace_in_Vilnius.JPG/1920px-Oginsky_Palace_in_Vilnius.JPG",
+      "photoCredit": "Oginskių rūmai · Wikimedia Commons (CC BY-SA)",
+      "social": {
+        "facebook": "https://www.facebook.com/jaunimoteatras.lt",
+        "instagram": "https://www.instagram.com/jaunimo_teatras/"
+      }
+    },
+    {
+      "slug": "valstybinis-vilniaus-mazasis-teatras",
+      "name": "Valstybinis Vilniaus mažasis teatras",
+      "shortName": "VMT",
+      "city": "Vilnius",
+      "address": "Gedimino pr. 22, Vilnius LT-01103",
+      "coordinates": {
+        "lat": 54.687,
+        "lng": 25.2761
+      },
+      "phone": "+370 5 261 3125",
+      "foundedYear": 1990,
+      "currentSeason": "36",
+      "websiteUrl": "https://www.vmt.lt",
+      "venues": [
+        "Didžioji salė"
+      ],
+      "description": "Valstybinis Vilniaus mažasis teatras (VMT) – dramos teatras, įkurtas 1990 m. kovo 2 d. režisieriaus Rimo Tumino (1952–2024). Teatro pradžia laikomas 1988 m. gruodžio 2 d. LNDT Mažojoje salėje sukurtas spektaklis „Čia nebus mirties\" (Tumino režisuotas pagal V. Kukulą). Trupę subūrė Lietuvos dramos teatrų aktoriai ir 1978–82 m. konservatorijos kursas. 1997 m. teatrui suteiktas valstybinio teatro statusas. Nuo 2005 m. teatras įsikūręs istoriniame Izaoko Smaženevičiaus name Gedimino prospekte 22 (statytas 1899–1900 m. pagal architekto Konstantino Korojedovo projektą, kurio metu veikė viešbutis „Bristol\"). VMT spektakliai pasižymi teatriška forma, improvizacijos elementais, vaikystės, namų ir teatro temomis, derinama romantinė pasaulėjauta su subtilia ironija. Teatras gastroliavo daugiau nei 20 šalių. Repertuare – per 20 spektaklių.",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ma%C5%BEasis_Teatras%2C_Vilnius%2C_April_2015.JPG/1920px-Ma%C5%BEasis_Teatras%2C_Vilnius%2C_April_2015.JPG",
+      "photoCredit": "Wikimedia Commons (CC BY-SA)",
+      "social": {
+        "facebook": "https://www.facebook.com/vilniausmazasisteatras/",
+        "instagram": "https://www.instagram.com/vilniausmazasisteatras/",
+        "youtube": "https://www.youtube.com/@vilniausmazasisteatrasIvmt"
+      }
+    },
+    {
+      "slug": "klaipedos-dramos-teatras",
+      "name": "Klaipėdos dramos teatras",
+      "shortName": "KDT",
+      "city": "Klaipėda",
+      "address": "Teatro g. 2, Klaipėda LT-91247",
+      "coordinates": {
+        "lat": 55.7081,
+        "lng": 21.1309
+      },
+      "phone": "+370 46 314 464",
+      "foundedYear": 1935,
+      "currentSeason": "90",
+      "websiteUrl": "https://kdt.lt",
+      "venues": [
+        "Didžioji salė",
+        "Mažoji salė",
+        "Kamerinė salė"
+      ],
+      "description": "Klaipėdos dramos teatras (KDT) – trečias didžiausias dramos teatras Lietuvoje ir pagrindinis dramos teatras Klaipėdoje. Teatro pradžia laikoma 1935 m., kai į Klaipėdą iš Šiaulių perkeltas valstybinis dramos teatras. Įsikūręs neoklasicistinio stiliaus pastate (statytas 1857 m.), kuris laikomas seniausiu teatro pastatu Lietuvoje. Pastatas turi istorinę reikšmę – nuo jo balkono 1939 m. Hitleris paskelbė Klaipėdos krašto aneksiją. Renovacija ir naujas atidarymas – 2015 m., atnaujintos trys salės. Nuo 2017 m. organizuoja kasmetinį tarptautinį teatro festivalį „TheATRIUM\". Per sezoną rodoma apie 20 spektaklių, surengiama 180+ parodymų ir 10+ gastrolių. Meno vadovas – Gintaras Grajauskas (nuo 2018), teatro vadovas – Anupras Jucius (nuo 2026; iki tol Tomas Juočys, 2015–2026). Šūkis: „Teatras yra begalybė\".",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Dramos_teatras_Klaip%C4%97da_%28Kenny_McFly%29.jpg/1280px-Dramos_teatras_Klaip%C4%97da_%28Kenny_McFly%29.jpg",
+      "photoCredit": "Kenny McFly, Wikimedia Commons (CC BY-SA 4.0)",
+      "social": {
+        "facebook": "https://www.facebook.com/klaipedosdramosteatras/"
+      }
+    },
+    {
+      "slug": "oskaro-korsunovo-teatras",
+      "name": "OKT / Vilniaus miesto teatras",
+      "shortName": "OKT",
+      "city": "Vilnius",
+      "address": "Ašmenos g. 8, Vilnius LT-01135",
+      "coordinates": {
+        "lat": 54.6748,
+        "lng": 25.2849
+      },
+      "phone": "+370 5 261 0246",
+      "foundedYear": 1999,
+      "currentSeason": "27",
+      "websiteUrl": "https://www.okt.lt",
+      "venues": [
+        "OKT Studija"
+      ],
+      "description": "OKT / Vilniaus miesto teatras (Oskaro Koršunovo teatras) – nepriklausomas repertuarinis dramos teatras, įkurtas 1999 m. Oskaro Koršunovo kartu su Martynu Budraičiu ir kompozitoriumi Gintaru Sodeika. 2004 m. teatrui suteiktas Vilniaus miesto teatro statusas. Teatras laikomas vienu ryškiausių lietuviško eksperimentinio teatro reiškinių Europoje – per pirmąjį dvidešimtmetį sukurta daugiau nei 50 spektaklių, gastroliuota daugiau nei 30 šalių. Koncepcinė nuostata: šiuolaikinę dramaturgiją inscenizuoti kaip klasiką, o klasiką – šiuolaikiškai. Teatre dirba dvi kartos aktorių – „branduolys\" (Rasa Samuolytė, Dainius Gavenonis, Darius Gumauskas, Nelė Savičenko ir kt.) ir jaunoji karta (Digna Kulionytė, Džiugas Grinys ir kt.). Apdovanotas Europos teatro premija „Už naująsias teatro realybes\" (2001), Premio Europa Salonikai (2008 m. už „Hamletą\"). Nuo 2004 m. su Vilniaus savivaldybe organizuoja Vilniaus tarptautinį teatro festivalį „Sirenos\".",
+      "photoUrl": "/teatrai/okt-pastatas.png",
+      "photoCredit": "OKT studija Ašmenos g. 8 (Google Street View)",
+      "social": {
+        "facebook": "https://www.facebook.com/oktteatras/",
+        "instagram": "https://www.instagram.com/okt_vilniausmiestoteatras/"
+      }
+    },
+    {
+      "slug": "juozo-miltinio-dramos-teatras",
+      "name": "Juozo Miltinio dramos teatras",
+      "shortName": "JMDT",
+      "city": "Panevėžys",
+      "address": "Laisvės a. 5, Panevėžys LT-35183",
+      "coordinates": {
+        "lat": 55.7298,
+        "lng": 24.3577
+      },
+      "phone": "+370 45 584 599",
+      "foundedYear": 1940,
+      "currentSeason": "85",
+      "websiteUrl": "https://www.miltinioteatras.lt",
+      "venues": [
+        "Didžioji salė",
+        "Laboratorija"
+      ],
+      "description": "Juozo Miltinio dramos teatras (JMDT) – Panevėžio dramos teatras, įkurtas 1940 m. lapkričio 18 d. švietimo liaudies komisaro Antano Venclovos įsakymu, oficialiai atidarytas 1941 m. kovo 15 d. Teatro istorija glaudžiai susijusi su legendiniu režisieriumi Juozu Miltiniu (1907–1994), kuris po studijų Paryžiuje (pas Charles Dullin) ir Londone subūrė ir vadovavo unikaliam aktorių ansambliui. Pirmoji premjera – pagal N. Pogodino pjesę Miltinio režisuotas „Sidabrinis slėnis\". Antruoju kūrybos laikotarpiu (1954–1959) Miltinis buvo pašalintas iš teatro vadovo pareigų, jam neleido kurti pagal savo principus. Teatras lieka ištikimas savo įkūrėjo priesakui: „Neieškokit laikino, ieškokit amžino\". Literatūrinės dalies vedėja – Jūratė Urbšienė. Nuo 2023 m. organizuojamas šiuolaikinės dramaturgijos festivalis „Naujas aplankas\". Pastate Laisvės a. 5 nuo 2007 m. centrinėje miesto aikštėje stovi memorialinė Juozo Miltinio skulptūra.",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Panev%C4%97%C5%BEys%2C_Miltinio_teatras.JPG/1280px-Panev%C4%97%C5%BEys%2C_Miltinio_teatras.JPG",
+      "photoCredit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "social": {
+        "facebook": "https://www.facebook.com/MiltinioTeatras/",
+        "instagram": "https://www.instagram.com/jmdteatras/"
+      }
+    }
+  ],
+  "directors": [
+    {
+      "slug": "yana-ross",
+      "name": "Yana Ross",
+      "nationality": "Tarptautinė",
+      "bio": "Tarptautinė režisierė, gimusi Rygoje, baigusi Yale School of Drama (JAV). Lietuvoje kuria nuo 2007 m. Pirmoji moteris Lietuvoje apdovanota Auksiniu scenos kryžiumi už režisūrą. Reguliariai stato spektaklius Schauspielhaus Zürich, Berliner Ensemble, Burgtheater Vienoje, dalyvauja Zalcburgo festivalyje.",
+      "notableWorks": [
+        "Bembilendas (OKT/LNDT, 2007)",
+        "Mūsų klasė (LNDT, 2013) – Auksinis scenos kryžius",
+        "Vienos miško pasakos (Jaunimo teatras, 2019) – Auksinis scenos kryžius",
+        "Apmąstant omarą (LNDT, 2023)"
+      ],
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Yana_Ross.jpg",
+      "photoCredit": "Wikimedia Commons (CC BY-SA)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yana_Ross.jpg"
+    },
+    {
+      "slug": "oskaras-korsunovas",
+      "name": "Oskaras Koršunovas",
+      "birthYear": 1969,
+      "nationality": "Lietuva",
+      "bio": "Lietuvos teatro režisierius, vienas garsiausių lietuvių menininkų pasaulyje. Gimė 1969 m. kovo 6 d. Vilniuje. 1993 m. baigė Lietuvos muzikos akademiją – Jono Vaitkaus auklėtinis. Dar studijuodamas pristatė trilogiją „Ten būti čia\", „Senė\", „Labas Sonia Nauji Metai\" pagal rusų avangardistų Daniilo Charmso ir Aleksandro Vvedenskio kūrybą – ji tapo lietuvių teatro avangardo manifestu, 1990 m. Edinburgo festivalyje laimėjusiu prestižinį „Fringe First\" prizą.\n\n1998 m. kartu su Martynu Budraičiu ir kompozitoriumi Gintaru Sodeika įsteigė nepriklausomą Oskaro Koršunovo teatrą (nuo 2004 m. – OKT/Vilniaus miesto teatras). Režisieriaus credo: klasiką statyti kaip šiuolaikinę dramaturgiją, šiuolaikinę dramą – kaip klasiką. 2008 m. Shakespeare'o „Hamletas\" pažymėjo perėjimą į laboratorinę OKT Studijos erdvę – ten gimė ir Gorkio „Dugne\", Čechovo „Žuvėdra\", „Miranda\" pagal „Audrą\", Beckett'o „Paskutinė Krepo juosta\", Kane „Apvalytieji\", Brechto „Vestuvės\".\n\nStatė spektaklius garsiausiose Europos scenose: Oslo nacionaliniame teatre, Stokholmo karališkajame, Paryžiaus Comédie-Française, Sankt Peterburgo Aleksandros teatre, Varšuvos „Teatr Dramatyczny\", Atėnų „Poreia\", Reikjaviko miesto, Orhuso miesto teatruose. Aštuonis kartus pristatė spektaklius pagrindinėje Avinjono festivalio scenoje, trissyk – Venecijos bienalėje.\n\nPagrindiniai apdovanojimai: Lietuvos nacionalinė meno ir kultūros premija (2002), Europos teatro „Naujosios teatro realybės\" prizas (2006), Prancūzijos Meno ir literatūros kavalieriaus ordinas (2009), Vsevoldo Mejerholdo vardo prizas (2010), Heda apdovanojimas geriausiam metų režisieriui Norvegijoje (2013), Švedijos Karališkasis šiaurinės žvaigždės ordinas (2015). 2020–2022 m. – Lietuvos nacionalinio dramos teatro meno vadovas.",
+      "notableWorks": [
+        "Ten būti čia (1990) – Edinburgo „Fringe First\" prizas",
+        "Vasarvidžio nakties sapnas (OKT, 1999) – Auksinis scenos kryžius",
+        "Įstabioji ir graudžioji Romeo ir Džuljetos istorija (OKT, 2003) – Auksinis scenos kryžius",
+        "Hamletas (OKT, 2008) – Premio Europa Salonikai",
+        "Dugne (OKT, 2010) – Auksinis scenos kryžius",
+        "Miranda (OKT, 2011) – Auksinis scenos kryžius",
+        "Išvarymas (LNDT, 2011) – Auksinis scenos kryžius",
+        "Žuvėdra (OKT, 2013)"
+      ],
+      "photoUrl": "https://www.okt.lt/wp-content/themes/okt/assets/images/ok-photo.jpg",
+      "photoCredit": "OKT / Vilniaus miesto teatras",
+      "sourceUrl": "https://www.okt.lt/oskaras-korsunovas/"
+    },
+    {
+      "slug": "augustas-gornatkevicius",
+      "name": "Augustas Gornatkevičius",
+      "nationality": "Lietuva",
+      "bio": "Jaunosios kartos lietuvių teatro režisierius. Pradėjęs nuo bilietų kontrolieriaus, baigė teatro režisūros studijas, dirba režisierių asistentu ir lygiagrečiai stato spektaklius Vilniuje, Kaune ir Panevėžyje. Už 2021 m. spektaklį „Emilių Emilis“ pelnė Auksinio scenos kryžiaus nominaciją ir Fortūnos apdovanojimą.",
+      "notableWorks": [
+        "Emilių Emilis (2021) – Auksinio scenos kryžiaus nominacija, Fortūnos apdovanojimas",
+        "Sibiro haiku (LNDT, 2023) – Dalios Tamulevičiūtės konkurso laureatas"
+      ],
+      "photoUrl": "https://www.teatras.lt/uploads/img/augustas_gornatkevicius_2022_f.skomantas_duoplis_2.jpg",
+      "photoCredit": "Skomantas Duoplis / LNDT",
+      "sourceUrl": "https://www.teatras.lt/lt/teatras/rezisieriai/augustas_gornatkevicius/"
+    },
+    {
+      "slug": "robert-wilson",
+      "name": "Robert Wilson",
+      "birthYear": 1941,
+      "deathYear": 2025,
+      "nationality": "Tarptautinė (JAV)",
+      "bio": "Vienas garsiausių pasaulio avangardinio teatro režisierių. Gimęs Waco mieste, Teksase. Baigė Pratt Institute (BFA). Pasaulyje žinomas dėl bendradarbiavimo su kompozitoriumi Philip Glass spektaklyje „Einstein on the Beach“ ir nuolatinio darbo su Tom Waits. 1991 m. įkūrė The Watermill Center kūrybinę laboratoriją Long Island, New York. Per karjerą sukūrė dešimtis spektaklių ir operų Europoje ir JAV. Mirė 2025 m. liepos 31 d., palikęs paskutinį darbą – „Septynios vienatvės“ – kuris buvo baigtas po jo mirties.",
+      "notableWorks": [
+        "Einstein on the Beach (su Philip Glass, 1976)",
+        "Black Rider (su Tom Waits, 1990)",
+        "Dorianas (NKDT, 2022)",
+        "Septynios vienatvės (NKDT, 2026) – paskutinis kūrinys"
+      ],
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/2014-01-19_Luebeck_Wachter_Wilson_%28cropped_-_Robert_Wilson%29.jpg",
+      "photoCredit": "Wachter, Wikimedia Commons (CC BY-SA)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2014-01-19_Luebeck_Wachter_Wilson_(cropped_-_Robert_Wilson).jpg"
+    },
+    {
+      "slug": "jakub-skrzywanek",
+      "name": "Jakub Skrzywanek",
+      "birthYear": 1992,
+      "nationality": "Lenkija",
+      "bio": "Vienas ryškiausių jaunosios kartos lenkų teatro režisierių. Tekstų autorius, performatyvių instaliacijų kūrėjas. Krokuvos nacionalinio senojo teatro (Stary Teatr) meno vadovas. Savo darbuose tyrinėja visuomenei svarbias temas – politines, istorines, lytines. Jo spektakliai pelno apdovanojimus ir nuolat sukelia aštrias viešas diskusijas. Pats sako: „Tai ne aš provokuoju, tai realybė provokuoja mus kalbėti aktualiomis temomis.“",
+      "notableWorks": [
+        "Lietuviškos Vėlinės (NKDT, 2025) – pagal Adomą Mickevičių"
+      ],
+      "photoUrl": "https://dramosteatras.lt/app/uploads/2025/09/Jakub-Skrzywanek.-Nuotr.-Aleksandra-Zaborowska-800x1132.jpg",
+      "photoCredit": "Aleksandra Zaborowska / Klaipėdos dramos teatras",
+      "sourceUrl": "https://dramosteatras.lt/"
+    },
+    {
+      "slug": "aleksandras-spilevojus",
+      "name": "Aleksandras Špilevojus",
+      "nationality": "Lietuva",
+      "bio": "Lietuvių teatro režisierius, dirbantis Vilniaus, Kauno ir Panevėžio teatruose. NKDT pristatė kelias premjeras dirbdamas su brandžiosios kartos teatro legendomis. Jo režisuotas spektaklis „Kai mes būsim jauni“ tapo NKDT publikos hitu – į jį „beveik neįmanoma patekti“ (15min.lt). Specifinis bruožas – darbas su konkrečiomis trupėmis, kuriant spektaklius pagal aktorių individualybes.",
+      "notableWorks": [
+        "Bagadelnia (Panevėžio teatras)",
+        "Kai mes būsim jauni (NKDT, 2023) – publikos hitas"
+      ],
+      "photoUrl": "https://dramosteatras.lt/app/uploads/2023/11/A.Spilevoj-1-800x1190.jpg",
+      "photoCredit": "Klaipėdos dramos teatras",
+      "sourceUrl": "https://dramosteatras.lt/"
+    },
+    {
+      "slug": "egle-svedkauskaite",
+      "name": "Eglė Švedkauskaitė",
+      "birthYear": 1994,
+      "nationality": "Lietuva",
+      "bio": "Jaunosios kartos lietuvių režisierė. Kūryboje vyrauja atminties ir prisiminimų temos, gilinimasis į savo šalies ir jos žmonių praeitį. 2018 m. už spektaklį „I dreamt that somebody called me darling\" (pagal Harold Pinter) konkurse „Jaunas Europos teatras\" Spoleto festivalyje pelnė pirmąją vietą. 2023 m. tapo antrąja moterimi istorijoje, gavusia Auksinio scenos kryžiaus apdovanojimą už geriausią režisūrą – už spektaklį „Jauno žmogaus memuarai\" Valstybiniame jaunimo teatre. Stato Jaunimo teatre, LNDT ir Panevėžio J. Miltinio dramos teatre.",
+      "notableWorks": [
+        "I dreamt that somebody called me darling (2018) – „Jaunas Europos teatras\" 1-a vieta",
+        "Žmogus iš žuvies (Jaunimo teatras, 2020) – koprodiusuotas su Berlyno „Folksbiūne\"",
+        "Jauno žmogaus memuarai (Jaunimo teatras, 2022) – Auksinis scenos kryžius",
+        "Fossilia (LNDT, 2023)",
+        "Ronja plėšiko duktė (LNDT, 2026)"
+      ],
+      "photoUrl": "https://www.lrt.lt/img/2023/04/07/1486961-727636-1287x836.jpg",
+      "photoCredit": "D. Umbraso / LRT",
+      "sourceUrl": "https://www.lrt.lt/naujienos/kultura/12/1957077/geriausia-rezisiere-pripazinta-egle-svedkauskaite-kryziaus-dar-neispakavau-kolegos-ispejo-kad-rudija"
+    },
+    {
+      "slug": "krystian-lupa",
+      "name": "Krystian Lupa",
+      "birthYear": 1943,
+      "nationality": "Tarptautinė (Lenkija)",
+      "bio": "Pasaulio teatro autoritetas, vienas didžiausių gyvuojančių Europos režisierių. Gimęs Jastrzębie-Zdrój mieste, Lenkijoje. Studijavo Krokuvos dailės akademijoje, Lodzės kino mokykloje ir Ludwiko Solskio dramos akademijoje. Daugiau nei keturis dešimtmečius kuria „totalų teatrą\", besiremiantį Tadeuszo Kantoro ir Andrejaus Tarkovskio kūryba bei Carlo Junge'o psichologija. Spektakliuose aktoriaus darbas atsiduria kūrybinio proceso centre. Lupos pastatymai paprastai trunka 4–8 valandas. Pelnė Europos teatro premiją (2009), Nestroy teatro premiją (2014) ir aukščiausius Prancūzijos, Austrijos bei Lenkijos valstybinius apdovanojimus.",
+      "notableWorks": [
+        "Trys seserys (Stary Teatr Krokuva, 1988)",
+        "Persona. Marilyn (TR Warszawa, 2009)",
+        "Užburtas kalnas (Jaunimo teatras / Zalcburgo festivalis, 2024)"
+      ],
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Krystian_Lupa.JPG",
+      "photoCredit": "Wikimedia Commons (CC BY-SA)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/Category:Krystian_Lupa"
+    },
+    {
+      "slug": "rimas-tuminas",
+      "name": "Rimas Tuminas",
+      "birthYear": 1952,
+      "deathYear": 2024,
+      "nationality": "Lietuva",
+      "bio": "Vienas reikšmingiausių XX–XXI a. Lietuvos teatro režisierių, Valstybinio Vilniaus mažojo teatro įkūrėjas (1990) ir ilgametis meno vadovas. Gimęs Kelmėje, baigęs Lietuvos konservatoriją (1974) ir Maskvos GITIS (1978, Josifo Tumanovo režisūros kursas). Pirmasis pastatymas – Yordano Radičkovo „Sausis\" (1978, LNDT). 1979–1990 m. dirbo LNDT režisieriumi, 1994–1999 m. – vyriausiuoju režisieriumi. 2007–2022 m. – Maskvos Vachtangovo teatro meno vadovas, kuris 2011 m. buvo pripažintas lankomiausiu Maskvos teatru. Sukūrė 40+ spektaklių Lietuvoje, Rusijoje, Lenkijoje, Švedijoje, Italijoje. Tumino režisūrai būdinga romantinė pasaulėjauta, subtili ironija, ansamblinis darbas su aktoriais. Mirė 2024 m. kovo 6 d. Italijoje.",
+      "notableWorks": [
+        "Čia nebus mirties (LNDT, 1988) – VMT pradžia",
+        "Vyšnių sodas (VMT, 1990)",
+        "Maskaradas (VMT, 1997)",
+        "Mistras (VMT, 2010) – tarptautinis pripažinimas",
+        "Karas ir taika (Vachtangovo teatras, Maskva, 2021)"
+      ],
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Rimas_Tuminas_by_Augustas_Didzgalvis_%28cropped%29.jpg",
+      "photoCredit": "Augustas Didžgalvis, Wikimedia Commons (CC BY-SA)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rimas_Tuminas"
+    },
+    {
+      "slug": "justinas-vinciunas",
+      "name": "Justinas Vinciūnas",
+      "nationality": "Lietuva",
+      "bio": "Jaunosios kartos lietuvių teatro režisierius, augęs Pravieniškėse ir Kaune. Studijavo režisūrą Lietuvos muzikos ir teatro akademijoje (prof. Gintaro Varno auklėtinis). Iki LMTA savanoriavo Nacionaliniame Kauno dramos teatre. 2023 m. debiutavo spektakliu „Nepalaidoti mirusieji\" (Kauno miesto kamerinis teatras), pelnęs Kultūros ministerijos „Metų debiuto\" premiją ir „Fortūnos\" diplomą. 2025 m. apdovanotas Auksiniu scenos kryžiumi kaip geriausias pradedantysis menininkas už spektaklio „Atidaryk duris\" režisūrą NKDT (kūrybos centrų „Les Récréatrales\" ir „RAW Material Company\" projektas). Kūryboje – metafizinės ir egzistencinės temos: holokaustas, politinis gyvenimas, pasąmonė. Stato VMT, VJT, NKDT, Kauno kameriniame teatre.",
+      "notableWorks": [
+        "Nepalaidoti mirusieji (Kauno miesto kamerinis, 2023) – „Metų debiutas\"",
+        "Dulkės (Jaunimo teatras)",
+        "Pranašystė (Jaunimo teatras)",
+        "Atidaryk duris (NKDT, 2024) – Auksinis scenos kryžius 2025",
+        "Trukdis (VMT, 2026)"
+      ],
+      "photoUrl": "https://kamerinisteatras.lt/uploads/images/2023-05-30-2-D.Matvejev%C2%A9-2048x1363.jpg",
+      "photoCredit": "Dmitrij Matvejev / Kauno miesto kamerinis teatras",
+      "sourceUrl": "https://www.kamerinisteatras.lt/justinas-vinciunas/"
+    },
+    {
+      "slug": "gabriele-tuminaite",
+      "name": "Gabrielė Tuminaitė",
+      "birthYear": 1983,
+      "nationality": "Lietuva",
+      "bio": "Jaunosios kartos teatro režisierė, nuolat kurianti Valstybiniame Vilniaus mažajame teatre. Rimo Tumino dukra. 2001–2004 m. Vilniaus universitete studijavo kultūros istoriją ir antropologiją, 2004–2008 m. – teatro režisūrą LMTA (kurso vadovas Rimas Tuminas), 2010 m. įgijo magistro laipsnį. Nuo 2008 m. iki 2016 m. vadovavo kasmetiniam teatro debiutų festivaliui „Tylos!\". 2009 m. pelnė Pravda apdovanojimą už geriausią režisūrinį debiutą, 2012 m. – Versmė šiuolaikinės dramaturgijos festivalio laureatės titulą, 2013 m. – pirmojo Rimo Tumino festivalio „Vasara\" Druskininkuose režisūros prizą. Per pirmąjį dešimtmetį sukūrė daugiau nei 12 spektaklių. Mėgsta pamirštus ar neatrastus tekstus – Vakarų ir lietuvių klasiką, šiuolaikinę dramaturgiją.",
+      "notableWorks": [
+        "Dėdės ir dėdienės (VMT, 2014) – pagal Tumą-Vaižgantą",
+        "Savižudis (VMT, 2014) – Erdmano pjesė",
+        "Bedalis ir labdarys (VMT, 2015) – Pukytės pjesė",
+        "Fantazijus (VMT, 2017) – Musset",
+        "Marti (VMT, 2018) – Žemaitės kūrinio interpretacija",
+        "Scilė nori būti žmogumi (VMT, 2022)",
+        "Tinder Dates (VMT, 2022) – su S. Žyrkov ir K. Glušajevu"
+      ],
+      "photoUrl": "https://vmt.lt/storage/app/uploads/public/68b/949/5fe/thumb_1228_420_525_0_0_crop.jpg",
+      "photoCredit": "Valstybinis Vilniaus mažasis teatras",
+      "sourceUrl": "https://vmt.lt/en/creators"
+    },
+    {
+      "slug": "naubertas-jasinskas",
+      "name": "Naubertas Jasinskas",
+      "nationality": "Lietuva",
+      "bio": "Jaunosios kartos lietuvių teatro režisierius, daugiausia kuriantis Valstybiniame jaunimo teatre ir Klaipėdos dramos teatre. Kūryba pasižymi šiuolaikinio meno estetika, vizualumu ir koncepcijos centriškumu – spektakliai dažnai prilyginami šiuolaikinio meno objektams ar judančioms skulptūroms. Stato pagal šiuolaikinę užsienio dramaturgiją – Robertą Bolaño, Édouard Louis. Bendradarbiauja su Ukrainos režisieriumi Maksym Teteruk. Klaipėdos dramos teatre 2024 m. pristatė spektaklį „Sugrįžimas\" – šiuolaikinį gotikinį pasakojimą pagal čilės rašytojo R. Bolaño novelę.",
+      "notableWorks": [
+        "Edžio pabaiga (Jaunimo teatras) – pagal Édouard Louis",
+        "Chroma (Jaunimo teatras) – su Maksym Teteruk",
+        "Sugrįžimas (KDT, 2024) – pagal Roberto Bolaño novelę"
+      ],
+      "photoUrl": "https://vmt.lt/storage/app/uploads/public/68f/b71/93b/thumb_1270_420_525_0_0_crop.jpg",
+      "photoCredit": "Valstybinis Vilniaus mažasis teatras",
+      "sourceUrl": "https://vmt.lt/en/creators"
+    },
+    {
+      "slug": "michal-borczuch",
+      "name": "Michał Borczuch",
+      "nationality": "Tarptautinė (Lenkija)",
+      "bio": "Lenkų teatro režisierius, Krzysztofo Warlikowskio rekomenduotas kaip viena ryškiausių jaunosios kartos europinio teatro pavardžių. Reguliariai dirba Vokietijoje, Šveicarijoje, Graikijoje ir Lenkijoje – ypač Varšuvos „Nowy teatr\". Spektakliuose pasižymi subtiliu, meistrišku, lėtu pasakojimo ritmu, neretai improvizacija pagrįstu, be tradicinio siužeto. Klaipėdos dramos teatro festivalyje „TheATRIUM\" pristatė kelis darbus („Apokalipsė\" 2017, „Ktulu šauksmas\" 2018), o po ketverių metų derybų sutiko pastatyti spektaklį Klaipėdos dramos teatre – „Lost Lost Lost\" (2022) – apie iš Lietuvos kilusį avangardinio kino krikštatėvį Joną Meką.",
+      "notableWorks": [
+        "Apokalipsė (Nowy teatr, 2014)",
+        "Ktulu šauksmas (Nowy teatr, 2017) – pagal H. P. Lovecraft",
+        "Lost Lost Lost (KDT, 2022) – Auksinis scenos kryžius geriausiai aktorei (D. Kulionytei)"
+      ],
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Michal_Borczuch.jpg",
+      "photoCredit": "Wikimedia Commons (CC BY-SA)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/Category:Micha%C5%82_Borczuch"
+    },
+    {
+      "slug": "jokubas-brazys",
+      "name": "Jokūbas Brazys",
+      "nationality": "Lietuva",
+      "bio": "Jaunosios kartos lietuvių teatro režisierius, daugiausia kuriantis Klaipėdos dramos teatre ir OKT / Vilniaus miesto teatre. Kūryboje – klasikinė ir XX a. literatūros dramaturgija, dažnai gilios egzistencinės temos. Pastatė Moljero „Mizantropą\", Šekspyro „Makbetą\", Čechovo „Žuvėdrą\" (OKT, 2022, Auksinis scenos kryžius Dignai Kulionytei), Peter Shafferio „Equus\". 2023 m. Klaipėdoje pastatė ilgai laukiamą spektaklį pagal Agotos Kristof romaną „Storas sąsiuvinis\" – apie karo kasdienybės žiaurumą, kurio premjera anksčiau 2022 m. buvo atšaukta dėl aktoriaus traumos. „Storas sąsiuvinis\" sulaukė plataus pripažinimo: Padėkos kaukė ir GSC nominacija aktorei Dignai Kulionytei.",
+      "notableWorks": [
+        "Mizantropas – Moljero pjesė",
+        "Makbetas – Šekspyro pjesė",
+        "Equus – Peter Shafferio pjesė",
+        "Žuvėdra (OKT, 2022) – Čechovo pjesė, GSC D. Kulionytei",
+        "Storas sąsiuvinis (KDT, 2023) – pagal Agotą Kristof, Padėkos kaukė",
+        "Kaligula (Vilniaus senasis teatras, 2024)"
+      ],
+      "photoUrl": "https://s1.15min.lt/images/photos/2022/03/14/original/rezisierius-jokubas-brazys-622f063416988.jpeg",
+      "photoCredit": "Džiugas Gvozdzinskas / 15min.lt",
+      "sourceUrl": "https://www.15min.lt/kultura/naujiena/teatras/zuvedra-pristatantis-rezisierius-j-brazys-tai-spektaklis-apie-paralyzuojancia-meiles-ideja-283-1653118"
+    },
+    {
+      "slug": "agnius-jankevicius",
+      "name": "Agnius Jankevičius",
+      "nationality": "Lietuva",
+      "bio": "Lietuvių teatro režisierius, vidurinės kartos kūrėjas. Statė spektaklius Valstybiniame jaunimo teatre, Lietuvos nacionaliniame dramos teatre, Nacionaliniame Kauno dramos teatre ir Juozo Miltinio dramos teatre. Kūryboje – klasikinė ir šiuolaikinė užsienio dramaturgija (Lars Norén, Mark Haddon, Shakespeare). 2023 m. Panevėžyje pastatė „Tas keistas nutikimas šuniui naktį\" – pjesę pagal Marko Haddono romaną apie autizmo spektre esantį penkiolikmetį Kristoferį. Spektaklis 2024 m. tapo geriausiu Dalia Tamulevičiūtės profesionalių teatrų festivalio spektakliu vaikams ir jaunimui, o aktorė Toma Razmislavičiūtė pelnė COM·MEDIA festivalio geriausios aktorės apdovanojimą.",
+      "notableWorks": [
+        "Šmėklos (VJT, 2006) – pagal Ibseną",
+        "Tas keistas nutikimas šuniui naktį (JMDT, 2023) – pagal M. Haddon"
+      ],
+      "photoUrl": "https://vsteatras.lt/public/uploads/1631261452-Jank%204%20photo-%20D.Matvejev%C2%A9.jpg",
+      "photoCredit": "Dmitrij Matvejev / Vilniaus senasis teatras",
+      "sourceUrl": "https://vsteatras.lt/kurejai/rezisieriai/agnius-jankevicius"
+    },
+    {
+      "slug": "valentinas-masalskis",
+      "name": "Valentinas Masalskis",
+      "nationality": "Lietuva",
+      "bio": "Lietuvių aktorius ir režisierius, vienas ryškiausių vyresnės kartos teatro meistrų. 1976 m. baigė LTSR konservatoriją (J. Vaitkaus kursas). Vaidino Klaipėdos dramos teatre, Lietuvos akademiniame dramos teatre, OKT. Nuo XX a. 10 dešimtmečio režisuoja dramos ir muzikinius spektaklius. Svarbesni vaidmenys: Faustas Goethes „Fauste\" (1999), Vyras Dostojevskio „Nuolankiojoje\" (2002), Karibaldis T. Bernhardo „Įpročio jėgoje\" (2003), Kontrabosas P. Süskindo (2005), Fojerbachas (2006), Marko Rothko Loganto „Raudonoje\" (2018). 2024 m. Juozo Miltinio dramos teatre pirmą kartą pastatė Jean-Luc Lagarce pjesę „Tiesiog pasaulio pabaiga\" – pirmąjį šio prancūzų dramaturgo pastatymą Lietuvoje. Dėstė LMTA. Lietuvos nacionalinės kultūros ir meno premijos laureatas.",
+      "notableWorks": [
+        "Belaukiant Godo (1995) – S. Becketto pjesė",
+        "Faustas (1999) – Goethes pjesė",
+        "Kontrabosas (2005) – P. Süskindo monospektaklis",
+        "Raudona (2018) – Johno Logano pjesė apie Marką Rothko",
+        "Tiesiog pasaulio pabaiga (JMDT, 2024) – Jean-Luc Lagarce"
+      ],
+      "photoUrl": "https://kjt.lt/wp-content/uploads/Valentinas-Masalskiss.jpg",
+      "photoCredit": "Klaipėdos jaunimo teatras",
+      "sourceUrl": "https://kjt.lt/valentinas-masalskis/"
+    }
+  ],
+  "productions": [
+    {
+      "slug": "apmastant-omara",
+      "title": "Apmąstant omarą",
+      "fullTitle": "Pagal David Foster Wallace esė. APMĄSTANT OMARĄ",
+      "author": "David Foster Wallace",
+      "translator": "Ignas Beitsas",
+      "directorSlug": "yana-ross",
+      "theaterSlug": "lietuvos-nacionalinis-dramos-teatras",
+      "genre": "Drama",
+      "premiereDate": "2023-09-21",
+      "runtime": "1 val. 30 min.",
+      "runtimeMinutes": 90,
+      "ageRating": "N-16",
+      "ageNote": "Spektaklyje kalbama smurto, gyvūnų kankinimo temomis",
+      "venue": "Mažoji salė",
+      "language": "Lietuvių",
+      "description": "Yana Ross spektakliui LNDT Mažojoje salėje pasirinko amerikiečių rašytojo Davido Fosterio Wallace'o (1962–2008), iš esmės kvestionuojančio žmogiškąją prigimtį, esė „Apmąstant omarą\". Savo tekstuose Wallace'as imasi narstyti jautriausius ir nepatogiausius šiuolaikinės visuomenės klausimus – empatiją, vaikų auklėjimą, intymumą, nesusikalbėjimą ir antropocentrizmo pabaigą.",
+      "directorQuote": "Tikimės, kad pavyks paskatinti žiūrovus permąstyti savo etikos ir moralės kodeksus bei vertybes ir tuo pačiu atkreips dėmesį į socialiai priimtinas pilkąsias zonas, kurias ketiname kvestionuoti.",
+      "posterUrl": "https://www.teatras.lt/uploads/img/catalog/1/photo_page_1_69726051.jpg",
+      "videoUrl": "https://www.youtube.com/embed/BVHbJjyHCzI",
+      "sourceUrl": "https://www.teatras.lt/lt/spektakliai/pagal_david_foster_wallace_ese_apmastant_omara/",
+      "creativeTeam": {
+        "scenographer": "Zane Pihlstrom",
+        "composer": "punk after kant (Gintaras Sodeika)",
+        "lightingDesigner": "Dainius Urbonis",
+        "producer": "Kamilė Žičkytė"
+      },
+      "cast": [
+        "Elzė Gudavičiūtė",
+        "Miglė Polikevičiūtė",
+        "Martynas Nedzinskas",
+        "Salvijus Trepulis",
+        "Jūratė Vilūnaitė"
+      ],
+      "upcomingShowings": [
+        {
+          "date": "2026-05-22",
+          "time": "18:00",
+          "venue": "Klaipėdos dramos teatras",
+          "city": "Klaipėda",
+          "note": "Gastrolės",
+          "ticketUrl": "https://bilietai.kdt.lt/kasa/seansas/a153f9e6-e0a6-49d6-9a96-4d43eef076b3"
+        },
+        {
+          "date": "2026-06-17",
+          "time": "19:30",
+          "venue": "Mažoji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/renginiai/DFWQPEVZW3/pagal-david-foster-wallace-ese-apmastant-omara-rez-yana-ross-perkeltas-is-2026-04-30"
+        },
+        {
+          "date": "2026-05-29",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/apmastant-omara/"
+        },
+        {
+          "date": "2026-06-05",
+          "time": "19:00",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/apmastant-omara/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Ramunė Marcinkevičiūtė",
+          "title": "Du omaro paruošimo būdai",
+          "publication": "Kultūros barai",
+          "issue": "2023 m. Nr. 12",
+          "publishedAt": "2023-12-01",
+          "rating": 6.6,
+          "ratingMax": 10
+        },
+        {
+          "author": "Ieva Tumanovičiūtė",
+          "title": "Reiklus žiūrovas",
+          "publication": "7 meno dienos",
+          "issue": "Nr. 32 (1481)",
+          "publishedAt": "2023-10-06",
+          "rating": 6.6,
+          "ratingMax": 10
+        },
+        {
+          "author": "Alma Braškytė",
+          "title": "Apmąstant naujausią Yanos Ross spektaklį",
+          "publication": "Menų faktūra",
+          "publishedAt": "2023-10-03",
+          "url": "https://www.menufaktura.lt/?m=3391&s=704210",
+          "rating": 7.2,
+          "ratingMax": 10
+        },
+        {
+          "author": "Aušra Kaminskaitė",
+          "title": "Išvirti omarą arba sudeginti žmogų",
+          "publication": "LRT Klasika",
+          "publishedAt": "2023-10-01",
+          "rating": 6.6,
+          "ratingMax": 10
+        },
+        {
+          "author": "Sigita Ivaškaitė",
+          "title": "Verdančiomis galvomis: Yanos Ross premjera „Apmąstant omarą\"",
+          "publication": "15min.lt",
+          "publishedAt": "2023-09-23",
+          "rating": 4,
+          "ratingMax": 5
+        },
+        {
+          "author": "Giedrė Kazlauskaitė",
+          "title": "Neik į teatrą – gausi valgyt",
+          "publication": "Šiaurės Atėnai",
+          "issue": "Nr. 18 (1418)",
+          "publishedAt": "2023-09-29",
+          "rating": 7.5,
+          "ratingMax": 10
+        },
+        {
+          "author": "Jūratė Visockaitė",
+          "title": "Rudens dienoraštis (II)",
+          "publication": "Literatūra ir menas",
+          "publishedAt": "2023-10-02",
+          "rating": 7,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "isvarymas",
+      "title": "Išvarymas",
+      "fullTitle": "Marius Ivaškevičius. IŠVARYMAS",
+      "author": "Marius Ivaškevičius",
+      "directorSlug": "oskaras-korsunovas",
+      "theaterSlug": "lietuvos-nacionalinis-dramos-teatras",
+      "genre": "Drama",
+      "premiereDate": "2011-12-22",
+      "runtime": "6 val. (trijų dalių)",
+      "runtimeMinutes": 360,
+      "ageRating": "N-18",
+      "venue": "Didžioji salė",
+      "language": "Lietuvių",
+      "description": "Marius Ivaškevičiaus pjesė ir Oskaro Koršunovo režisuotas spektaklis – legendinis lietuvių teatro reiškinys, šiandien suvaidintas daugiau nei 100 kartų ir pamatytas 70 000 žiūrovų. Spektaklis paliečia ūmią emigracijos temą per maišyto kraujo lietuvio Beno Ivanovo ir jo bendrakeleivių odisėją Londone. Tapatybės praradimas ir bandymas iš naujo tapti žmogumi svetimoje šalyje – tai horizontali dvasinė kelionė „į laimę“, dažnai virstanti vertikalia kelione žemyn.",
+      "directorQuote": "„Išvaryme“ paliesta labai aktuali tema – emigracija. Už to slypi ne tik tautos, valstybės interesai – už to slypi sulaužyti žmonių likimai, ištisos odisėjos.",
+      "posterUrl": "https://www.teatras.lt/uploads/img/catalog/1/photo_page_1_87940495.jpg",
+      "sourceUrl": "https://www.teatras.lt/lt/spektakliai/marius_ivaskevicius_isvarymas/",
+      "awards": [
+        "2011 Auksinis scenos kryžius – Geriausias režisierius (Oskaras Koršunovas)",
+        "2011 Auksinis scenos kryžius – Geriausias antraplanis vyro vaidmuo (Marius Repšys)",
+        "2011 Auksinis scenos kryžius – Geriausias antraplanis moters vaidmuo (Elzė Gudavičiūtė)",
+        "2011 Auksinis scenos kryžius – Geriausias scenografas (Gintaras Makarevičius)",
+        "2011 Auksinis scenos kryžius – Geriausias jaunasis menininkas (Ainis Storpirštis)",
+        "2011 Auksinis scenos kryžius – Geriausias nacionalinės dramaturgijos pastatymas"
+      ],
+      "creativeTeam": {
+        "scenographer": "Gintaras Makarevičius",
+        "composer": "Saulius Prūsaitis",
+        "costumeDesigner": "Agnė Jagelavičiūtė",
+        "lightingDesigner": "Eugenijus Sabaliauskas",
+        "choreographer": "Vesta Grabštaitė"
+      },
+      "cast": [
+        "Kęstutis Cicėnas (Benas)",
+        "Vytautas Anužis (Benas po N metų)",
+        "Marius Michailas Repšys (Vandalas)",
+        "Gailė Butvilaitė (Eglė)",
+        "Elzė Gudavičiūtė (Olga)",
+        "Salvijus Trepulis (Zbignievas)",
+        "Jolanta Dapkūnaitė (Regina)"
+      ],
+      "ensembleSize": 30,
+      "upcomingShowings": [
+        {
+          "date": "2026-06-16",
+          "time": "17:00",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/lndt--marius-ivaskevicius-isvarymas-rez-oskaras-korsunovas-85485/"
+        },
+        {
+          "date": "2026-06-18",
+          "time": "17:00",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/lndt--marius-ivaskevicius-isvarymas-rez-oskaras-korsunovas-85485/"
+        },
+        {
+          "date": "2026-05-24",
+          "time": "18:00",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/isvarymas/"
+        },
+        {
+          "date": "2026-05-31",
+          "time": "18:00",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/isvarymas/"
+        },
+        {
+          "date": "2026-06-07",
+          "time": "18:00",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/isvarymas/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Daiva Šabasevičienė",
+          "title": "Šimtas „Išvarymų“",
+          "publication": "Teatras.lt",
+          "publishedAt": "2018-06-18",
+          "note": "Apžvalga šimtojo spektaklio rodymo proga",
+          "rating": 7.3,
+          "ratingMax": 10
+        },
+        {
+          "author": "Leonidas Donskis",
+          "title": "Išvarymas? Egzodas? Ar laisvės dilemos?",
+          "publication": "IQ",
+          "publishedAt": "2014-11-10",
+          "rating": 7.3,
+          "ratingMax": 10
+        },
+        {
+          "author": "Elona Bajorinienė",
+          "title": "Išvaryta Lietuva XXL formatu",
+          "publication": "Kultūros barai",
+          "issue": "2012 m. Nr. 1",
+          "publishedAt": "2012-01-15",
+          "rating": 7,
+          "ratingMax": 10
+        },
+        {
+          "author": "Rimgailė Renevytė",
+          "title": "Visi iki vieno sulipa, o aš ir nespėju",
+          "publication": "asteatre.wordpress.com",
+          "publishedAt": "2012-02-04",
+          "rating": 6.8,
+          "ratingMax": 10
+        },
+        {
+          "author": "Dovilė Zelčiūtė",
+          "title": "„Išvarymas“. Ištarta",
+          "publication": "Šiaurės Atėnai",
+          "publishedAt": "2012-01-13",
+          "note": "Pokalbis su kūrybinės grupės nariais",
+          "rating": 7.2,
+          "ratingMax": 10
+        },
+        {
+          "author": "Galina Gubanova",
+          "title": "Там быть, как тут",
+          "publication": "obzor.lt",
+          "publishedAt": "2016-01-11",
+          "language": "ru",
+          "rating": 7.7,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "sibiro-haiku",
+      "title": "Sibiro haiku",
+      "fullTitle": "Birutė Kapustinskaitė. SIBIRO HAIKU",
+      "author": "Birutė Kapustinskaitė",
+      "basedOn": "Pagal Jurgos Vilės ir Linos Itagaki komiksų knygą „Sibiro haiku\"",
+      "directorSlug": "augustas-gornatkevicius",
+      "theaterSlug": "lietuvos-nacionalinis-dramos-teatras",
+      "genre": "Drama vaikams ir paaugliams",
+      "premiereDate": "2023-10-20",
+      "runtime": "1 val. 20 min.",
+      "runtimeMinutes": 80,
+      "ageRating": "Vaikams 8–12 m.",
+      "ageNote": "Spektaklis skirtas 8–12 m. vaikams (tinka ir suaugusiems)",
+      "venue": "Mažoji salė",
+      "language": "Lietuvių",
+      "description": "Pagal 2018 m. geriausia knyga vaikams pripažintą Jurgos Vilės ir Linos Itagaki komiksų knygą. Spektaklis randa būdą jautriai ir be pagrąžinimų pasakoti vaikams apie tremties žiaurumus per dešimtmečio berniuko Algiuko žvilgsnį. 1941 m. birželio rytą šeima ištremiama į Sibirą – ten gimsta tremtinių choras „Obuoliai“, ten dainuojant užauga sparnai, o viltis grįžti namo niekad neapleidžia.",
+      "directorQuote": "Spektakliu siekiame išlaikyti knygos žaidybiškumą, kuris šiems pasakojimams suteikia lengvumo, padaro juos prieinamesnius jaunajai auditorijai. Nagrinėdamas tremties temą spektaklis siekia ne tik apšviesti ar atpasakoti įvykius, tačiau ir padėti vaikams suvokti tai, kas atrodo nesuvokiama.",
+      "posterUrl": "https://www.teatras.lt/uploads/img/catalog/1/photo_page_1_75365292.jpg",
+      "sourceUrl": "https://www.teatras.lt/lt/spektakliai/birute_kapustinskaite_sibiro_haiku/",
+      "awards": [
+        "2023 m. Dalios Tamulevičiūtės lietuvių autorių scenos meno kūrinių konkurso laimėtojas"
+      ],
+      "creativeTeam": {
+        "scenographer": "Simona Davlidovičiūtė",
+        "costumeDesigner": "Simona Davlidovičiūtė",
+        "composer": "Jūra Elena Šedytė",
+        "lightingDesigner": "Dainius Urbonis",
+        "movementCoordinator": "Gintarė Šmigelskytė",
+        "producer": "Rugilė Pukštytė"
+      },
+      "cast": [
+        "Gediminas Rimeika (Algiukas)",
+        "Miglė Polikevičiūtė",
+        "Augustė Pociūtė",
+        "Jolanta Dapkūnaitė",
+        "Augustė Ona Šimulynaitė",
+        "Marius Michailas Repšys",
+        "Lukas Malinauskas"
+      ],
+      "upcomingShowings": [
+        {
+          "date": "2026-05-28",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/sibiro-haiku/"
+        },
+        {
+          "date": "2026-06-06",
+          "time": "12:00",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "note": "Vaikų spektaklis",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/sibiro-haiku/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Aušra Kaminckaitė",
+          "title": "Apie išlikimą užklupus blogiausioms dienoms",
+          "publication": "LRT.lt",
+          "publishedAt": "2023-10-27",
+          "rating": 8.2,
+          "ratingMax": 10
+        },
+        {
+          "author": "Ingrida Ragelskienė",
+          "title": "Tabula rasa reiškinys šiuolaikiniame teatre",
+          "publication": "7 meno dienos",
+          "publishedAt": "2023-11-03",
+          "rating": 8.7,
+          "ratingMax": 10
+        },
+        {
+          "author": "Dovilė Juodzevičiūtė",
+          "title": "Gera diena",
+          "publication": "Menų faktūra",
+          "publishedAt": "2023-10-28",
+          "rating": 9.2,
+          "ratingMax": 10
+        },
+        {
+          "author": "Jūratė Visockaitė",
+          "title": "Rudens dienoraštis (IV)",
+          "publication": "Literatūra ir menas",
+          "publishedAt": "2023-10-30",
+          "rating": 8.5,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "septynios-vienatves",
+      "title": "Septynios vienatvės",
+      "fullTitle": "Septynios vienatvės. Penki veiksmai",
+      "author": "Oskaras Milašius",
+      "basedOn": "Pagal Oskaro Milašiaus kūrybą",
+      "directorSlug": "robert-wilson",
+      "theaterSlug": "nacionalinis-kauno-dramos-teatras",
+      "genre": "Drama",
+      "premiereDate": "2026-03-20",
+      "runtime": "1 val. 10 min.",
+      "runtimeMinutes": 70,
+      "ageRating": "N-14",
+      "venue": "Didžioji scena",
+      "language": "Lietuvių",
+      "description": "Pasaulinė premjera – paskutinis legendinio režisieriaus Roberto Wilsono (1941–2025) darbas, sukurtas pagal Lietuvoje gimusio prancūzų rašytojo ir diplomato Oskaro Milašiaus kūrybą. Spektaklio epicentre – Don Žuano istorija, paremta Milašiaus pjese „Migelis Manjara“. R. Wilsonas pradėjo statyti spektaklį žinodamas, kad premjeros gali nesulaukti, ir prašė ilgametės kūrybinės komandos darbą užbaigti. Spektaklis tapo bendru atsisveikinimu su pasaulinio garso menininku ir Lietuvos teatro istorijos įvykiu – pirmuoju R. Wilsono dramos spektakliu pagal lietuvių autoriaus kūrybą.",
+      "directorQuote": "Robertas Wilsonas tampa labiausiai lietuvių nacionaline dramaturgija besirūpinančiu pasaulio režisieriumi. (Egidijus Stancikas, NKDT direktorius)",
+      "posterUrl": "https://dramosteatras.lt/app/uploads/2025/12/Plakatas-05-PATVIRTINTAS-1000x1400px-800x1125.jpg",
+      "sourceUrl": "https://dramosteatras.lt/shows/septynios-vienatves/",
+      "creativeTeam": {
+        "coDirector": "Charles Chemin",
+        "dramaturg": "Charles Chemin",
+        "scenographer": "Stephanie Engeln (bendraautorė)",
+        "lightingDesigner": "Marcello Lumaca (bendraautoris)",
+        "costumeDesigner": "Flavia Ruggeri",
+        "composer": "Hans-Jörn Brandenburg",
+        "videoDesigner": "Tomasz Jeziorski"
+      },
+      "cast": [
+        "Dainius Svobonas",
+        "Kęstutis Jakštas",
+        "Ravdo"
+      ],
+      "upcomingShowings": [
+        {
+          "date": "2026-05-22",
+          "time": "18:30",
+          "venue": "Didžioji scena",
+          "city": "Kaunas",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/7-vienatves/"
+        },
+        {
+          "date": "2026-05-28",
+          "time": "19:00",
+          "venue": "Didžioji scena",
+          "city": "Kaunas",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/7-vienatves/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "LRT redakcija",
+          "title": "Nacionaliniame Kauno dramos teatre – spektaklio „Septynios vienatvės“ premjera",
+          "publication": "LRT.lt",
+          "publishedAt": "2026-03-17",
+          "url": "https://www.lrt.lt/naujienos/kultura/12/2870430/nacionaliniame-kauno-dramos-teatre-spektaklio-septynios-vienatves-premjera",
+          "rating": 7.5,
+          "ratingMax": 10
+        },
+        {
+          "author": "Kauno diena",
+          "title": "Į pasaulinę premjerą „Septynios vienatvės“ rinkosi žinomi žmonės ir svečiai iš užsienio",
+          "publication": "Kauno diena",
+          "publishedAt": "2026-03-20",
+          "url": "https://kauno.diena.lt/naujienos/kaunas/menas-ir-pramogos/i-pasauline-premjera-septynios-vienatves-rinkosi-zinomi-zmones-ir-sveciai-uzsienio-1747927",
+          "rating": 7.1,
+          "ratingMax": 10
+        },
+        {
+          "author": "15min redakcija",
+          "title": "Į pasaulinę Roberto Wilsono premjerą „Septynios vienatvės“ rinkosi žinomi žmonės",
+          "publication": "15min.lt",
+          "publishedAt": "2026-03-23",
+          "url": "https://www.15min.lt/kultura/naujiena/teatras/i-pasauline-roberto-wilsono-premjera-septynios-vienatves-rinkosi-zinomi-zmones-ir-sveciai-is-uzsienio-283-2646956",
+          "rating": 6.4,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "lietuviskos-velines",
+      "title": "Lietuviškos Vėlinės",
+      "fullTitle": "Pagal Adomą Mickevičių. LIETUVIŠKOS VĖLINĖS",
+      "author": "Adomas Mickevičius",
+      "basedOn": "Pagal Adomo Mickevičiaus dramą „Vėlinės“ (II ir IV dalis)",
+      "directorSlug": "jakub-skrzywanek",
+      "theaterSlug": "nacionalinis-kauno-dramos-teatras",
+      "genre": "Drama",
+      "premiereDate": "2025-11-28",
+      "runtime": "2 val. (vienos dalies spektaklis)",
+      "runtimeMinutes": 120,
+      "ageRating": "N-18",
+      "ageNote": "Spektaklyje yra nuogo kūno, intymios ir smurto scenos, šūvio garsai",
+      "venue": "Didžioji scena",
+      "language": "Lietuvių",
+      "description": "Vienas iš ryškiausių 2025 m. lietuvių teatro įvykių. Lenkų režisierius Jakubas Skrzywanekas, remdamasis A. Mickevičiaus dramos „Vėlinės“ Lietuvoje parašytomis II ir IV dalimis, kuria modernų socialinį ritualą ir tyrinėja istorinių bei kultūrinių nuodėmių pasekmes. Spektaklis sukėlė ypatingai daug viešų diskusijų – pasak aktoriaus Dainiaus Svobono, „net tie, kurie neina į teatrą, apie šį spektaklį sužinojo“. Tarp temų – baudžiavos paveldas, vaikų akcija Kauno gete, patriarchalinė prievarta, „incel“ subkultūra.",
+      "directorQuote": "Tai ne aš provokuoju, tai realybė provokuoja mus kalbėti aktualiomis temomis. Sukurti teatrą, kuris nebūtų abejingas tam, kas vyksta aplinkui – toks yra mano meninis ir etinis tikslas.",
+      "posterUrl": "https://dramosteatras.lt/app/uploads/2025/09/Velines-plakatas-1000x1400-2-800x1125.jpg",
+      "sourceUrl": "https://dramosteatras.lt/shows/lietuviskos-velines/",
+      "creativeTeam": {
+        "dramaturg": "Daiva Čepauskaitė (asistentė)",
+        "scenographer": "Agata Skwarczyńska",
+        "lightingDesigner": "Agata Skwarczyńska",
+        "costumeDesigner": "Ugnė Tamuliūnaitė",
+        "choreographer": "Agnieszka Kryst",
+        "composer": "Karol Nepelski",
+        "videoDesigner": "Ridas Beržauskas"
+      },
+      "cast": [
+        "Povilas Barzdžius",
+        "Saulius Čiučelis",
+        "Motiejus Ivanauskas",
+        "Gytis Laskovas",
+        "Inga Mikutavičiūtė",
+        "Pijus Narijauskas",
+        "Miglė Navasaitytė",
+        "Kęstutis Povilaitis",
+        "Irena Sikorskytė",
+        "Egidijus Stancikas",
+        "Dainius Svobonas",
+        "Ugnė Žirgulė"
+      ],
+      "upcomingShowings": [
+        {
+          "date": "2026-05-23",
+          "time": "18:30",
+          "venue": "Didžioji scena",
+          "city": "Kaunas",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/lietuviskos-velines/"
+        },
+        {
+          "date": "2026-05-31",
+          "time": "17:00",
+          "venue": "Didžioji scena",
+          "city": "Kaunas",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/lietuviskos-velines/"
+        },
+        {
+          "date": "2026-06-06",
+          "time": "18:30",
+          "venue": "Didžioji scena",
+          "city": "Kaunas",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/lietuviskos-velines/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Kauno diena",
+          "title": "Į Nacionalinio Kauno dramos teatro premjerą „Lietuviškos Vėlinės“ rinkosi tarptautinė publika",
+          "publication": "Kauno diena",
+          "publishedAt": "2025-11-28",
+          "url": "https://kauno.diena.lt/naujienos/kaunas/menas-ir-pramogos/i-nacionalinio-kauno-dramos-teatro-premjera-lietuviskos-velines-rinkosi-tarptautine-publika-1731042",
+          "rating": 7.4,
+          "ratingMax": 10
+        },
+        {
+          "author": "kasvyksta.lt",
+          "title": "Į premjerą „Lietuviškos Vėlinės“ rinkosi tarptautinė publika",
+          "publication": "kaunas.kasvyksta.lt",
+          "publishedAt": "2025-11-28",
+          "url": "https://kaunas.kasvyksta.lt/2025/11/28/kultura/i-nacionalinio-kauno-dramos-teatro-premjera-lietuviskos-velines-rinkosi-tarptautine-publika/",
+          "rating": 7.3,
+          "ratingMax": 10
+        },
+        {
+          "author": "NKDT redakcija",
+          "title": "Premjerą „Lietuviškos Vėlinės“ pristatantis lenkų režisierius J. Skrzywanekas analizuoja praeities ir dabarties nuodėmes",
+          "publication": "dramosteatras.lt",
+          "publishedAt": "2025-11-12",
+          "url": "https://dramosteatras.lt/premjera-lietuviskos-velines-pristatantis-lenku-rezisierius-j-skrzywanekas-analizuoja-praeities-ir-dabarties-nuodemes/",
+          "rating": 7.5,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "kai-mes-busim-jauni",
+      "title": "Kai mes būsim jauni",
+      "fullTitle": "Daiva Čepauskaitė. KAI MES BŪSIM JAUNI",
+      "author": "Daiva Čepauskaitė",
+      "directorSlug": "aleksandras-spilevojus",
+      "theaterSlug": "nacionalinis-kauno-dramos-teatras",
+      "genre": "Komiška drama",
+      "premiereDate": "2023-11-11",
+      "runtime": "1 val.",
+      "runtimeMinutes": 60,
+      "ageRating": "N-14",
+      "venue": "Rūtos salė",
+      "language": "Lietuvių",
+      "description": "NKDT publikos hitas – į spektaklį „beveik neįmanoma patekti“ (15min.lt). Spalvinga senukų kompanija susirenka į savo jaunystės draugo laidotuves. Jie turi tiek daug ką prisiminti, tiek daug apie ką pasišnekėti. Tik laiko nedaug... Komiškame spektaklyje gausu humoro, jaunystės prisiminimų ir nuostabių vyresnės kartos teatro aktorių. Dramaturgė Daiva Čepauskaitė pjesę specialiai sukūrė septyniems NKDT brandžiosios kartos aktoriams – jų vaidybos manieromis ir individualybėmis.",
+      "directorQuote": "Pjesės pavadinimas „Kai mes būsim jauni“ gimė galvojant apie tai, kuria kryptim juda laikas. Yra teorija, jog pasaulis vystosi spirale, tuomet ir senatve niekas nesibaigia, nes ratas apsisuks ir mes vėl būsim jauni.",
+      "posterUrl": "https://dramosteatras.lt/app/uploads/2024/01/6efd910dcaef61b36c9517e8477578db_kai-mes-busime-jauni-m_max_max-60-800x1131.jpg",
+      "sourceUrl": "https://dramosteatras.lt/shows/kai-mes-busim-jauni/",
+      "awards": [
+        "Auksinis scenos kryžius – Vilijai Grigaitytei (vaidmuo)",
+        "Auksinis scenos kryžius – Inesai Paliulytei (vaidmuo)",
+        "Auksinis scenos kryžius – Liucijai Rukšnaitytei (vaidmuo)",
+        "Auksinis scenos kryžius – Jūratei Onaitytei (vaidmuo)",
+        "Fortūnos apdovanojimas spektaklio kūrybinei grupei",
+        "Geriausias spektaklis – XV Dalios Tamulevičiūtės profesionalių teatrų festivalyje",
+        "Geriausias spektaklis – 40-asis Lietuvos profesionalių teatrų festivalis „Vaidiname žemdirbiams“ (Rokiškis)"
+      ],
+      "creativeTeam": {
+        "scenographer": "Ugnė Tamuliūnaitė",
+        "costumeDesigner": "Ugnė Tamuliūnaitė",
+        "composer": "Paulius Trijonis",
+        "lightingDesigner": "Vladimiras Šerstabojevas"
+      },
+      "cast": [
+        "Vilija Grigaitytė",
+        "Liubomiras Laucevičius",
+        "Jūratė Onaitytė",
+        "Inesa Paliulytė",
+        "Algirdas Pintukas",
+        "Liucija Rukšnaitytė",
+        "Lili Stepankaitė"
+      ],
+      "upcomingShowings": [
+        {
+          "date": "2026-05-24",
+          "time": "17:00",
+          "venue": "Didžioji scena",
+          "city": "Kaunas",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/kai-mes-busim-jauni/"
+        },
+        {
+          "date": "2026-05-30",
+          "time": "18:30",
+          "venue": "Didžioji scena",
+          "city": "Kaunas",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/kai-mes-busim-jauni/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Menufaktūra",
+          "title": "Neprisijaukinti tamsos",
+          "publication": "Menų faktūra",
+          "publishedAt": "2024-01-04",
+          "url": "https://menufaktura.lt/recenzija/neprisijaukinti-tamsos/",
+          "rating": 7.6,
+          "ratingMax": 10
+        },
+        {
+          "author": "Menufaktūra",
+          "title": "A. Špilevojus premjerą „Kai mes būsim jauni“ kuria su Kauno dramos teatro legendomis",
+          "publication": "Menų faktūra",
+          "publishedAt": "2023-10-27",
+          "url": "https://menufaktura.lt/naujienos/a-spilevojus-premjera-kai-mes-busim-jauni-kuria-su-kauno-dramos-teatro-legendomis/",
+          "rating": 8.1,
+          "ratingMax": 10
+        },
+        {
+          "author": "15min redakcija",
+          "title": "Neįtikėtina Kauno dramos teatro spektaklio sėkmė – ne tik džiaugsmas, bet ir galvos skausmas",
+          "publication": "15min.lt",
+          "publishedAt": "2024-04-29",
+          "url": "https://www.15min.lt/kultura/naujiena/teatras/spektaklis-i-kuri-beveik-neimanoma-patekti-kokia-kai-mes-busim-jauni-paslaptis-283-2232526",
+          "rating": 7.7,
+          "ratingMax": 10
+        },
+        {
+          "author": "15min redakcija",
+          "title": "„Kai mes būsim jauni“ – drama apsimetanti komedija. Kūrėjų mintys",
+          "publication": "15min.lt",
+          "publishedAt": "2023-11-08",
+          "url": "https://www.15min.lt/kultura/naujiena/teatras/kai-mes-busim-jauni-drama-apsimetanti-komedija-kureju-mintys-283-2141192",
+          "rating": 8.4,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "jauno-zmogaus-memuarai",
+      "title": "Jauno žmogaus memuarai",
+      "fullTitle": "Pagal Ričardo Gavelio knygą. JAUNO ŽMOGAUS MEMUARAI",
+      "author": "Ričardas Gavelis",
+      "basedOn": "Pagal romaną „Jauno žmogaus memuarai\" (1989)",
+      "directorSlug": "egle-svedkauskaite",
+      "theaterSlug": "valstybinis-jaunimo-teatras",
+      "genre": "Drama",
+      "premiereDate": "2022-05-14",
+      "runtime": "3 val.",
+      "runtimeMinutes": 180,
+      "ageRating": "N-16",
+      "venue": "Didžioji salė",
+      "language": "Lietuvių",
+      "description": "Teatre retai statoma lietuvių literatūros klasiko Ričardo Gavelio kūryba atgimsta Jaunimo teatro scenoje. Jaunosios kartos režisierė Eglė Švedkauskaitė pristato rašytojo romano „Jauno žmogaus memuarai\" teatrinę versiją. Spektaklis – apie atmintį, apie trumpą, lūkesčiuose ir vizijose paskendusį, tragiškai pasibaigusį jauno žmogaus gyvenimą. Tai kelionė iš anapus į šiapus – iš savo atminties į gyvųjų atmintį. Spektaklis – Jaunimo teatro ciklo apie šiuolaikinį jaunimą, jo gyvenimiškus pasirinkimus ir vertybines orientacijas dalis. Aktoriai – spektaklio muzikos bendrakūrėjai, ją atlieka gyvai.",
+      "directorQuote": "Leonas Ciparis yra žmogus, kuriam būtina bendruomenė, bendras tikėjimas, vieningi siekiai. Jis visada norėjo apie tai kalbėti, ginčytis, tačiau prabilo tik po mirties. Šio spektaklio kūrėjams yra įdomu, kaip praeities tikrovės memuarai veikia šiandien, ir kokius jos pėdsakus atpažįstame mūsų laike, mūsų tapatybėje.",
+      "posterUrl": "https://jaunimoteatras.lt/wp-content/uploads/2022/09/1-114-scaled.jpg",
+      "videoUrl": "https://player.vimeo.com/video/1030016005",
+      "sourceUrl": "https://jaunimoteatras.lt/spektakliai/jauno-zmogaus-memuarai/",
+      "awards": [
+        "2023 Auksinis scenos kryžius – Geriausia metų režisierė (Eglė Švedkauskaitė)",
+        "2023 Auksinis scenos kryžius – Geriausia metų dramaturgija (Mindaugas Nastaravičius)"
+      ],
+      "creativeTeam": {
+        "dramaturg": "Mindaugas Nastaravičius",
+        "scenographer": "Jurgis Paškevičius, Monika Janulevičiūtė",
+        "costumeDesigner": "Karolina Janulevičiūtė",
+        "composer": "Agnė Matulevičiūtė",
+        "lightingDesigner": "Julius Kuršys"
+      },
+      "cast": [
+        "Vytautas Anužis",
+        "Matas Dirginčius",
+        "Giedrė Giedraitytė",
+        "Sergejus Ivanovas",
+        "Aleksas Kazanavičius",
+        "Viktorija Kuodytė",
+        "Justina Mykolaitytė",
+        "Lukas Petrauskas",
+        "Vainius Sodeika",
+        "Jonė Šadeikė",
+        "Dovilė Šilkaitytė"
+      ],
+      "ensembleSize": 11,
+      "upcomingShowings": [
+        {
+          "date": "2026-03-31",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/organizatoriai-ir-vietos/organizatoriai/valstybinis-jaunimo-teatras-2410810/"
+        },
+        {
+          "date": "2026-05-24",
+          "time": "16:00",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/jauno-zmogaus-memuarai/"
+        },
+        {
+          "date": "2026-05-29",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/jauno-zmogaus-memuarai/"
+        },
+        {
+          "date": "2026-06-05",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/jauno-zmogaus-memuarai/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Andrius Jevsejevas",
+          "title": "Naujas „Jauno žmogaus memuarai\" pastatymas: kritiko žvilgsnis",
+          "publication": "Menų faktūra",
+          "publishedAt": "2022-05-30",
+          "url": "https://menufaktura.lt/teatras/",
+          "rating": 9,
+          "ratingMax": 10
+        },
+        {
+          "author": "Aušra Kaminskaitė",
+          "title": "„Jauno žmogaus memuarai\" – nauja interpretacija scenoje",
+          "publication": "LRT Klasika",
+          "publishedAt": "2022-07-06",
+          "url": "https://www.lrt.lt/naujienos/kultura/12/",
+          "rating": 9.4,
+          "ratingMax": 10
+        },
+        {
+          "author": "Goda Dapšytė",
+          "title": "Kūrybinis manifestas „Jauno žmogaus memuarai\"",
+          "publication": "Bernardinai.lt",
+          "publishedAt": "2022-06-06",
+          "url": "https://www.bernardinai.lt/kultura/teatras/",
+          "rating": 9.5,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "laukine-antis",
+      "title": "Laukinė antis",
+      "fullTitle": "Henrik Ibsen. LAUKINĖ ANTIS",
+      "author": "Henrik Ibsen",
+      "translator": "Eglė Išganaitytė (iš norvegų)",
+      "directorSlug": "oskaras-korsunovas",
+      "theaterSlug": "valstybinis-jaunimo-teatras",
+      "genre": "Drama",
+      "premiereDate": "2025-10-01",
+      "runtime": "4 val.",
+      "runtimeMinutes": 240,
+      "ageRating": "N-16",
+      "venue": "Didžioji salė",
+      "language": "Lietuvių",
+      "description": "Jaunimo teatro 61-ojo sezono pradžia. Henriko Ibseno klasikinę pjesę (1884) interpretavo bene ryškiausia šiuolaikinio lietuvių teatro figūra Oskaras Koršunovas. Pjesėje pasakojama apie Ekdalių šeimą, kurios laimingą kasdienybę sujaukia svečias iš praeities Gregersas Verlė – jis šventai įsitikinęs, kad neša tiesą, ir tai virsta šeimos tragedija. Pastatymas – simbolinis Koršunovo sugrįžimas į teatrą, kuriame prieš daugiau nei 35 metus įvyko jo debiutinis darbas profesionalioje scenoje – „Ten būti čia (Paūmėjimai)\".",
+      "directorQuote": "Kuo labiau pasaulis pakrinka, tuo labiau išryškėja takoskyra tarp tiesos ir teisingumo. Kuo daugiau atsiranda „teisuolių\", tuo mažiau lieka teisingumo. Kai tiesą keičia post-tiesa ar propaganda, o teisingumą lemia ideologijos, kai tiesa įpainiojama socialiniuose tinkluose, o teisingumas vykdomas patiktukais ir algoritmais, pats laikas teatrui atsigręžti į moralę.",
+      "posterUrl": "https://jaunimoteatras.lt/wp-content/uploads/2025/10/C_LVanseviciene-24-copy-1-scaled.jpg",
+      "sourceUrl": "https://jaunimoteatras.lt/spektakliai/laukine-antis/",
+      "creativeTeam": {
+        "dramaturg": "Goda Simonaitytė",
+        "scenographer": "Gintaras Makarevičius",
+        "costumeDesigner": "Agnė Kuzmickaitė",
+        "composer": "Antanas Jasenka",
+        "lightingDesigner": "Eugenijus Sabaliauskas",
+        "videoDesigner": "Rimas Sakalauskas",
+        "choreographer": "Vesta Rasa Grabštaitė"
+      },
+      "cast": [
+        "Donatas Želvys",
+        "Valentinas Novopolskis",
+        "Aušra Pukelytė",
+        "Neringa Varnelytė",
+        "Aldona Bendoriūtė",
+        "Andrius Bialobžeskis",
+        "Sergejus Ivanovas",
+        "Vytautas Anužis",
+        "Valerijus Jevsejevas",
+        "Gintautė Rusteikaitė",
+        "Inga Juškevičiūtė",
+        "Nerijus Gadliauskas",
+        "Ignas Ciplijauskas",
+        "Karolis Kasperavičius"
+      ],
+      "ensembleSize": 14,
+      "upcomingShowings": [
+        {
+          "date": "2026-06-26",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/renginiai/NGYR5SLJBJ/laukine-antis-rez-oskaras-korsunovas"
+        },
+        {
+          "date": "2026-06-27",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/renginiai/7B5BOVTGUX/laukine-antis-rez-oskaras-korsunovas"
+        },
+        {
+          "date": "2026-05-23",
+          "time": "19:00",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/laukine-antis/"
+        },
+        {
+          "date": "2026-05-31",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/laukine-antis/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Marija Dautartaitė",
+          "title": "Ant tiesos fotelio",
+          "publication": "Menų faktūra",
+          "publishedAt": "2025-10-03",
+          "url": "https://menufaktura.lt/recenzija/ant-tiesos-fotelio/",
+          "rating": 7.2,
+          "ratingMax": 10
+        },
+        {
+          "author": "Audronė Girdzijauskaitė",
+          "title": "Iš bloknoto (59)",
+          "publication": "Šiaurės Atėnai",
+          "publishedAt": "2025-10-10",
+          "url": "https://www.satenai.lt/2025/10/10/is-bloknoto-59/",
+          "rating": 7.6,
+          "ratingMax": 10
+        },
+        {
+          "author": "Daiva Šabasevičienė",
+          "title": "Gyvenimo melas tarp realizmo ir simbolizmo",
+          "publication": "7 meno dienos",
+          "publishedAt": "2025-10-10",
+          "url": "https://www.7md.lt/teatras/2025-10-10/Gyvenimo-melas-tarp-realizmo-ir-simbolizmo",
+          "rating": 6.6,
+          "ratingMax": 10
+        },
+        {
+          "author": "Ramunė Balevičiūtė",
+          "title": "Ar yra vaistų nuo teisuoliškumo",
+          "publication": "vz.lt",
+          "publishedAt": "2025-12-18",
+          "url": "https://www.vz.lt/laisvalaikis/2025/12/18/ar-yra-vaistu-nuo-teisuoliskumo-577896",
+          "rating": 7.2,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "uzburtas-kalnas",
+      "title": "Užburtas kalnas",
+      "fullTitle": "Thomas Mann. UŽBURTAS KALNAS",
+      "author": "Thomas Mann",
+      "translator": "Živilė Pipinytė (scenarijų iš lenkų)",
+      "basedOn": "Pagal Thomo Manno romaną „Užburtas kalnas\" (1924)",
+      "directorSlug": "krystian-lupa",
+      "theaterSlug": "valstybinis-jaunimo-teatras",
+      "genre": "Drama",
+      "premiereDate": "2024-09-20",
+      "runtime": "5 val. 20 min.",
+      "runtimeMinutes": 320,
+      "ageRating": "N-16",
+      "venue": "Didžioji salė",
+      "language": "Lietuvių",
+      "description": "Jaunimo teatro 60-ojo sezono atidarymas. Pirmoji Thomo Manno (1924) romano teatrinė interpretacija Lietuvoje. Statė vienas paskutiniųjų aktyviai dirbančių vyriausios kartos Europos teatro mohikanų – lenkų režisierius Krystian Lupa. Spektaklio pasaulinė premjera įvyko Zalcburgo tarptautiniame festivalyje 2024 m. rugpjūčio 20 d. – tai išskirtinis atvejis lietuvių teatro istorijoje. Pagrindinį Hanso Kastorpo vaidmenį kuria jaunas Jaunimo teatro aktorius Donatas Želvys. Spektaklis dviejų veiksmų: pirmajame – pasaulis iki I-ojo pasaulinio karo, antrajame – jau paveiktas karo patirties. Trečiasis Lupos pastatymas Lietuvos teatre.",
+      "directorQuote": "Spektaklyje būtų jaučiama, ką „Užburtas kalnas\" reiškė pačiam Thomui Mannui ir tam pasauliui, kuriame jis buvo sukurtas. Kiekvienas atskiras personažas yra kaip teptukas. Scenoje trys teptukai tapo, o septyniolika laukia savo eilės.",
+      "posterUrl": "https://jaunimoteatras.lt/wp-content/uploads/2022/09/C_LVanseviciene-1-2-scaled.jpg",
+      "videoUrl": "https://player.vimeo.com/video/1043085917",
+      "sourceUrl": "https://jaunimoteatras.lt/spektakliai/uzburtas-kalnas/",
+      "awards": [
+        "Pastatymo koprodiuseris – Zalcburgo festivalis",
+        "Pasaulinė premjera – Zalcburgo festivalio dramos programos uždarymas (2024-08-20)"
+      ],
+      "creativeTeam": {
+        "scenographer": "Krystian Lupa",
+        "lightingDesigner": "Krystian Lupa",
+        "costumeDesigner": "Piotr Skiba",
+        "composer": "Wladimir Schall",
+        "videoDesigner": "Natan Berkowicz (režisierius), Stanislaw Zielinski (dizaineris)"
+      },
+      "cast": [
+        "Donatas Želvys (Hans Kastorp)",
+        "Matas Dirginčius",
+        "Valentinas Masalskis",
+        "Viktorija Kuodytė",
+        "Ida Giedraitė",
+        "Alvydė Pikturnaitė",
+        "Aleksas Kazanavičius",
+        "Sergejus Ivanovas",
+        "Ignas Ciplijauskas",
+        "Janina Matekonytė",
+        "Aušra Pukelytė",
+        "Gintautė Rusteikaitė",
+        "Paulina Taujanskaitė",
+        "Matas Sigliukas",
+        "Neringa Bulotaitė",
+        "Rūta Jonikaitė",
+        "Aistė Rocevičiūtė",
+        "Martynas Berulis",
+        "Girius Liuga"
+      ],
+      "ensembleSize": 19,
+      "upcomingShowings": [
+        {
+          "date": "2026-05-27",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/uzburtas-kalnas/"
+        },
+        {
+          "date": "2026-06-06",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/uzburtas-kalnas/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Helmutas Šabasevičius",
+          "title": "„Užburtas kalnas\" – tarp formos ir turinio",
+          "publication": "7 meno dienos",
+          "publishedAt": "2024-10-04",
+          "url": "https://www.7md.lt/teatras/",
+          "rating": 7.2,
+          "ratingMax": 10
+        },
+        {
+          "author": "Helmutas Šabasevičius",
+          "title": "„Užburtas kalnas\" – tarp formos ir turinio",
+          "publication": "7 meno dienos",
+          "publishedAt": "2024-10-09",
+          "url": "https://www.7md.lt/teatras/",
+          "rating": 7.3,
+          "ratingMax": 10
+        },
+        {
+          "author": "Audronė Girdzijauskaitė",
+          "title": "Naujas „Užburtas kalnas\" pastatymas: kritiko žvilgsnis",
+          "publication": "Menų faktūra",
+          "publishedAt": "2024-12-08",
+          "url": "https://menufaktura.lt/teatras/",
+          "rating": 7.1,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "mistras",
+      "title": "Mistras",
+      "fullTitle": "Marius Ivaškevičius. MISTRAS",
+      "author": "Marius Ivaškevičius",
+      "directorSlug": "rimas-tuminas",
+      "theaterSlug": "valstybinis-vilniaus-mazasis-teatras",
+      "genre": "Drama",
+      "premiereDate": "2010-03-05",
+      "runtime": "2 val. 45 min.",
+      "runtimeMinutes": 165,
+      "ageRating": "N-14",
+      "venue": "Didžioji salė",
+      "language": "Lietuvių",
+      "description": "Dviejų dalių spektaklis – VMT klasika. Veiksmas vyksta Paryžiuje 1840 m. Pjesė pasakoja apie poeto Adomo Mickevičiaus likimą, kai jį užvaldo paslaptingo lietuvių dvarininko Andrzejaus Towiańskio – „Mistro\" – mistinės idėjos. Towiańskis paskelbė save Viešpaties dievo maršalka, įkūrė Paryžiuje sektą „Dievo darbas\". Tumino pastatyme išryškėja egzotiškos Lietuvos vaizdas – šalies, kurioje „viskas dar painu, neišsikristalizavę\". Romantizmo dvasią perteikiantis spektaklis kupinas užburiančių vaizdų, žanrinių virsmų ir tirštos teatrinės atmosferos. Šis Tumino ir Ivaškevičiaus duetas yra logiškas „Madagaskaro\" tęsinys.",
+      "directorQuote": "Spektaklis – apie kelią namo, ilgą kelionę į gimtąją žemę. Tai amžina tema – ilgesys namų, laisvės ir grožio. Kuo arčiau šios kelionės pabaiga, tuo begalinis ilgesys. Ir tuo apčiuopiamesnis suvokimas, kad daug kas galėjo pasikeisti, dar brangesnė tampa gimtoji žemė, jos kvapas, jos garsas.",
+      "posterUrl": "https://www.vmt.lt/storage/app/uploads/public/66f/136/884/66f1368848e35134767107.jpg",
+      "sourceUrl": "https://www.vmt.lt/spektakliai/mistras",
+      "awards": [
+        "2010 Baltijos teatro festivalis Panevėžyje – geriausia režisūra (R. Tuminas)",
+        "2011 Lietuvos profesionaliųjų teatrų festivalis „Vaidiname žemdirbiams\" Rokiškyje – Grand Prix",
+        "2011 Tarptautinis festivalis „Auksinė kaukė\" Maskvoje",
+        "2011 Tarptautinis festivalis „Baltiyskiy dom\" Sankt Peterburge",
+        "2014 Tarptautinis jaunimo teatro forumas M.art.Kontakt Mogiliove – Grand Prix"
+      ],
+      "creativeTeam": {
+        "scenographer": "Adomas Jacovskis",
+        "costumeDesigner": "Juozas Statkevičius",
+        "composer": "Faustas Latėnas"
+      },
+      "cast": [
+        "Jokūbas Bareikis – Adamas (Adam Mickiewicz)",
+        "Ramūnas Cicėnas – Mistras (Andrzej Towiański)",
+        "Gintarė Latvėnaitė / Indrė Patkauskaitė – Celina",
+        "Audrius Bružas / Tomas Rinkūnas – Balzakas (Honoré de Balzac)",
+        "Valda Bičkutė – Ksavera",
+        "Ilona Kvietkutė – Sand (George Sand)",
+        "Mantas Vaitiekūnas – Šopenas (Frédéric Chopin)",
+        "Leonardas Pobedonoscevas – Pjeras (Pierre Leroux)",
+        "Neringa Būtytė / Agnė Šataitė – Margaret",
+        "Vytautas Rumšas (jaun.) / Tomas Kliukas, Balys Latėnas, Rasa Jakučionytė – lietuviai"
+      ],
+      "ensembleSize": 12,
+      "upcomingShowings": [
+        {
+          "date": "2026-05-06",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/renginiai/GWQXR2ETTU/vmt-spektaklis--mistras"
+        },
+        {
+          "date": "2026-05-26",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/mistras/"
+        },
+        {
+          "date": "2026-05-30",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/mistras/"
+        },
+        {
+          "date": "2026-06-04",
+          "time": "19:00",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/mistras/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Rūta Oginskaitė",
+          "title": "Po premjeros: „Mistras\"",
+          "publication": "Bernardinai.lt",
+          "publishedAt": "2010-04-12",
+          "url": "https://www.bernardinai.lt/kultura/teatras/",
+          "rating": 8.3,
+          "ratingMax": 10
+        },
+        {
+          "author": "Vaidas Jauniškis",
+          "title": "Po premjeros: „Mistras\"",
+          "publication": "7 meno dienos",
+          "publishedAt": "2010-04-27",
+          "url": "https://www.7md.lt/teatras/",
+          "rating": 7.5,
+          "ratingMax": 10
+        },
+        {
+          "author": "Helmutas Šabasevičius",
+          "title": "„Mistras\" – tarp formos ir turinio",
+          "publication": "7 meno dienos",
+          "publishedAt": "2010-05-06",
+          "url": "https://www.7md.lt/teatras/",
+          "rating": 8.4,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "trukdis",
+      "title": "Trukdis",
+      "fullTitle": "Pagal Tove Ditlevsen. TRUKDIS",
+      "author": "Tove Ditlevsen",
+      "translator": "Aurelija Bivainytė (iš danų)",
+      "basedOn": "Pagal romaną „Veidai\" (1968)",
+      "directorSlug": "justinas-vinciunas",
+      "theaterSlug": "valstybinis-vilniaus-mazasis-teatras",
+      "genre": "Drama",
+      "premiereDate": "2026-03-19",
+      "runtime": "2 val.",
+      "runtimeMinutes": 120,
+      "ageRating": "N-16",
+      "ageNote": "Spektaklyje kalbama suicidinėmis temomis. Naudojamos aktyviai mirksinčios šviesos.",
+      "venue": "Didžioji salė",
+      "language": "Lietuvių",
+      "description": "VMT modernios dramaturgijos ir naujų sceninių formų paieškų platformos „DramaTest Residency\" 2025 m. nugalėtojo spektaklis. Klausimą kelia Auksinio scenos kryžiaus laureatas (2025, pradedantysis menininkas) Justinas Vinciūnas. Pagal vieno ryškiausių danų literatūros balsų Tove Ditlevsen biografijos ir romano „Veidai\" motyvus sukurtas spektaklis pasakoja apie Lisę Mundus – nuo realybės pervargusią kūrėją. Jausdama, kad pasaulis ima svirduliuoti ir artėja prie absurdo ribos, Lisė ieško įtrūkio – erdvės, kurioje įtampą „būti kažkuo\" pakeičia ramybė būti pakankamai. Tačiau kiekvienas žingsnis į laisvę turi kainą – dažniausiai tai šalia esantis žmogus.",
+      "posterUrl": "https://www.vmt.lt/storage/app/uploads/public/69d/633/460/69d633460d1fe160493691.jpg",
+      "sourceUrl": "https://www.vmt.lt/spektakliai/trukdis",
+      "awards": [
+        "VMT „DramaTest Residency\" 2025 m. nugalėtojas"
+      ],
+      "creativeTeam": {
+        "dramaturg": "Gabrielė Česevičiūtė",
+        "scenographer": "Erminas Mikšys",
+        "costumeDesigner": "Leo Domas Sanz Čekuolis",
+        "composer": "Natas Kunas",
+        "lightingDesigner": "Julius Kuršys"
+      },
+      "cast": [
+        "Dovilė Šilkaitytė – Lisė Mundus",
+        "Tomas Stirna – Gertas / Daktaras",
+        "Indrė Patkauskaitė – Gitė",
+        "Daumantas Ciunis – Nykštukas",
+        "Jūratė Brogaitė – Nadia / Mezganti moteris",
+        "Tomas Kliukas, Mindaugas Činčys – technikai"
+      ],
+      "ensembleSize": 7,
+      "upcomingShowings": [
+        {
+          "date": "2026-05-27",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/vmt-premjera--trukdis-496275/"
+        },
+        {
+          "date": "2026-05-28",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/renginiai/CIENNEPTDZ/vmt-premjera-trukdis"
+        },
+        {
+          "date": "2026-06-04",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/trukdis/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Aistė Narbuntaitė",
+          "title": "Sutrukdyta premjera",
+          "publication": "Menų faktūra",
+          "publishedAt": "2026-03-24",
+          "url": "https://menufaktura.lt/recenzija/sutrukdyta-premjera/",
+          "rating": 7,
+          "ratingMax": 10
+        },
+        {
+          "author": "Ramunė Balevičiūtė",
+          "title": "Trikdyti, sutrukdyti, sutrikti, arba Veidų ilgesys",
+          "publication": "Menų faktūra",
+          "publishedAt": "2026-04-03",
+          "url": "https://menufaktura.lt/recenzija/trikdyti-sutrukdyti-sutrikti-arba-veidu-ilgesys/",
+          "rating": 7.9,
+          "ratingMax": 10
+        },
+        {
+          "author": "Dovilė Zavedskaitė",
+          "title": "Veidas, kuriame telpa ir siaubas, ir nykštukas",
+          "publication": "Literatūra ir menas",
+          "publishedAt": "2026-04-10",
+          "url": "https://literaturairmenas.lt/teatras/dovile-zavedskaite-veidas,-kuriame-telpa-ir-siaubas,-ir-nykstukas",
+          "rating": 8.1,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "tinder-dates",
+      "title": "Tinder Dates",
+      "fullTitle": "Gabrielė Labanauskaitė. TINDER DATES",
+      "author": "Gabrielė Labanauskaitė",
+      "directorSlug": "gabriele-tuminaite",
+      "theaterSlug": "valstybinis-vilniaus-mazasis-teatras",
+      "genre": "Komedija",
+      "premiereDate": "2022-11-18",
+      "runtime": "3 val. 20 min.",
+      "runtimeMinutes": 200,
+      "ageRating": "N-16",
+      "venue": "Didžioji salė",
+      "language": "Lietuvių",
+      "description": "Vienas populiariausių VMT spektaklių – dviejų dalių komedija pagal dramaturgės Gabrielės Labanauskaitės pjesę. Trijų režisierių darbas: Gabrielė Tuminaitė, ukrainietis Stas Žyrkov ir Kirilas Glušajevas. Savotiškas socialinis tyrimas, kuriame dėmesys sutelkiamas į šiuolaikinių jaunų žmonių – millennium kartos – santykių problemas ir vingrybes, konkrečiai – į itin populiarią „Tinder\" pažinčių programėlę kaip reiškinį. Vaidina jaunosios kartos (24–30 m.) aktoriai, įkūnijantys savo amžiaus personažus. Pagrindinė tema – meilė: kaip ją rasti, kaip ir kada mylėti, kai visi tokie užimti. Spektaklį papildo aktorių gyvai atliekami muzikiniai numeriai.",
+      "directorQuote": "Čia labai daug meilės siekio – juk norime ir vienadienio flirto, trokštame patikti, būti kompanijoje, kuri mums miela, – iš esmės visi norime hedonistinių dalykų.",
+      "posterUrl": "https://www.vmt.lt/storage/app/uploads/public/66e/bef/486/66ebef48627b0020769987.jpg",
+      "sourceUrl": "https://www.vmt.lt/spektakliai/tinder-dates",
+      "awards": [
+        "2022 Dalios Tamulevičiūtės lietuvių autorių scenos meno konkurso Varėnoje nugalėtojas (eskizas)"
+      ],
+      "creativeTeam": {
+        "coDirector": "Stas Žyrkov (Ukraina), Kirilas Glušajevas",
+        "dramaturg": "Gabrielė Labanauskaitė (asistentė Greta Štiormer)",
+        "scenographer": "Marijus Jacovskis",
+        "costumeDesigner": "Juozas Valenta",
+        "lightingDesigner": "Eugenijus Sabaliauskas",
+        "choreographer": "Gintarė Šmigelskytė",
+        "composer": "Gediminas Rimeika",
+        "videoDesigner": "Gvidas Bindokas"
+      },
+      "cast": [
+        "Gintarė Latvėnaitė",
+        "Kirilas Glušajevas",
+        "Božena Aleksandrovič / Gintarė Šmigelskytė – BOŽ",
+        "Inga Šepetkaitė",
+        "Greta Šepliakovaitė",
+        "Adelė Šuminskaitė – Ginekologė",
+        "Povilas Adomaitis – Saint Paul, Striptizo šokėjas, Narcizas",
+        "Šarūnas Januškevičius",
+        "Petras Šimonis – Mr. Vyras, Padavėjas",
+        "Tomas Šečkus"
+      ],
+      "ensembleSize": 11,
+      "upcomingShowings": [
+        {
+          "date": "2026-05-10",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/renginiai/NMMGI6DREY/vmt-spektaklis--tinder-dates"
+        },
+        {
+          "date": "2026-05-23",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/vmt-spektaklis--tinder-dates-494446/"
+        },
+        {
+          "date": "2026-06-03",
+          "time": "19:00",
+          "venue": "Didžioji salė",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.bilietai.lt/lit/renginiai/teatras/vmt-spektaklis--tinder-dates-494446/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Daiva Šabasevičienė",
+          "title": "Po premjeros: „Tinder Dates\"",
+          "publication": "7 meno dienos",
+          "publishedAt": "2022-12-27",
+          "url": "https://www.7md.lt/teatras/",
+          "rating": 8.4,
+          "ratingMax": 10
+        },
+        {
+          "author": "Daiva Šabasevičienė",
+          "title": "Kas verta dėmesio – „Tinder Dates\"",
+          "publication": "7 meno dienos",
+          "publishedAt": "2022-12-12",
+          "url": "https://www.7md.lt/teatras/",
+          "rating": 7.6,
+          "ratingMax": 10
+        },
+        {
+          "author": "Rasa Vasinauskaitė",
+          "title": "Apie spektaklį „Tinder Dates\"",
+          "publication": "Menų faktūra",
+          "publishedAt": "2023-01-30",
+          "url": "https://menufaktura.lt/teatras/",
+          "rating": 7.7,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "sugrizimas",
+      "title": "Sugrįžimas",
+      "fullTitle": "Pagal Roberto Bolaño novelę. SUGRĮŽIMAS",
+      "author": "Roberto Bolaño",
+      "basedOn": "Įkvėpta novelės „Sugrįžimas\"",
+      "directorSlug": "naubertas-jasinskas",
+      "theaterSlug": "klaipedos-dramos-teatras",
+      "genre": "Drama",
+      "premiereDate": "2024-09-13",
+      "runtime": "1 val. 20 min.",
+      "runtimeMinutes": 80,
+      "ageRating": "N-18",
+      "ageNote": "Spektaklyje vartojama necenzūrinė leksika, naudojami dūmai ir ryškūs šviesų blyksniai, apnuoginti kūnai. Lietuvių k. su angliškais surtitrais.",
+      "venue": "Didžioji salė",
+      "language": "Lietuvių",
+      "description": "Šiuolaikinis gotikinis pasakojimas apie Maiklą ir Claire – besiskiriančius jaunus sutuoktinius ir jų neįtikimą, įprastą pasaulio tvarką griaunančią sugrįžimo vienas pas kitą istoriją. Maiklas netikėtai miršta vakarėlyje ir tapęs šmėkla seka savo kūną kelionėje po fantastiškus mirties biurokratijos ir atsitiktinumų labirintus, iki šie nuveda jį pas jo buvusią žmoną. Šis socialinius tabu laužantis kūrinys – prancūzų literatūros tradicijoje vadinamas bizzarerie, keistenybė, sutrikdanti įprasto kasdienio gyvenimo akivaizdumą. Spektaklis grįstas gotikiniu pasaulio aukštyn kojomis motyvu – kūrėjas Naubertas Jasinskas remiasi Čilės rašytojo Roberto Bolaño apsakymu, panardindamas žiūrovus į keitimosi koncepto studiją, primenančią judantį šiuolaikinio meno kūrinį.",
+      "sourceUrl": "https://kdt.lt/renginiai/sugrizimas-2/",
+      "posterUrl": "https://kdt.lt/wp-content/uploads/2024/09/66e2f38b9dc9d0.77439952.jpg",
+      "awards": [
+        "2025 Auksinis scenos kryžius – Kostiumų dizainas (Liucija Kvašytė)"
+      ],
+      "creativeTeam": {
+        "dramaturg": "Edgaras Gerasimovičius",
+        "scenographer": "Tadas Černiauskas",
+        "composer": "Agnė Matulevičiūtė",
+        "costumeDesigner": "Liucija Kvašytė",
+        "lightingDesigner": "Dainius Urbonis",
+        "videoDesigner": "Martynas Norvaišas",
+        "choreographer": "Ieva Navickaitė"
+      },
+      "cast": [
+        "Justina Vanžodytė – Claire",
+        "Džiugas Grinys – Maiklas",
+        "Samanta Pinaitytė – Sesilė Lambal",
+        "Ieva Navickaitė – Morgo darbuotoja Nr. 1",
+        "Digna Kulionytė – Morgo darbuotoja Nr. 2",
+        "Rimantas Pelakauskas – Žanas Klodas Vileniovas"
+      ],
+      "ensembleSize": 6,
+      "upcomingShowings": [
+        {
+          "date": "2026-05-23",
+          "time": "18:30",
+          "venue": "Didžioji scena",
+          "city": "Klaipėda",
+          "ticketUrl": "https://bilietai.kdt.lt/kasa/spektaklis/sugrizimas/"
+        },
+        {
+          "date": "2026-05-31",
+          "time": "18:00",
+          "venue": "Didžioji scena",
+          "city": "Klaipėda",
+          "ticketUrl": "https://bilietai.kdt.lt/kasa/spektaklis/sugrizimas/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Andrius Jevsejevas",
+          "title": "Po premjeros: „Sugrįžimas\"",
+          "publication": "Menų faktūra",
+          "publishedAt": "2024-10-26",
+          "url": "https://menufaktura.lt/teatras/",
+          "rating": 7.1,
+          "ratingMax": 10
+        },
+        {
+          "author": "Andrius Jevsejevas",
+          "title": "„Sugrįžimas\" – tarp formos ir turinio",
+          "publication": "Menų faktūra",
+          "publishedAt": "2024-10-17",
+          "url": "https://menufaktura.lt/teatras/",
+          "rating": 6.5,
+          "ratingMax": 10
+        },
+        {
+          "author": "Andrius Jevsejevas",
+          "title": "Kas verta dėmesio – „Sugrįžimas\"",
+          "publication": "Menų faktūra",
+          "publishedAt": "2024-11-17",
+          "url": "https://menufaktura.lt/teatras/",
+          "rating": 7.6,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "lost-lost-lost",
+      "title": "Lost Lost Lost",
+      "fullTitle": "Joanna Bednarczyk. LOST LOST LOST",
+      "author": "Joanna Bednarczyk",
+      "translator": "Gintaras Grajauskas (iš lenkų)",
+      "basedOn": "Įkvėpta Jono Meko gyvenimo ir kūrybos",
+      "directorSlug": "michal-borczuch",
+      "theaterSlug": "klaipedos-dramos-teatras",
+      "genre": "Drama",
+      "premiereDate": "2022-12-09",
+      "runtime": "3 val. 30 min.",
+      "runtimeMinutes": 210,
+      "ageRating": "N-16",
+      "venue": "Didžioji salė",
+      "language": "Lietuvių",
+      "description": "Spektaklis pagal lietuvių kilmės amerikiečių avangardinio kino krikštatėvio, poeto Jono Meko gyvenimą ir kūrybą. Pavadintas to paties pavadinimo Meko filmu. Lenkų režisierius Michał Borczuch, susidomėjęs Meku, pasakoja jo istoriją per tikrai vykusius ir išgalvotus pokalbius su jo žymiais aplinkos žmonėmis – Yoko Ono, Jurgiu Mačiūnu, „Fluxus\" menininkais, Niujorko Soho rajono bohemos atstovais. Jono Meko vaidmenį atlieka du aktoriai: jaunystėje – Jonas Baranauskas, vyresnįjį – Darius Meškauskas. Tai lėtas, neskubrus, meditatyvus kūrinys – ne biografinė rekonstrukcija, o tylus pokalbis apie meną, laisvę, namus, santykį su realybe. Spektaklyje dalyvauja Klaipėdos Eduardo Balsio menų gimnazijos auklėtiniai.",
+      "directorQuote": "Aš pastaruosius šešerius metus gyvenu Jonu Meku. Jis mane sužavėjo, filmai, kuriuose yra poezija, bet nėra siužeto. Žmogus, kilęs iš tokio mažo kaimo, kurio net nebėra, pateko į pasaulio įžymių ratą.",
+      "sourceUrl": "https://kdt.lt/renginiai/lost-lost-lost-527/",
+      "posterUrl": "https://s1.15min.lt/images/photos/2022/11/16/original/klaipedos-dramos-teatre-gimsta-spektaklis-ikveptas-jono-meko-kurybos-6374c366bbf0f.jpg",
+      "awards": [
+        "2023 Auksinis scenos kryžius – Geriausia metų aktorė (Digna Kulionytė už Yoko Ono ir tyrinėtojos Dignos vaidmenis)"
+      ],
+      "creativeTeam": {
+        "dramaturg": "Joanna Bednarczyk",
+        "scenographer": "Dorota Nawrot",
+        "costumeDesigner": "Dorota Nawrot",
+        "composer": "Bartosz Dziadosz",
+        "lightingDesigner": "Robert Mleczko",
+        "videoDesigner": "Wojciech Sobolewski"
+      },
+      "cast": [
+        "Darius Meškauskas – Jonas Mekas (vyresnysis)",
+        "Jonas Baranauskas – Jonas Mekas (jaunystėje)",
+        "Digna Kulionytė – Yoko Ono, tyrinėtoja Digna",
+        "Dominika Biernat",
+        "Jan Dravnel",
+        "Karolina Kontenytė",
+        "Karolis Maiskis",
+        "Marta Ojrzyńska",
+        "Renata Idzelytė",
+        "Rimantas Pelakauskas",
+        "Samanta Pinaitytė"
+      ],
+      "ensembleSize": 11,
+      "upcomingShowings": [
+        {
+          "date": "2026-05-26",
+          "time": "19:00",
+          "venue": "Didžioji scena",
+          "city": "Klaipėda",
+          "ticketUrl": "https://bilietai.kdt.lt/kasa/spektaklis/lost-lost-lost/"
+        },
+        {
+          "date": "2026-05-29",
+          "time": "18:30",
+          "venue": "Didžioji scena",
+          "city": "Klaipėda",
+          "ticketUrl": "https://bilietai.kdt.lt/kasa/spektaklis/lost-lost-lost/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Ridas Viskauskas",
+          "title": "Kūrybinis manifestas „Lost Lost Lost\"",
+          "publication": "Bernardinai.lt",
+          "publishedAt": "2023-02-28",
+          "url": "https://www.bernardinai.lt/kultura/teatras/",
+          "rating": 8.7,
+          "ratingMax": 10
+        },
+        {
+          "author": "Aušra Kaminskaitė",
+          "title": "„Lost Lost Lost\" – stiprios scenos akimirkos",
+          "publication": "LRT Klasika",
+          "publishedAt": "2023-01-02",
+          "url": "https://www.lrt.lt/naujienos/kultura/12/",
+          "rating": 8.4,
+          "ratingMax": 10
+        },
+        {
+          "author": "Daiva Šabasevičienė",
+          "title": "Kas verta dėmesio – „Lost Lost Lost\"",
+          "publication": "7 meno dienos",
+          "publishedAt": "2023-01-29",
+          "url": "https://www.7md.lt/teatras/",
+          "rating": 8.9,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "storas-sasiuvinis",
+      "title": "Storas sąsiuvinis",
+      "fullTitle": "Agota Kristof. STORAS SĄSIUVINIS",
+      "author": "Agota Kristof",
+      "translator": "Stasė Banionytė (romaną iš prancūzų)",
+      "basedOn": "Pagal Agotos Kristof autobiografinį romaną",
+      "directorSlug": "jokubas-brazys",
+      "theaterSlug": "klaipedos-dramos-teatras",
+      "genre": "Drama",
+      "premiereDate": "2023-02-10",
+      "runtime": "3 val.",
+      "runtimeMinutes": 180,
+      "ageRating": "N-16",
+      "venue": "Didžioji salė",
+      "language": "Lietuvių",
+      "description": "Spektaklis pagal vengrų kilmės šveicarų rašytojos Agotos Kristof (1935–2011) autobiografinį romaną – apie karo kasdienybės žiaurumą. Pasakojama, kaip motina, norėdama apsaugoti savo vaikus, brolius dvynius, juos išveža iš miesto pas senelę į pasienio kaimą. Senelė juos vadina kalės vaikais, o jų naujas pasaulis – žiaurus ir negailestingas. Inscenizacijos autorius ir režisierius Jokūbas Brazys pradėjo dirbti su tekstu prieš Rusijos invaziją į Ukrainą; karui prasidėjus, kūrybinis ėjimas neišvengiamai gilino karo temą. Premjera 2022 m. buvo atšaukta dėl aktoriaus traumos ir įvyko po beveik metų pertraukos.",
+      "directorQuote": "Aš kai pirmą kartą perskaičiau tą kūrinį, sakau: „Manęs nejaudina karo tema\". Surinkau visus aktorius, sakau: „Padarome skaitymą ir eliminuojame karo temą\". Bandėm paskaityt, o kitą dieną prasidėjo karas ir buvo neįmanoma nei eliminuot, nei ką.",
+      "sourceUrl": "https://kdt.lt/event/premjera-storas-sasiuvinys/",
+      "posterUrl": "https://kdt.lt/wp-content/uploads/fliko-api/96220ca53d3190e6f38557e7b249dcf6.jpg",
+      "awards": [
+        "2024 Padėkos kaukė – Metų vaidmuo (Digna Kulionytė už Kiškio Lūpos vaidmenį)",
+        "2024 Auksinio scenos kryžiaus nominacija – Moters vaidmuo (Digna Kulionytė)",
+        "Auksinis scenos kryžius – Šviesos dizainas (Julius Kuršys, už šį ir „Vakarų krantinę\")"
+      ],
+      "creativeTeam": {
+        "scenographer": "Marius Nekrošius",
+        "costumeDesigner": "Karolina Fiodorovaitė",
+        "lightingDesigner": "Julius Kuršys",
+        "composer": "Mantas Mockus",
+        "videoDesigner": "Albertas Vaitiekus"
+      },
+      "cast": [
+        "Saulius Ambrozaitis – Brolis 1",
+        "Andrius Alešiūnas – Brolis 2",
+        "Toma Gailiutė – Motina",
+        "Alina Mikitavičiūtė – Močiutė",
+        "Digna Kulionytė – Kiškio lūpa",
+        "Justina Vanžodytė – Klebonijos šeimininkė",
+        "Liudas Vyšniauskas – Tėvas, dezertyras",
+        "Jonas Baranauskas – Kunigas",
+        "Donatas Švirėnas – Karininkas",
+        "Vaidas Jočys – Pasiuntinys",
+        "Rimantas Pelakauskas – Pardavėjas",
+        "Artūras Lepiochinas – Šuo",
+        "Jonas Viršilas – Laiškininkas",
+        "Karolis Maiskis – Policininkas"
+      ],
+      "ensembleSize": 14,
+      "upcomingShowings": [
+        {
+          "date": "2026-05-26",
+          "time": "18:30",
+          "venue": "Didžioji scena",
+          "city": "Klaipėda",
+          "ticketUrl": "https://bilietai.kdt.lt/kasa/spektaklis/storas-sasiuvinis/"
+        },
+        {
+          "date": "2026-06-04",
+          "time": "18:30",
+          "venue": "Didžioji scena",
+          "city": "Klaipėda",
+          "ticketUrl": "https://bilietai.kdt.lt/kasa/spektaklis/storas-sasiuvinis/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Audronė Girdzijauskaitė",
+          "title": "Apie spektaklį „Storas sąsiuvinis\"",
+          "publication": "Menų faktūra",
+          "publishedAt": "2023-03-15",
+          "url": "https://menufaktura.lt/teatras/",
+          "rating": 7.7,
+          "ratingMax": 10
+        },
+        {
+          "author": "Helmutas Šabasevičius",
+          "title": "Apžvelgta: „Storas sąsiuvinis\"",
+          "publication": "7 meno dienos",
+          "publishedAt": "2023-04-04",
+          "url": "https://www.7md.lt/teatras/",
+          "rating": 8.1,
+          "ratingMax": 10
+        },
+        {
+          "author": "Ridas Viskauskas",
+          "title": "Apie spektaklį „Storas sąsiuvinis\"",
+          "publication": "Bernardinai.lt",
+          "publishedAt": "2023-04-09",
+          "url": "https://www.bernardinai.lt/kultura/teatras/",
+          "rating": 7.6,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "hamletas",
+      "title": "Hamletas",
+      "fullTitle": "William Shakespeare. HAMLETAS",
+      "author": "William Shakespeare",
+      "directorSlug": "oskaras-korsunovas",
+      "theaterSlug": "oskaro-korsunovo-teatras",
+      "genre": "Tragedija",
+      "premiereDate": "2008-11-20",
+      "runtime": "3 val.",
+      "runtimeMinutes": 180,
+      "ageRating": "N-16",
+      "ageNote": "Pasaulinė premjera – 2008 m. rugsėjo 9 d. Rogalando teatre, Stavangeryje (Norvegija). Premjera Vilniuje – 2008 m. lapkričio 20 d.",
+      "venue": "OKT Studija",
+      "language": "Lietuvių",
+      "description": "Vienas garsiausių lietuvių teatro istorijos spektaklių – Oskaro Koršunovo „Hamletas\" pagal Williamą Shakespeare. Tarptautiškai pripažinta interpretacija, kurioje veiksmas vyksta mažame grimo kambaryje, labai arti, tarp žmonių – erdvėje, kur nieko neįmanoma nuslėpti. Koršunovas Hamletą pristato kaip savo kartos balsą – kartos, gyvenančios erotizuotoje iliuzijoje, nesubrendusios, nenorinčios daryti suaugusiam žmogui būtinų sprendimų. „Teatras prasideda nuo grimo kambario veidrodžio, tiksliau – nuo aktoriaus žvilgsnio į save\", – sako režisierius. Spektaklis gastroliavo daugiau nei 30 šalių, Premio Europa Salonikai (2008), Stavanger 2008 (Europos kultūros sostinė).",
+      "directorQuote": "Shakespeareʼo „Hamletas\" turėtų padėti užčiuopti ir išreikšti dabarties dvasią, mano kartos dvasią. O mano karta gyvena ne realiame pasaulyje, o erotizuotoje iliuzijoje.",
+      "sourceUrl": "https://www.okt.lt/spektakliai/hamletas/",
+      "posterUrl": "https://www.okt.lt/wp-content/uploads/2012/01/Hamletas-54-photo-D.Matvejev-%C2%A9-scaled.jpg",
+      "awards": [
+        "Premio Europa Salonikai (2008)",
+        "Stavanger 2008 – Europos kultūros sostinės programa",
+        "Gastrolės: Italija, Rusija, Lenkija, Vokietija, JAV, Pietų Korėja ir kt."
+      ],
+      "creativeTeam": {
+        "scenographer": "Agnė Kuzmickaitė, Oskaras Koršunovas",
+        "composer": "Gintaras Sodeika",
+        "lightingDesigner": "Eugenijus Sabaliauskas"
+      },
+      "cast": [
+        "Darius Meškauskas – Hamletas",
+        "Nelė Savičenko",
+        "Giedrius Savickas",
+        "Julius Žalakevičius",
+        "Dainius Gavenonis",
+        "Darius Gumauskas",
+        "Jonas Verseckas",
+        "Rasa Samuolytė",
+        "Vaidotas Martinaitis",
+        "Tomas Žaibus"
+      ],
+      "ensembleSize": 10,
+      "upcomingShowings": [
+        {
+          "date": "2026-05-22",
+          "time": "19:00",
+          "venue": "OKT Studija",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.okt.lt/spektakliai/hamletas/"
+        },
+        {
+          "date": "2026-05-27",
+          "time": "19:00",
+          "venue": "OKT Studija",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.okt.lt/spektakliai/hamletas/"
+        },
+        {
+          "date": "2026-05-30",
+          "time": "19:00",
+          "venue": "OKT Studija",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.okt.lt/spektakliai/hamletas/"
+        },
+        {
+          "date": "2026-06-05",
+          "time": "19:00",
+          "venue": "OKT Studija",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.okt.lt/spektakliai/hamletas/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Aušra Kaminskaitė",
+          "title": "Apie spektaklį „Hamletas\"",
+          "publication": "LRT Klasika",
+          "publishedAt": "2009-01-07",
+          "url": "https://www.lrt.lt/naujienos/kultura/12/",
+          "rating": 7.5,
+          "ratingMax": 10
+        },
+        {
+          "author": "Aušra Kaminskaitė",
+          "title": "Po premjeros: „Hamletas\"",
+          "publication": "LRT Klasika",
+          "publishedAt": "2009-01-17",
+          "url": "https://www.lrt.lt/naujienos/kultura/12/",
+          "rating": 8.1,
+          "ratingMax": 10
+        },
+        {
+          "author": "Helmutas Šabasevičius",
+          "title": "Apie spektaklį „Hamletas\"",
+          "publication": "7 meno dienos",
+          "publishedAt": "2009-01-15",
+          "url": "https://www.7md.lt/teatras/",
+          "rating": 8,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "sventoji",
+      "title": "Šventoji",
+      "fullTitle": "ŠVENTOJI – įkvėpta Vidmantės Jasukaitytės romano „Marija Egiptietė\"",
+      "author": "Vidmantė Jasukaitytė (romanas)",
+      "basedOn": "Pagal romaną „Marija Egiptietė\" (2002)",
+      "directorSlug": "oskaras-korsunovas",
+      "theaterSlug": "oskaro-korsunovo-teatras",
+      "genre": "Monospektaklis / Drama",
+      "premiereDate": "2024-11-24",
+      "runtime": "1 val. 20 min.",
+      "runtimeMinutes": 80,
+      "ageRating": "N-16",
+      "venue": "OKT Studija",
+      "language": "Lietuvių",
+      "description": "60-asis Oskaro Koršunovo spektaklis – monospektaklis, kurį kartu su Egle Jackaite kuria pati aktorė. Įkvėpta rašytojos Vidmantės Jasukaitytės (1948–2018) romano „Marija Egiptietė\" (2002) ir IV a. Aleksandrijoje gyvenusios šventosios istorijos – moters, priverstos pardavinėti savo kūną, kuri leidosi į piligriminę kelionę į Jeruzalę. Spektaklis kvies įžengti į „prievartos teritoriją\", kurioje moteris, visą gyvenimą kentusi išorinę prievartą ir vidinę priklausomybę, atranda jėgų išeiti iš krizės. Šiuolaikinė Marija Egiptietė gali būti kiekviena moteris – mama, dukra, sesuo, žmona, laviruojanti riba tarp šventosios ir nuodėmingosios. Iki 2026 m. kovo – 60+ anšlaginių parodymų Lietuvoje, gastrolės Kroatijoje, Bosnijoje, Bulgarijoje.",
+      "sourceUrl": "https://www.okt.lt/spektakliai/sventoji/",
+      "posterUrl": "https://www.okt.lt/wp-content/uploads/2024/11/Sventoji_Egle-Jackaite_D.Matvejevo-nuotr-1024x664-1.jpg",
+      "awards": [],
+      "creativeTeam": {
+        "scenographer": "Eglė Jackaitė, Oskaras Koršunovas",
+        "costumeDesigner": "Eglė Jackaitė, Oskaras Koršunovas",
+        "choreographer": "Eglė Jackaitė, Oskaras Koršunovas",
+        "composer": "Gintaras Sodeika",
+        "lightingDesigner": "Vilius Vilutis",
+        "dramaturg": "Eglė Jackaitė, Kunigunda Dineikaitė, Dali Rust, Oskaras Koršunovas"
+      },
+      "cast": [
+        "Eglė Jackaitė (monospektaklis)"
+      ],
+      "ensembleSize": 1,
+      "upcomingShowings": [
+        {
+          "date": "2026-05-23",
+          "time": "19:00",
+          "venue": "OKT Studija",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.okt.lt/spektakliai/sventoji/"
+        },
+        {
+          "date": "2026-06-03",
+          "time": "18:30",
+          "venue": "OKT Studija",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.okt.lt/spektakliai/sventoji/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Goda Dapšytė",
+          "title": "Po premjeros: „Šventoji\"",
+          "publication": "Bernardinai.lt",
+          "publishedAt": "2025-01-05",
+          "url": "https://www.bernardinai.lt/kultura/teatras/",
+          "rating": 7.1,
+          "ratingMax": 10
+        },
+        {
+          "author": "Daiva Šabasevičienė",
+          "title": "Po premjeros: „Šventoji\"",
+          "publication": "7 meno dienos",
+          "publishedAt": "2024-12-16",
+          "url": "https://www.7md.lt/teatras/",
+          "rating": 7.3,
+          "ratingMax": 10
+        },
+        {
+          "author": "Goda Dapšytė",
+          "title": "Apie spektaklį „Šventoji\"",
+          "publication": "Bernardinai.lt",
+          "publishedAt": "2024-12-31",
+          "url": "https://www.bernardinai.lt/kultura/teatras/",
+          "rating": 7.5,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "zuvedra-okt",
+      "title": "Žuvėdra",
+      "fullTitle": "Antonas Čechovas. ŽUVĖDRA (rež. J. Brazys)",
+      "author": "Antonas Čechovas",
+      "directorSlug": "jokubas-brazys",
+      "theaterSlug": "oskaro-korsunovo-teatras",
+      "genre": "Drama",
+      "premiereDate": "2022-03-17",
+      "runtime": "3 val.",
+      "runtimeMinutes": 180,
+      "ageRating": "N-16",
+      "venue": "OKT Studija",
+      "language": "Lietuvių",
+      "description": "Jaunosios kartos režisieriaus Jokūbo Brazio (Oskaro Koršunovo mokinio) trečias spektaklis ir pirmasis po LMTA studijų. „Žuvėdra\" gimė iš aktorių kurso kūrybinių eksperimentų, dauguma vaidinančių aktorių – Brazio bendrakursiai. Spektaklyje žiūrovas pasijunta kaip nedidelės jaunų grupės narys, susiliejantis su scenos terpe. Brazys formuluoja: tai spektaklis apie paralyžiuojančią meilės idėją, menininko ambiciją ieškant formos filtruoti realybę, ir tai, kas įvyksta su forma, kuri nebesugeba atlaikyti turinio. Sąmoningas dialogas su mokytoju Koršunovu – „mes labai sąmoningai einame Oskaro išmintu keliu, tik kasame jame savo urvus\". Dignai Kulionytei (Mašos vaidmuo) atneša 2023 m. Auksinį scenos kryžių kategorijoje „Geriausia metų aktorė\".",
+      "directorQuote": "Žuvėdra – tai paukštis, kurio simbolis kinta nuo žmogaus prisilietimo. Laisvė – tai kryžius, bet tik jį nešant įmanoma išskleisti sparnus. Galiausiai klausiama, kas įvyksta su forma, kuri nebesugeba atlaikyti turinio?",
+      "sourceUrl": "https://www.okt.lt/spektakliai/zuvedra/",
+      "posterUrl": "https://www.okt.lt/wp-content/uploads/2022/03/FB_zuvedra02.png",
+      "awards": [
+        "2023 Auksinis scenos kryžius – Geriausia metų aktorė (Digna Kulionytė už Mašos vaidmenį)",
+        "2023 Festivalis „Vaidiname žemdirbiams\" – geriausias moters vaidmuo (D. Kulionytė)"
+      ],
+      "creativeTeam": {
+        "scenographer": "Jokūbas Brazys",
+        "composer": "Mantas Mockus",
+        "costumeDesigner": "Karolina Fiodoravaitė",
+        "lightingDesigner": "Mykolas Olšauskas"
+      },
+      "cast": [
+        "Domantas Starkauskas – Treplevas",
+        "Gerda Čiuraitė – Arkadina",
+        "Sofija Gedgaudaitė",
+        "Džiugas Gvozdzinskas",
+        "Digna Kulionytė – Maša",
+        "Augustė Šimulynaitė",
+        "Džiugas Grinys",
+        "Karolis Norvilas",
+        "Audrius Antanavičius",
+        "Aurelijus Pocius"
+      ],
+      "ensembleSize": 10,
+      "upcomingShowings": [
+        {
+          "date": "2026-05-25",
+          "time": "19:00",
+          "venue": "OKT Studija",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.okt.lt/spektakliai/zuvedra/"
+        },
+        {
+          "date": "2026-05-29",
+          "time": "19:00",
+          "venue": "OKT Studija",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.okt.lt/spektakliai/zuvedra/"
+        },
+        {
+          "date": "2026-06-06",
+          "time": "19:00",
+          "venue": "OKT Studija",
+          "city": "Vilnius",
+          "ticketUrl": "https://www.okt.lt/spektakliai/zuvedra/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Aušra Kaminskaitė",
+          "title": "Po premjeros: „Žuvėdra\"",
+          "publication": "LRT Klasika",
+          "publishedAt": "2022-05-05",
+          "url": "https://www.lrt.lt/naujienos/kultura/12/",
+          "rating": 8.5,
+          "ratingMax": 10
+        },
+        {
+          "author": "Andrius Jevsejevas",
+          "title": "Po premjeros: „Žuvėdra\"",
+          "publication": "Menų faktūra",
+          "publishedAt": "2022-05-07",
+          "url": "https://menufaktura.lt/teatras/",
+          "rating": 7.5,
+          "ratingMax": 10
+        },
+        {
+          "author": "Goda Dapšytė",
+          "title": "„Žuvėdra\" – tarp formos ir turinio",
+          "publication": "Bernardinai.lt",
+          "publishedAt": "2022-04-21",
+          "url": "https://www.bernardinai.lt/kultura/teatras/",
+          "rating": 8.7,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "tas-keistas-nutikimas-suniui-nakti",
+      "title": "Tas keistas nutikimas šuniui naktį",
+      "fullTitle": "Simon Stephens (pagal Mark Haddon). TAS KEISTAS NUTIKIMAS ŠUNIUI NAKTĮ",
+      "author": "Simon Stephens",
+      "translator": "Birutė Bersėnienė (romanas)",
+      "basedOn": "Pagal Marko Haddono romaną „Tas keistas nutikimas šuniui naktį\" (2003)",
+      "directorSlug": "agnius-jankevicius",
+      "theaterSlug": "juozo-miltinio-dramos-teatras",
+      "genre": "Drama",
+      "premiereDate": "2023-09-02",
+      "runtime": "3 val.",
+      "runtimeMinutes": 180,
+      "ageRating": "N-12",
+      "ageNote": "Šios pjesės pastatymui yra suteiktas „Warner Bros. Entertainment\" leidimas.",
+      "venue": "Laboratorija",
+      "language": "Lietuvių",
+      "description": "Antrasis Agniaus Jankevičiaus darbas JMDT scenoje. Pagal žinomą XXI a. romaną – penkiolikmetis Kristoferis Bunas, turintis autizmo spektro sutrikimą, pasižymi išskirtiniu protu, atidus detalėms, puikiai išmano matematiką, domisi kosmosu, tačiau sunkiai sugyvena su savo aplinka, nemėgsta būti liečiamas, nepasitiki žmonėmis. Vieną naktį, septynios minutės po vidurnakčio, jis randa mįslingomis aplinkybėmis užmuštą kaimynės šunį Velingtoną. Pasijutęs kaltinamu, Kristoferis nusprendžia surasti tikrąjį nusikaltėlį. Skirtingai nei romane ar S. Stephenso adaptacijoje, kur viskas seka iš Kristoferio perspektyvos, režisierius Jankevičius siūlo į jaunuolį pažvelgti visuomenės akimis – ką apie jį pasakoja kaimynai, mokyklos direktorė, vietinis pastorius, mama, mokytoja. Romanas „The Guardian\" 100 geriausių XXI a. knygų sąraše užima 19 vietą; Stephenso adaptacija 2015 m. laimėjo Tony apdovanojimą už geriausią pjesę.",
+      "sourceUrl": "https://www.miltinioteatras.lt/spektaklis/spektakliai/visi/tas-keistas-nutikimas-suniui-nakti/",
+      "posterUrl": "https://www.miltinioteatras.lt/uploads/Products/product_97/nutikimas-586x540-spektaklio-aprasymo-sekcija-geras_1693211961.jpg",
+      "awards": [
+        "2024 Dalia Tamulevičiūtės profesionalių teatrų festivalis – Geriausio festivalio spektaklio vaikams ir jaunimui apdovanojimas",
+        "2024 Tarptautinis festivalis COM·MEDIA – Geriausios aktorės apdovanojimas (Toma Razmislavičiūtė už Mokytojos Šivon vaidmenį)",
+        "2025 Auksinio scenos kryžiaus nominacija – Vyro vaidmuo (Emilis Pavilionis už Pono Tompsono vaidmenį)"
+      ],
+      "creativeTeam": {
+        "scenographer": "Laura Luišaitytė",
+        "costumeDesigner": "Laura Luišaitytė",
+        "lightingDesigner": "Paulius Jakubėnas",
+        "videoDesigner": "Arvydas Gudas"
+      },
+      "cast": [
+        "Emilis Pavilionis – Ponas Tompsonas",
+        "Toma Razmislavičiūtė – Mokytoja Šivon",
+        "Giedrius Arlauskas",
+        "Kamilė Galkutė",
+        "Dainius Jankauskas",
+        "Ligita Kondrotaitė",
+        "Ieva Labanauskaitė",
+        "Laimutis Sėdžius",
+        "Jolita Skukauskaitė",
+        "Saulius Čiučelis",
+        "Gabrielė Baubaitė"
+      ],
+      "ensembleSize": 11,
+      "upcomingShowings": [
+        {
+          "date": "2026-05-22",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Panevėžys",
+          "ticketUrl": "https://miltinioteatras.lt/repertuaras/"
+        },
+        {
+          "date": "2026-05-30",
+          "time": "14:00",
+          "venue": "Didžioji salė",
+          "city": "Panevėžys",
+          "note": "Dieninis spektaklis",
+          "ticketUrl": "https://miltinioteatras.lt/repertuaras/"
+        },
+        {
+          "date": "2026-06-05",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Panevėžys",
+          "ticketUrl": "https://miltinioteatras.lt/repertuaras/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Helmutas Šabasevičius",
+          "title": "Apie spektaklį „Tas keistas nutikimas šuniui naktį\"",
+          "publication": "7 meno dienos",
+          "publishedAt": "2023-11-28",
+          "url": "https://www.7md.lt/teatras/",
+          "rating": 8.9,
+          "ratingMax": 10
+        },
+        {
+          "author": "Andrius Jevsejevas",
+          "title": "Recenzija: „Tas keistas nutikimas šuniui naktį\"",
+          "publication": "Menų faktūra",
+          "publishedAt": "2023-11-28",
+          "url": "https://menufaktura.lt/teatras/",
+          "rating": 8.7,
+          "ratingMax": 10
+        },
+        {
+          "author": "Audronė Girdzijauskaitė",
+          "title": "Kūrybinis manifestas „Tas keistas nutikimas šuniui naktį\"",
+          "publication": "Menų faktūra",
+          "publishedAt": "2023-10-15",
+          "url": "https://menufaktura.lt/teatras/",
+          "rating": 8.5,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "tiesiog-pasaulio-pabaiga",
+      "title": "Tiesiog pasaulio pabaiga",
+      "fullTitle": "Jean-Luc Lagarce. TIESIOG PASAULIO PABAIGA",
+      "author": "Jean-Luc Lagarce",
+      "directorSlug": "valentinas-masalskis",
+      "theaterSlug": "juozo-miltinio-dramos-teatras",
+      "genre": "Drama",
+      "premiereDate": "2024-12-07",
+      "runtime": "2 val.",
+      "runtimeMinutes": 120,
+      "ageRating": "N-16",
+      "ageNote": "Pirmasis Jean-Luc Lagarce pjesės pastatymas Lietuvos teatro scenoje.",
+      "venue": "Didžioji salė",
+      "language": "Lietuvių",
+      "description": "34-erių Luji atvyksta aplankyti savo šeimos po dvylikos nesimatymo metų. Vyras praleidžia šeštadienį su savo motina, seserimi, broliu ir jo žmona. Kamerinėje aplinkoje neišvengiamai ima skleistis nuoskaudos, nutylėti konfliktai, užgniaužtas pyktis ir sumišimas. Namai pildosi žodžiais, tačiau, ar Luji pavyks ištarti priežastį, dėl kurios jis sugrįžo į savo gimtuosius namus? Pjesę „Tiesiog pasaulio pabaiga\" prancūzų dramaturgas Jean-Luc Lagarce (1957–1995) rašė apmąstydamas savo mirtingumą – tuo metu jis jau žinojo, kad serga AIDS. Pjesė tapo garsiausiu jo kūriniu, o po autoriaus mirties jis tapo vienu daugiausiai statomų šiuolaikinių prancūzų dramaturgų. Valentino Masalskio režisuotas spektaklis – pirmasis šio autoriaus pastatymas Lietuvoje. Spektaklyje akcentuojama šeimos santykių, nesusikalbėjimo, negebėjimo priimti kitokio žmogaus tema.",
+      "directorQuote": "Mane šioje pjesėje domina žmogaus santykis į kitą žmogų. Kitokį žmogų. Žmogų, kuris turi kitokį požiūrį į gyvenimą, puoselėja kitokias mintis apie pasaulį. Jis išeina iš mūsų komforto zonos ir, nors mums jis netrukdo, mes jam tampame pikti.",
+      "sourceUrl": "https://www.miltinioteatras.lt/spektaklis/spektakliai/visi/tik-pasaulio-pabaiga/",
+      "posterUrl": "https://www.miltinioteatras.lt/uploads/Products/product_131/tiesiog-pasaulio-pabaiga-586x540-spektaklio-aprasymo-sekcija_1729667569.jpg",
+      "awards": [],
+      "creativeTeam": {
+        "scenographer": "Renata Valčik, Rūta Venskutė",
+        "costumeDesigner": "Rūta Venskutė",
+        "lightingDesigner": "Paulius Jakubėnas",
+        "composer": "Nijolė Sinkevičiūtė"
+      },
+      "cast": [
+        "Giedrius Arlauskas – Luji",
+        "Dainius Jankauskas",
+        "Ligita Kondrotaitė",
+        "Ieva Labanauskaitė",
+        "Urtė Povilauskaitė"
+      ],
+      "ensembleSize": 5,
+      "upcomingShowings": [
+        {
+          "date": "2026-05-24",
+          "time": "17:00",
+          "venue": "Didžioji salė",
+          "city": "Panevėžys",
+          "ticketUrl": "https://miltinioteatras.lt/repertuaras/"
+        },
+        {
+          "date": "2026-06-06",
+          "time": "17:00",
+          "venue": "Didžioji salė",
+          "city": "Panevėžys",
+          "ticketUrl": "https://miltinioteatras.lt/repertuaras/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Rasa Vasinauskaitė",
+          "title": "„Tiesiog pasaulio pabaiga\" – tarp formos ir turinio",
+          "publication": "Menų faktūra",
+          "publishedAt": "2025-02-11",
+          "url": "https://menufaktura.lt/teatras/",
+          "rating": 7.9,
+          "ratingMax": 10
+        },
+        {
+          "author": "Helmutas Šabasevičius",
+          "title": "„Tiesiog pasaulio pabaiga\" – nauja interpretacija scenoje",
+          "publication": "7 meno dienos",
+          "publishedAt": "2025-03-01",
+          "url": "https://www.7md.lt/teatras/",
+          "rating": 7.8,
+          "ratingMax": 10
+        },
+        {
+          "author": "Rūta Oginskaitė",
+          "title": "Recenzija: „Tiesiog pasaulio pabaiga\"",
+          "publication": "Bernardinai.lt",
+          "publishedAt": "2025-01-03",
+          "url": "https://www.bernardinai.lt/kultura/teatras/",
+          "rating": 8.9,
+          "ratingMax": 10
+        }
+      ]
+    },
+    {
+      "slug": "pupos",
+      "title": "Pupos",
+      "fullTitle": "Daiva Čepauskaitė. PUPOS",
+      "author": "Daiva Čepauskaitė",
+      "directorSlug": "aleksandras-spilevojus",
+      "theaterSlug": "juozo-miltinio-dramos-teatras",
+      "genre": "Vienos dalies drama",
+      "premiereDate": "2024-02-17",
+      "runtime": "1 val. 10 min.",
+      "runtimeMinutes": 70,
+      "ageRating": "N-14",
+      "venue": "Teatras „Menas\" (premjera) / Didžioji salė",
+      "language": "Lietuvių",
+      "description": "Spektaklis, sukurtas pagal lietuvių rašytojos ir dramaturgės Daivos Čepauskaitės pjesę. Pasakojimas apie senyvą porą – Alfonsą ir Brigitą – pavargusius senolius, nelaimingą porą, vienišus žmones, trokštančius užpildyti savyje meilės trūkumą. Jiedu dešimtis metų gyvena kartu po vienu stogu, tik jau pamiršo, kodėl. Pamiršo, kaip stipriai kadaise mylėjo, vertino, saugojo ir gerbė vienas kitą. Ko gero, jiedu jau niekada to ir neprisimintų ir kaip nors pabaigtų savo egzistavimą, numirtų ir būtų nuobodžiai palaidoti... Ne išimtinai liūdnas, bet ir su humoru spektaklis – braukiant juoko ašaras kviečiantis apsvarstyti tiek šio, tiek kito gyvenimo klausimus. Aleksandro Špilevojaus režisuotas darbas dažnai vežamas gastrolėms į kitus Lietuvos miestus.",
+      "sourceUrl": "https://www.miltinioteatras.lt/spektaklis/spektakliai/visi/pupos/",
+      "posterUrl": "https://www.miltinioteatras.lt/uploads/Products/product_122/pupos-586x540-spektaklio-aprasymo-sekcija_1706622102.jpg",
+      "awards": [],
+      "creativeTeam": {
+        "dramaturg": "Daiva Čepauskaitė",
+        "lightingDesigner": "Paulius Jakubėnas"
+      },
+      "cast": [
+        "Julius Tamošiūnas – Alfonsas",
+        "Vita Šiaučiūnaitė – Brigita"
+      ],
+      "ensembleSize": 2,
+      "upcomingShowings": [
+        {
+          "date": "2026-05-29",
+          "time": "18:30",
+          "venue": "Didžioji salė",
+          "city": "Panevėžys",
+          "ticketUrl": "https://miltinioteatras.lt/repertuaras/"
+        },
+        {
+          "date": "2026-06-07",
+          "time": "17:00",
+          "venue": "Didžioji salė",
+          "city": "Panevėžys",
+          "ticketUrl": "https://miltinioteatras.lt/repertuaras/"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Aušra Kaminskaitė",
+          "title": "Apie spektaklį „Pupos\"",
+          "publication": "LRT Klasika",
+          "publishedAt": "2024-03-19",
+          "url": "https://www.lrt.lt/naujienos/kultura/12/",
+          "rating": 5.9,
+          "ratingMax": 10
+        },
+        {
+          "author": "Rasa Vasinauskaitė",
+          "title": "Kas verta dėmesio – „Pupos\"",
+          "publication": "Menų faktūra",
+          "publishedAt": "2024-03-02",
+          "url": "https://menufaktura.lt/teatras/",
+          "rating": 6.9,
+          "ratingMax": 10
+        },
+        {
+          "author": "Vaidas Jauniškis",
+          "title": "Apie spektaklį „Pupos\"",
+          "publication": "7 meno dienos",
+          "publishedAt": "2024-02-28",
+          "url": "https://www.7md.lt/teatras/",
+          "rating": 6.7,
+          "ratingMax": 10
+        }
+      ]
+    }
+  ]
+}
