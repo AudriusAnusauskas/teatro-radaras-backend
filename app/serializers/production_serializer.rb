@@ -51,7 +51,8 @@ class ProductionSerializer
         ensemble_size:  production.ensemble_size,
   
         upcoming_showings: production.screenings.upcoming.limit(20).map { |s| serialize_screening(s) },
-        reviews:           production.reviews.matched.recent.map { |r| serialize_review(r) }
+        reviews:           production.reviews.matched.recent.map { |r| serialize_review(r) },
+        comments:          production.comments.visible.includes(:user).order(created_at: :desc).map { |c| CommentSerializer.list(c) }
       )
     end
   

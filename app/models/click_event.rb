@@ -4,4 +4,4 @@ class ClickEvent < ApplicationRecord
     belongs_to :user,      optional: true
   
     validates :target_url, :clicked_at, presence: true
-  end
+end
