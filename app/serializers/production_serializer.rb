@@ -32,6 +32,12 @@ class ProductionSerializer
   
     # Full detail view — used by /api/productions/:slug
     def self.detail(production)
+      comments = production.comments.visible.includes(:user).order(created_at: :desc)
+      user_ids = comments.map(&:user_id).uniq
+      ratings_by_user = UserRating
+                        .where(production_id: production.id, user_id: user_ids)
+                        .index_by(&:user_id)
+  
       list(production).merge(
         full_title:     production.full_title,
         author:         production.author,
@@ -52,7 +58,7 @@ class ProductionSerializer
   
         upcoming_showings: production.screenings.upcoming.limit(20).map { |s| serialize_screening(s) },
         reviews:           production.reviews.matched.recent.map { |r| serialize_review(r) },
-        comments:          production.comments.visible.includes(:user).order(created_at: :desc).map { |c| CommentSerializer.list(c) }
+        comments:          comments.map { |c| CommentSerializer.list(c, ratings_by_user[c.user_id]) }
       )
     end
   

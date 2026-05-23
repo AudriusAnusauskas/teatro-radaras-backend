@@ -6,7 +6,8 @@ class Api::CommentsController < Api::BaseController
       comment = production.comments.build(user: current_user, body: params[:body])
   
       if comment.save
-        render json: { comment: CommentSerializer.list(comment) }, status: :created
+        user_rating = UserRating.find_by(production_id: production.id, user_id: current_user.id)
+        render json: { comment: CommentSerializer.list(comment, user_rating) }, status: :created
       else
         render json: { errors: comment.errors.full_messages }, status: :unprocessable_entity
       end
