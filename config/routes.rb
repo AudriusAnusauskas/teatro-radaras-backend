@@ -1,3 +1,5 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
   namespace :api do
     resources :productions, only: %i[index show], param: :slug
@@ -20,5 +22,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     get "me", to: "sessions#show"
+  end
+
+  if Rails.env.development?
+    mount Sidekiq::Web => "/sidekiq"
   end
 end
