@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: teatro_radaras_backend_production
-  username: teatro_radaras_backend
-  password: <%= ENV["TEATRO_RADARAS_BACKEND_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
