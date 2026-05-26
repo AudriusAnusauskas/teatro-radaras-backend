@@ -32,6 +32,10 @@ module Scrapers
     end
 
     # Returns current LNDT screenings from the repertory page.
+    def fetch_all
+      fetch_screenings
+    end
+
     def fetch_screenings
       Rails.logger.info("[LndtScheduleScraper] Fetching schedule from #{REPERTUARAS_URL}")
 
@@ -110,8 +114,12 @@ module Scrapers
       starts_at = parse_starts_at(clean_text(cells[0].text), month, year)
       return nil unless starts_at
 
+      path_slug = extract_slug(production_link["href"])
+      source_url = absolute_url("/lt/spektakliai/#{path_slug}/") if path_slug
+
       {
-        production_slug: extract_slug(production_link["href"]),
+        production_slug: path_slug,
+        production_source_url: source_url,
         production_title: clean_text(production_link.text),
         starts_at: starts_at,
         venue: clean_text(cells[3].text).presence,
