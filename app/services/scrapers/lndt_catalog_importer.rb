@@ -32,6 +32,8 @@ module Scrapers
 
     def import_one(data)
       director = find_or_create_director(name: data[:director_name], source_url: data[:director_url])
+      raw_title = data[:full_title].presence || data[:title]
+      parsed = Scrapers::TitleParser.parse(raw_title)
       production = Production.find_or_initialize_by(source_url: data[:source_url])
       is_new = production.new_record?
 
@@ -40,17 +42,18 @@ module Scrapers
       if is_new
         production.theater = lndt_theater
         production.director = director
-        production.slug = data[:slug]
-        production.title = data[:title]
-        production.full_title = data[:full_title]
-        production.author = data[:author]
+        production.title = parsed.title
+        production.full_title = raw_title
+        production.author = parsed.author
+        production.based_on = parsed.based_on
       else
-        production.full_title = data[:full_title] if data[:full_title].present?
+        production.full_title = raw_title if raw_title.present?
 
         if production.director_id != director&.id && director.present?
           Rails.logger.warn(
             "[LndtCatalogImporter] Director mismatch for #{production.slug}: " \
-            "DB has #{production.director&.name}, scraper has #{director.name}. Keeping DB value."
+            "DB has #{production.director&.name.inspect}, scraper has #{director.name.inspect}. " \
+            "Keeping DB value."
           )
         end
       end
