@@ -355,12 +355,12 @@ GEM
     rufus-scheduler (3.9.2)
       fugit (~> 1.1, >= 1.11.1)
     securerandom (0.4.1)
-    sidekiq (7.3.9)
-      base64
-      connection_pool (>= 2.3.0)
-      logger
-      rack (>= 2.2.4)
-      redis-client (>= 0.22.2)
+    sidekiq (8.0.10)
+      connection_pool (>= 2.5.0)
+      json (>= 2.9.0)
+      logger (>= 1.6.2)
+      rack (>= 3.1.0)
+      redis-client (>= 0.23.2)
     sidekiq-scheduler (6.0.2)
       rufus-scheduler (~> 3.2)
       sidekiq (>= 7.3, < 9)
@@ -423,7 +423,7 @@ DEPENDENCIES
   redis (~> 5.3)
   rspec-rails (~> 8.0)
   rubocop-rails-omakase
-  sidekiq (~> 7.3)
+  sidekiq (~> 8.0)
   sidekiq-scheduler (~> 6.0)
   tzinfo-data
 
