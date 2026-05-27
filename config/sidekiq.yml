@@ -21,3 +21,8 @@ production:
       class: ScrapeLndtScheduleJob
       queue: scrapers
       description: "Daily LNDT schedule scrape"
+
+    scrape_sevenmd_reviews:
+      cron: "0 6 * * 1"   # Weekly Monday 06:00 (Vilnius)
+      class: ScrapeSevenmdReviewsJob
+      description: "Scrape 7md.lt theater reviews weekly"
