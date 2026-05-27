@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :theaters,    only: %i[index show], param: :slug
     resources :directors,   only: %i[index show], param: :slug
     resources :reviews,     only: %i[index]
+    resources :screenings,  only: %i[index]
     resources :ratings,     only: %i[create]
     resources :comments,    only: %i[create destroy]
 
