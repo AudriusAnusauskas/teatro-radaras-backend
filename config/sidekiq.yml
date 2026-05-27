@@ -1,9 +1,23 @@
 :concurrency: 5
 
 :queues:
-  - [default, 5]
-  - [scrapers, 3]
-  - [mailers, 2]
+  - default
+  - scrapers
+  - mailers
 
 production:
   :concurrency: 10
+
+:scheduler:
+  :schedule:
+    scrape_lndt_catalog:
+      cron: "0 4 * * 1"  # Monday 4:00 AM Vilnius time
+      class: ScrapeLndtCatalogJob
+      queue: scrapers
+      description: "Weekly LNDT catalog scrape"
+
+    scrape_lndt_schedule:
+      cron: "0 5 * * *"  # Daily 5:00 AM Vilnius time
+      class: ScrapeLndtScheduleJob
+      queue: scrapers
+      description: "Daily LNDT schedule scrape"
