@@ -65,10 +65,12 @@ class ProductionSerializer
   
     def self.serialize_screening(screening)
       return nil unless screening
-  
+
       {
         id:          screening.id,
-        starts_at:   screening.starts_at.iso8601,   # ISO with offset; frontend renders local
+        date:        screening.starts_at.to_date.iso8601,
+        time:        screening.starts_at.strftime("%H:%M"),
+        starts_at:   screening.starts_at.iso8601,
         venue:       screening.venue,
         city:        screening.city,
         ticket_url:  screening.ticket_url,
