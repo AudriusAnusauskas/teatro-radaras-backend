@@ -20,7 +20,13 @@ class ReviewSerializer
       {
         slug:               production.slug,
         title:              production.title,
-        theater_short_name: production.theater.short_name
+        theater_short_name: production.theater.short_name,
+        poster_url:         production.poster_url,
+        theater_slug:       production.theater.slug,
+        director: {
+          slug: production.director.slug,
+          name: production.director.name
+        }
       }
     end
   end

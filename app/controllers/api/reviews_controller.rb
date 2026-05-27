@@ -1,6 +1,6 @@
 class Api::ReviewsController < Api::BaseController
     def index
-      reviews = Review.matched.recent.includes(production: :theater)
+      reviews = Review.matched.recent.includes(production: [:theater, :director])
       reviews = apply_filters(reviews, params)
   
       render json: {
