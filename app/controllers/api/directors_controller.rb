@@ -1,6 +1,6 @@
 class Api::DirectorsController < Api::BaseController
     def index
-      directors = Director.includes(:productions)
+      directors = Director.includes(productions: :theater)
       directors = apply_filters(directors, params)
   
       render json: {
