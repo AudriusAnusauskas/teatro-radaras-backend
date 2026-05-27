@@ -5,6 +5,8 @@ class TheaterSerializer
         name:              theater.name,
         short_name:        theater.short_name,
         city:              theater.city,
+        address:           theater.address,
+        description:       theater.description,
         photo_url:         theater.photo_url,
         founded_year:      theater.founded_year,
         productions_count: theater.productions.size
