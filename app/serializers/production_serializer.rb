@@ -6,6 +6,7 @@ class ProductionSerializer
         title:          production.title,
         genre:          production.genre,
         premiere_date:  production.premiere_date,
+        status:         production.status,
         description:    production.description,
         poster_url:     production.poster_url,
         age_rating:     production.age_rating,

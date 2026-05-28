@@ -1,6 +1,8 @@
 class Api::ScreeningsController < Api::BaseController
   def index
     screenings = Screening.where("starts_at >= ?", Time.current)
+                          .joins(:production)
+                          .where(productions: { status: "active" })
                           .includes(production: [:theater, :director])
                           .order(:starts_at)
     screenings = apply_filters(screenings, params)

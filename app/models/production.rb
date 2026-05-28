@@ -10,6 +10,8 @@ class Production < ApplicationRecord
     has_many :user_ratings, dependent: :destroy
     has_many :comments,     dependent: :destroy
     has_many :click_events, dependent: :nullify    # analytics archyvas
+
+    enum :status, { active: "active", archived: "archived" }, default: "active", validate: true
   
     validates :slug, :title, presence: true
     validates :slug, uniqueness: true
