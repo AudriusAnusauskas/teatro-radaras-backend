@@ -16,7 +16,8 @@ class ScreeningSerializer
         slug: production.slug,
         title: production.title,
         poster_url: production.poster_url,
-        genre: production.genre
+        genre: production.genre,
+        premiere_date: production.premiere_date&.iso8601
       },
       theater: {
         slug: theater.slug,
