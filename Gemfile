@@ -39,7 +39,7 @@ group :development, :test do
 end
 
 # --- Background jobs & cache
-gem "sidekiq", "~> 7.3"
+gem "sidekiq", "~> 8.0"
 gem "redis", "~> 5.3"
 
 # --- Scraping
