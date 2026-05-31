@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_05_28_062000) do
+ActiveRecord::Schema[7.2].define(version: 2026_05_31_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -115,10 +115,12 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_28_062000) do
     t.datetime "matched_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "radaras_score"
     t.index ["match_status"], name: "index_reviews_on_match_status"
     t.index ["production_id"], name: "index_reviews_on_production_id"
     t.index ["publication"], name: "index_reviews_on_publication"
     t.index ["published_at"], name: "index_reviews_on_published_at"
+    t.index ["radaras_score"], name: "index_reviews_on_radaras_score"
   end
 
   create_table "screenings", force: :cascade do |t|

@@ -57,11 +57,18 @@ module Scrapers
         published_at: extract_date(url),
         issue: extract_issue(doc),
         body_excerpt: extract_body_excerpt(doc),
+        body: extract_body(doc),
         tags: extract_tags(doc)
       }
     rescue StandardError => e
       Rails.logger.error("[SevenmdReviewScraper] Error fetching #{url}: #{e.message}")
       nil
+    end
+
+    # Full article hash (including complete :body) — used by classification,
+    # since :body_excerpt is too short for accurate review/interview detection.
+    def fetch_article_full(url)
+      fetch_article(url)
     end
 
     private
@@ -114,6 +121,10 @@ module Scrapers
     def extract_body_excerpt(doc)
       paragraphs = doc.css("p").map { |p| p.text.strip }.select { |text| text.length > 50 }
       paragraphs.first(3).join("\n\n").strip[0..500]
+    end
+
+    def extract_body(doc)
+      doc.css("p").map { |p| p.text.strip }.reject(&:empty?).join("\n\n").strip
     end
 
     def extract_tags(doc)
