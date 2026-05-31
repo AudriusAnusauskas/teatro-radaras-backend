@@ -24,9 +24,10 @@ class ProductionSerializer
           name: production.director.name
         },
   
-        critic_score:    production.critic_score,
-        audience_score:  production.audience_score,
-        audience_count:  production.audience_count,
+        critic_score:        production.critic_score,
+        critic_review_count: production.critic_review_count,
+        audience_score:      production.audience_score,
+        audience_count:      production.audience_count,
   
         next_screening: serialize_screening(production.screenings.upcoming.first)
       }

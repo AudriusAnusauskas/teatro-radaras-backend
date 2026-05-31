@@ -21,11 +21,20 @@ class Production < ApplicationRecord
     scope :upcoming_first, -> { left_joins(:screenings).where("screenings.starts_at >= ?", Time.current).distinct.order("MIN(screenings.starts_at)").group(:id) }
   
     # Score helpers — single source of truth, used by API serializers and admin.
-    # critic_score: 1-10 scale (matched reviews only)
+    # critic_score: 1-5 scale — average radaras_score from AI-classified reviews.
+    # Computed in Ruby over the (eager-loaded) reviews association to avoid N+1.
     def critic_score
-      reviews.matched.where.not(rating: nil).average(:rating)&.to_f&.round(1)
+      scored = reviews.select { |r| r.radaras_score.present? }
+      return nil if scored.empty?
+
+      (scored.sum(&:radaras_score) / scored.size).round(1)
     end
-  
+
+    # critic_review_count: number of reviews carrying a radaras_score
+    def critic_review_count
+      reviews.count { |r| r.radaras_score.present? }
+    end
+
     # audience_score: 1-5 scale
     def audience_score
       user_ratings.average(:rating)&.to_f&.round(2)
