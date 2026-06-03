@@ -10,6 +10,13 @@ Rails.application.routes.draw do
     resources :ratings,     only: %i[create]
     resources :comments,    only: %i[create destroy]
 
+    scope :home, controller: :home, as: :home do
+      get :top_rated
+      get :upcoming_premieres
+      get :latest_reviews
+      get :city_stats
+    end
+
     get "search", to: "search#index"
   end
 
