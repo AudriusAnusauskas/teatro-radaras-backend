@@ -1,11 +1,11 @@
 class ReviewClassifier
-  # scraped: { title:, body (full preferred, excerpt fallback):, production_title: }
+  # scraped: { title:, body (full preferred, excerpt fallback):, production_title:, director_name: optional }
   # Returns: { is_review: bool, radaras_score: Float|nil (1.0-5.0), quote: String|nil }
   def initialize(client: ClaudeClient.new)
     @client = client
   end
 
-  def classify(article_title:, article_body:, production_title:)
+  def classify(article_title:, article_body:, production_title:, director_name: nil)
     system = <<~SYS
       Tu esi lietuvių teatro recenzijų analizės asistentas. Gauni straipsnį ir spektaklio pavadinimą.
       Nustatyk:
@@ -20,8 +20,10 @@ class ReviewClassifier
       {"is_review": true/false, "radaras_score": 1.0-5.0 arba null, "quote": "..." arba null}
     SYS
 
+    director_line = director_name.present? ? "\nRežisierius: #{director_name}" : ""
+
     user = <<~USR
-      Spektaklis: #{production_title}
+      Spektaklis: „#{production_title}“#{director_line}
       Straipsnio antraštė: #{article_title}
       Straipsnio tekstas:
       #{article_body}

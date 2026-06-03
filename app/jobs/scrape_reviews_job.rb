@@ -6,7 +6,7 @@ class ScrapeReviewsJob < ApplicationJob
   def perform
     results = { sevenmd: zero_counts, menufaktura: zero_counts }
 
-    Production.active.find_each do |production|
+    Production.active.includes(:director).find_each do |production|
       merge_counts!(results[:sevenmd], run_sevenmd(production))
       merge_counts!(results[:menufaktura], run_menufaktura(production))
     end

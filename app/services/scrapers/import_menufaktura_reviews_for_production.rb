@@ -41,10 +41,21 @@ module Scrapers
         body = review[:body].presence || review[:quote].to_s
         next if body.blank?
 
+        # A review published more than a year before the premiere cannot be
+        # about this staging — skip before spending a Claude call.
+        if review[:published_on].present? && @production.premiere_date.present? &&
+           review[:published_on] < @production.premiere_date - 1.year
+          Rails.logger.info("[ImportMenufakturaReviews] Skipping #{url} — published #{review[:published_on]}, premiere #{@production.premiere_date}")
+          record_seen(url, "not_review")
+          result[:skipped_not_review] += 1
+          next
+        end
+
         classification = @classifier.classify(
           article_title: review[:title].to_s,
           article_body: body,
-          production_title: @production.title
+          production_title: @production.title,
+          director_name: @production.director&.name
         )
         result[:classified] += 1
         sleep(REQUEST_DELAY)
