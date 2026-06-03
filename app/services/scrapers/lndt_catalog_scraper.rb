@@ -50,6 +50,10 @@ module Scrapers
       "dramaturg" => :dramaturg
     }.freeze
 
+    # Titles containing these keywords are events (talks, discussions, etc.),
+    # not repertoire productions, and must not be imported.
+    NON_PRODUCTION_KEYWORDS = %w[pokalbiai diskusija pristatymas susitikimas workshopas].freeze
+
     def initialize(http: nil)
       @http = http || Faraday.new(url: BASE_URL) do |f|
         f.headers["User-Agent"] = USER_AGENT
@@ -112,13 +116,27 @@ module Scrapers
 
     # Combines catalog pagination + detail fetches with a polite delay.
     def fetch_all
-      fetch_catalog_list.map.with_index do |item, index|
+      fetch_catalog_list.filter_map.with_index do |item, index|
         sleep DELAY_BETWEEN_REQUESTS if index.positive?
-        fetch_production_detail(item[:url])
+        detail = fetch_production_detail(item[:url])
+
+        if event_title?(detail[:title])
+          Rails.logger.warn("[LndtCatalogScraper] Skipping non-production (event) page: #{detail[:title].inspect} (#{item[:url]})")
+          next
+        end
+
+        detail
       end
     end
 
     private
+
+    def event_title?(title)
+      return false if title.blank?
+
+      downcased = title.downcase
+      NON_PRODUCTION_KEYWORDS.any? { |kw| downcased.include?(kw) }
+    end
 
     def fetch_list_page(url)
       Rails.logger.info("[LndtCatalogScraper] Fetching catalog page from #{url}")
