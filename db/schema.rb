@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_05_31_120000) do
+ActiveRecord::Schema[7.2].define(version: 2026_06_03_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -137,6 +137,17 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_31_120000) do
     t.index ["production_id", "starts_at"], name: "index_screenings_on_production_id_and_starts_at"
     t.index ["production_id"], name: "index_screenings_on_production_id"
     t.index ["starts_at"], name: "index_screenings_on_starts_at"
+  end
+
+  create_table "seen_articles", force: :cascade do |t|
+    t.string "url", null: false
+    t.string "publication", null: false
+    t.string "outcome"
+    t.datetime "seen_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["publication", "seen_at"], name: "index_seen_articles_on_publication_and_seen_at"
+    t.index ["url"], name: "index_seen_articles_on_url", unique: true
   end
 
   create_table "theaters", force: :cascade do |t|

@@ -24,7 +24,16 @@ module Scrapers
       result[:fetched] = reviews.size
 
       reviews.each do |review|
-        if Review.exists?(publication: PUBLICATION, url: review[:url])
+        url = review[:url]
+
+        # Primary dedup: already processed this URL (any outcome) — skip the Claude call.
+        if SeenArticle.exists?(url: url)
+          result[:skipped_dedup] += 1
+          next
+        end
+
+        # Secondary safety: review with this URL already imported (idempotency).
+        if Review.exists?(publication: PUBLICATION, url: url)
           result[:skipped_dedup] += 1
           next
         end
@@ -44,7 +53,7 @@ module Scrapers
           Review.create!(
             production: @production,
             publication: PUBLICATION,
-            url: review[:url],
+            url: url,
             title: review[:title],
             author: review[:author].presence || "Nežinomas",
             published_at: review[:published_on],
@@ -56,20 +65,32 @@ module Scrapers
             language: "lt"
           )
           result[:imported] += 1
+          record_seen(url, "imported")
           Rails.logger.info("[ImportMenufakturaReviews] ✓ Imported: #{review[:title]} (score #{classification[:radaras_score]})")
         else
           result[:skipped_not_review] += 1
+          record_seen(url, "not_review")
           Rails.logger.info("[ImportMenufakturaReviews] ✗ Not a review: #{review[:title]}")
         end
       rescue ClaudeClient::RateLimitError => e
+        # Rate-limited: transient — do NOT cache, so the article retries next run.
         result[:errors] << { url: review[:url], error: "rate_limited: #{e.message}" }
         Rails.logger.warn("[ImportMenufakturaReviews] Rate limited on #{review[:url]}: #{e.message}")
       rescue StandardError => e
+        # Other errors are also left uncached so they can be retried.
         result[:errors] << { url: review[:url], error: e.message }
         Rails.logger.error("[ImportMenufakturaReviews] Error #{review[:url]}: #{e.message}")
       end
 
       result
+    end
+
+    private
+
+    def record_seen(url, outcome)
+      SeenArticle.create!(url: url, publication: PUBLICATION, outcome: outcome, seen_at: Time.current)
+    rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid
+      # Already recorded (re-run / race) — safe to ignore.
     end
   end
 end

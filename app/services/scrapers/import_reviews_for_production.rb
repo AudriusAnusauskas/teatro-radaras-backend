@@ -19,7 +19,13 @@ module Scrapers
       result[:fetched] = urls.size
 
       urls.each do |url|
-        # Dedup: skip if review with this URL+publication already in DB
+        # Primary dedup: already processed this URL (any outcome) — skip the Claude call.
+        if SeenArticle.exists?(url: url)
+          result[:skipped_dedup] += 1
+          next
+        end
+
+        # Secondary safety: review with this URL already imported (idempotency).
         if Review.exists?(publication: PUBLICATION, url: url)
           result[:skipped_dedup] += 1
           next
@@ -55,21 +61,32 @@ module Scrapers
             language: "lt"
           )
           result[:imported] += 1
+          record_seen(url, "imported")
           Rails.logger.info("[ImportReviewsForProduction] ✓ Imported: #{article[:title]} (score #{classification[:radaras_score]})")
         else
           result[:skipped_not_review] += 1
+          record_seen(url, "not_review")
           Rails.logger.info("[ImportReviewsForProduction] ✗ Not a review: #{article[:title]}")
         end
       rescue ClaudeClient::RateLimitError => e
-        # Rate-limited: record as error and move on — do NOT mark as "not review".
+        # Rate-limited: transient — do NOT cache, so the article retries next run.
         result[:errors] << { url: url, error: "rate_limited: #{e.message}" }
         Rails.logger.warn("[ImportReviewsForProduction] Rate limited on #{url}: #{e.message}")
       rescue StandardError => e
+        # Other errors are also left uncached so they can be retried.
         result[:errors] << { url: url, error: e.message }
         Rails.logger.error("[ImportReviewsForProduction] Error #{url}: #{e.message}")
       end
 
       result
+    end
+
+    private
+
+    def record_seen(url, outcome)
+      SeenArticle.create!(url: url, publication: PUBLICATION, outcome: outcome, seen_at: Time.current)
+    rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid
+      # Already recorded (re-run / race) — safe to ignore.
     end
   end
 end
