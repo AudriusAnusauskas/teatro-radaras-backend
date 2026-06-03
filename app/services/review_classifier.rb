@@ -35,6 +35,10 @@ class ReviewClassifier
       radaras_score: parsed["radaras_score"]&.to_f,
       quote: parsed["quote"]
     }
+  rescue ClaudeClient::RateLimitError
+    # Never miscategorize a rate-limited article as "not a review" —
+    # let it bubble up so the orchestrator can record it as an error.
+    raise
   rescue StandardError => e
     Rails.logger.error("[ReviewClassifier] #{e.message}")
     { is_review: false, radaras_score: nil, quote: nil, error: e.message }

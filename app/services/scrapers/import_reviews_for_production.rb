@@ -1,7 +1,7 @@
 module Scrapers
   class ImportReviewsForProduction
     PUBLICATION = "7 meno dienos"
-    REQUEST_DELAY = 1.0 # seconds between Claude/scrape calls
+    REQUEST_DELAY = 4.0 # seconds between Claude/scrape calls — stays under tier 1 limit (50K tokens/min)
 
     def initialize(production)
       @production = production
@@ -60,6 +60,10 @@ module Scrapers
           result[:skipped_not_review] += 1
           Rails.logger.info("[ImportReviewsForProduction] ✗ Not a review: #{article[:title]}")
         end
+      rescue ClaudeClient::RateLimitError => e
+        # Rate-limited: record as error and move on — do NOT mark as "not review".
+        result[:errors] << { url: url, error: "rate_limited: #{e.message}" }
+        Rails.logger.warn("[ImportReviewsForProduction] Rate limited on #{url}: #{e.message}")
       rescue StandardError => e
         result[:errors] << { url: url, error: e.message }
         Rails.logger.error("[ImportReviewsForProduction] Error #{url}: #{e.message}")
