@@ -5,14 +5,24 @@ class Api::HomeController < Api::BaseController
   # GET /api/home/top_rated
   # Top 6 productions by average radaras_score across their matched reviews.
   def top_rated
-    productions = Production.active
-                            .joins(:reviews)
-                            .merge(Review.matched)
-                            .where.not(reviews: { radaras_score: nil })
-                            .group("productions.id")
-                            .order(Arel.sql("AVG(reviews.radaras_score) DESC"))
-                            .limit(6)
-                            .includes(:theater, :director, :screenings, :reviews)
+    # Step 1: aggregate to find the top production IDs. Kept as a clean
+    # GROUP BY productions.id with no eager-loaded joins so Postgres doesn't
+    # demand the joined tables' columns in the GROUP BY clause.
+    top_ids = Production.active
+                        .joins(:reviews)
+                        .merge(Review.matched)
+                        .where.not(reviews: { radaras_score: nil })
+                        .group("productions.id")
+                        .order(Arel.sql("AVG(reviews.radaras_score) DESC"))
+                        .limit(6)
+                        .pluck("productions.id")
+
+    # Step 2: load full records with associations, restoring the ranked order.
+    productions = Production.includes(:theater, :director, :screenings, :reviews)
+                            .where(id: top_ids)
+                            .index_by(&:id)
+                            .values_at(*top_ids)
+                            .compact
 
     render json: {
       productions: productions.map { |p| ProductionSerializer.list(p) },
