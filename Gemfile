@@ -47,7 +47,7 @@ gem "nokogiri", "~> 1.17"
 gem "ferrum", "~> 0.16"
 
 # --- Auth
-gem "devise", "~> 4.9"
+gem "devise", "~> 5.0"
 gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", "~> 1.2"
 
