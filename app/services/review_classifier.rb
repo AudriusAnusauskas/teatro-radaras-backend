@@ -10,14 +10,14 @@ class ReviewClassifier
       Tu esi lietuvių teatro recenzijų analizės asistentas. Gauni straipsnį ir spektaklio pavadinimą.
       Nustatyk:
       1. Ar tai RECENZIJA apie nurodytą spektaklį (analitinis, vertinamasis tekstas apie vieną pastatymą), o NE interviu, anonsas, festivalio apžvalga ar straipsnis apie kelis spektaklius.
-      2. Jei recenzija — įvertink bendrą kritiko požiūrio teigiamumą skalėje nuo 1.0 iki 5.0 (1=labai neigiamas, 3=mišrus, 5=labai teigiamas). Tai NĖRA kritiko balas — tai teksto tono interpretacija.
+      2. Jei tai recenzija (is_review: true) — PRIVALAI įvertinti kritiko požiūrio teigiamumą skalėje 1.0–5.0 (1=labai neigiamas, 3=mišrus/neutralus, 5=labai teigiamas). Niekada negrąžink null kai is_review yra true — jei tonas neutralus ar sunkiai nustatomas, grąžink 3.0. Tai NĖRA kritiko balas — tai teksto tono interpretacija. Jei tai NE recenzija (is_review: false) — radaras_score turi būti null.
       3. Jei recenzija — ištrauk vieną reprezentatyvią, vertinamąją citatą VERBATIM iš teksto (iki 200 simbolių, pilnas sakinys, lietuviškai).
 
       SVARBU dėl JSON galiojimo: citatos lauke ("quote") jokiu būdu nenaudok ASCII dvigubų kabučių (").
       Vietoj jų naudok lietuviškas kabutes („ ir “) arba escape'ink kaip \". Kitaip JSON bus sugadintas.
 
       Atsakyk TIK JSON formatu, be jokio papildomo teksto:
-      {"is_review": true/false, "radaras_score": 1.0-5.0 arba null, "quote": "..." arba null}
+      {"is_review": true/false, "radaras_score": 1.0-5.0 kai is_review: true, null kai is_review: false, "quote": "..." arba null}
     SYS
 
     director_line = director_name.present? ? "\nRežisierius: #{director_name}" : ""
