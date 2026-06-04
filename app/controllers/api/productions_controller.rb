@@ -1,6 +1,6 @@
 class Api::ProductionsController < Api::BaseController
     def index
-      productions = Production.includes(:theater, :director, :screenings, :reviews)
+      productions = Production.includes(:theater, :director, :screenings, :reviews, :user_ratings)
       productions = apply_filters(productions, params)
   
       render json: {
@@ -10,7 +10,7 @@ class Api::ProductionsController < Api::BaseController
     end
   
     def show
-      production = Production.includes(:theater, :director, :screenings, :reviews)
+      production = Production.includes(:theater, :director, :screenings, :reviews, :user_ratings)
                              .friendly.find(params[:slug])
   
       render json: { production: ProductionSerializer.detail(production) }

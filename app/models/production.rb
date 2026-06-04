@@ -35,12 +35,22 @@ class Production < ApplicationRecord
       reviews.count { |r| r.radaras_score.present? }
     end
 
-    # audience_score: 1-5 scale
-    def audience_score
-      user_ratings.average(:rating)&.to_f&.round(2)
+    # Next upcoming screening — computed in Ruby over preloaded screenings to avoid N+1.
+    def next_screening
+      screenings
+        .select { |s| s.starts_at >= Time.current }
+        .min_by(&:starts_at)
     end
-  
+
+    # audience_score: 1-5 scale — computed in Ruby over preloaded user_ratings.
+    def audience_score
+      ratings = user_ratings.map(&:rating).compact
+      return nil if ratings.empty?
+
+      (ratings.sum.to_f / ratings.size).round(2)
+    end
+
     def audience_count
-      user_ratings.count
+      user_ratings.size
     end
 end

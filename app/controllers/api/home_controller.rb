@@ -18,7 +18,7 @@ class Api::HomeController < Api::BaseController
                         .pluck("productions.id")
 
     # Step 2: load full records with associations, restoring the ranked order.
-    productions = Production.includes(:theater, :director, :screenings, :reviews)
+    productions = Production.includes(:theater, :director, :screenings, :reviews, :user_ratings)
                             .where(id: top_ids)
                             .index_by(&:id)
                             .values_at(*top_ids)
@@ -37,7 +37,7 @@ class Api::HomeController < Api::BaseController
                             .where("premiere_date > ?", Date.current)
                             .order(premiere_date: :asc)
                             .limit(4)
-                            .includes(:theater, :director, :screenings, :reviews)
+                            .includes(:theater, :director, :screenings, :reviews, :user_ratings)
 
     render json: {
       productions: productions.map { |p| ProductionSerializer.list(p) },

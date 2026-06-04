@@ -29,7 +29,7 @@ class ProductionSerializer
         audience_score:      production.audience_score,
         audience_count:      production.audience_count,
   
-        next_screening: serialize_screening(production.screenings.upcoming.first)
+        next_screening: serialize_screening(production.next_screening)
       }
     end
   

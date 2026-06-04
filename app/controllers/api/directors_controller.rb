@@ -10,7 +10,7 @@ class Api::DirectorsController < Api::BaseController
     end
   
     def show
-      director = Director.includes(productions: [:theater, :screenings, :reviews])
+      director = Director.includes(productions: [:theater, :screenings, :reviews, :user_ratings])
                          .friendly.find(params[:slug])
   
       render json: { director: DirectorSerializer.detail(director) }

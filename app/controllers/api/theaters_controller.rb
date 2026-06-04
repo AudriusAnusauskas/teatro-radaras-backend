@@ -10,7 +10,7 @@ class Api::TheatersController < Api::BaseController
     end
   
     def show
-      theater = Theater.includes(productions: [:director, :screenings, :reviews])
+      theater = Theater.includes(productions: [:theater, :director, :screenings, :reviews, :user_ratings])
                        .friendly.find(params[:slug])
   
       render json: { theater: TheaterSerializer.detail(theater) }
