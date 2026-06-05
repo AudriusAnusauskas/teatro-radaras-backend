@@ -3,6 +3,7 @@ require "sidekiq/web"
 Rails.application.routes.draw do
   namespace :api do
     resources :productions, only: %i[index show], param: :slug
+    get "theaters/:theater_slug/productions/:slug", to: "productions#show", as: :theater_production
     resources :theaters,    only: %i[index show], param: :slug
     resources :directors,   only: %i[index show], param: :slug
     resources :reviews,     only: %i[index]

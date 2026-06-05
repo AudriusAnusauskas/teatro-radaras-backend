@@ -42,6 +42,7 @@ class Api::SearchController < Api::BaseController
       {
         slug: production.slug,
         title: production.title,
+        theater_slug: production.theater.slug,
         theater_short_name: production.theater.short_name
       }
     end

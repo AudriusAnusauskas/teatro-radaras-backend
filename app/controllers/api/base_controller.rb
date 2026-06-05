@@ -1,5 +1,6 @@
 class Api::BaseController < ActionController::API
     include Devise::Controllers::Helpers
+    include Api::ProductionLookup
 
     rescue_from ActiveRecord::RecordNotFound do |e|
       render json: { error: "not_found", message: e.message }, status: :not_found

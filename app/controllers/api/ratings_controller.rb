@@ -1,6 +1,9 @@
 class Api::RatingsController < Api::BaseController
     def create
-      production = Production.friendly.find(params[:production_slug])
+      production = find_production_by_slug(
+        params[:production_slug],
+        theater_slug: params[:theater_slug]
+      )
       rating = UserRating.find_or_initialize_by(production_id: production.id, **rating_identifier)
       rating.rating = params[:rating]
   

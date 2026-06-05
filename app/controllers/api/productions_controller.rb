@@ -10,9 +10,12 @@ class Api::ProductionsController < Api::BaseController
     end
   
     def show
-      production = Production.includes(:theater, :director, :screenings, :reviews, :user_ratings)
-                             .friendly.find(params[:slug])
-  
+      production = find_production_by_slug(
+        params[:slug],
+        theater_slug: params[:theater_slug],
+        includes: %i[theater director screenings reviews user_ratings]
+      )
+
       render json: { production: ProductionSerializer.detail(production) }
     end
   

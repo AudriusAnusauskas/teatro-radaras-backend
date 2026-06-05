@@ -2,7 +2,10 @@ class Api::CommentsController < Api::BaseController
     before_action :authenticate_user!
   
     def create
-      production = Production.friendly.find(params[:production_slug])
+      production = find_production_by_slug(
+        params[:production_slug],
+        theater_slug: params[:theater_slug]
+      )
       comment = production.comments.build(user: current_user, body: params[:body])
   
       if comment.save
