@@ -28,6 +28,7 @@ module Scrapers
 
     DIRECTOR_COMBINED_PATTERN = /(?:Autorius ir režisierius|Pjesės autorius ir režisierius)\s*[–-]\s*(.+)/i
     DIRECTOR_PATTERN = /Režisier(?:ius|ė|iai)\s*[–-]\s*(.+)/i
+    IDEA_AUTHOR_PATTERN = /\AIdėjos\s+autor(?:ė|ius)\s*[–-]\s*(.+)\z/i
     PREMIERE_PATTERN = /(\d{4})\s*m\.\s*([a-ząčęėįšųūž]+)\s+(\d{1,2})\s*d\./i
     AGE_RATING_PATTERN = /\(N-?\s*(\d+)\)|\bN-?\s*(\d+)\b/i
     TRANSLATOR_LABEL_PATTERN = /vertė/i
@@ -49,10 +50,11 @@ module Scrapers
     end
 
     def fetch_production_detail(url)
-      slug = slug_from_url(url)
-      canonical = canonical_production_url(slug)
-      Rails.logger.info("[VmtCatalogScraper] Fetching detail from #{canonical}")
-      doc = html_doc(canonical)
+      normalized_slug = slug_from_url(url)
+      fetch_url = fetch_url_for(url)
+      stored_source_url = canonical_production_url(normalized_slug)
+      Rails.logger.info("[VmtCatalogScraper] Fetching detail from #{fetch_url}")
+      doc = html_doc(fetch_url)
       layer = doc.at_css("div.layer .small-wrap")
       tags = extract_tags(doc)
       intro_text = clean_text(layer&.at_css("div.intro p")&.text)
@@ -73,8 +75,8 @@ module Scrapers
 
       {
         title: title,
-        slug: slug,
-        source_url: canonical,
+        slug: normalized_slug,
+        source_url: stored_source_url,
         author: author_info[:author],
         director_name: author_info[:director_name],
         translator: extract_translator(sections[:creative_team]),
@@ -159,17 +161,34 @@ module Scrapers
       key = slug_from_url(url)
       return if key.blank?
 
-      slugs[key] = pick_preferred_url(slugs[key], canonical_production_url(key))
+      slugs[key] = pick_preferred_fetch_url(slugs[key], absolute_url(url))
     end
 
-    def pick_preferred_url(current, candidate)
+    # Dedup key is lowercased slug; value is original-case URL for HTTP fetch.
+    def pick_preferred_fetch_url(current, candidate)
       return candidate if current.nil?
 
-      current_segment = URI.parse(current).path.split("/").reject(&:blank?).last.to_s
-      candidate_segment = URI.parse(candidate).path.split("/").reject(&:blank?).last.to_s
+      current_segment = path_slug_segment(current)
+      candidate_segment = path_slug_segment(candidate)
       return candidate if current_segment.match?(/\.+\z/) && !candidate_segment.match?(/\.+\z/)
+      return current if !current_segment.match?(/\.+\z/) && candidate_segment.match?(/\.+\z/)
+
+      # VMT CMS paths are case-sensitive — prefer mixed-case over all-lowercase.
+      return candidate if mixed_case_slug?(candidate_segment) && !mixed_case_slug?(current_segment)
 
       current
+    end
+
+    def mixed_case_slug?(segment)
+      segment.present? && segment != segment.downcase
+    end
+
+    def path_slug_segment(url)
+      URI.parse(url).path.split("/").reject(&:blank?).last.to_s
+    end
+
+    def fetch_url_for(url)
+      absolute_url(url)
     end
 
     def classify_pipe_title(title)
@@ -210,6 +229,7 @@ module Scrapers
 
       author_lines = []
       director_name = nil
+      idea_author_name = nil
 
       lines.each do |line|
         if (match = line.match(DIRECTOR_COMBINED_PATTERN))
@@ -222,8 +242,15 @@ module Scrapers
           next
         end
 
+        if (match = line.match(IDEA_AUTHOR_PATTERN))
+          idea_author_name ||= clean_text(match[1])
+          next
+        end
+
         author_lines << line
       end
+
+      director_name ||= idea_author_name
 
       {
         author: author_lines.join(" ").presence,
