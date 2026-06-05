@@ -49,8 +49,10 @@ module Scrapers
     end
 
     def fetch_production_detail(url)
-      Rails.logger.info("[VmtCatalogScraper] Fetching detail from #{url}")
-      doc = html_doc(url)
+      slug = slug_from_url(url)
+      canonical = canonical_production_url(slug)
+      Rails.logger.info("[VmtCatalogScraper] Fetching detail from #{canonical}")
+      doc = html_doc(canonical)
       layer = doc.at_css("div.layer .small-wrap")
       tags = extract_tags(doc)
       intro_text = clean_text(layer&.at_css("div.intro p")&.text)
@@ -71,8 +73,8 @@ module Scrapers
 
       {
         title: title,
-        slug: slug_from_url(url),
-        source_url: canonical_url(url),
+        slug: slug,
+        source_url: canonical,
         author: author_info[:author],
         director_name: author_info[:director_name],
         translator: extract_translator(sections[:creative_team]),
@@ -157,7 +159,7 @@ module Scrapers
       key = slug_from_url(url)
       return if key.blank?
 
-      slugs[key] = pick_preferred_url(slugs[key], canonical_url(url))
+      slugs[key] = pick_preferred_url(slugs[key], canonical_production_url(key))
     end
 
     def pick_preferred_url(current, candidate)
@@ -362,11 +364,8 @@ module Scrapers
       URI.join(BASE_URL, escaped_href).to_s
     end
 
-    def canonical_url(url)
-      parsed = URI.parse(url)
-      parsed.fragment = nil
-      parsed.query = nil
-      parsed.to_s
+    def canonical_production_url(slug)
+      "#{BASE_URL}/spektakliai/#{normalize_slug(slug)}"
     end
 
     def production_detail_url?(url)
