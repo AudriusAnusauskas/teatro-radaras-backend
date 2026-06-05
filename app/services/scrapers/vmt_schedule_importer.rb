@@ -72,7 +72,7 @@ module Scrapers
 
     def find_production(data)
       production = Production.find_by(source_url: data[:production_url])
-      production ||= Production.find_by(slug: data[:production_slug])
+      production ||= Production.find_by("LOWER(slug) = ?", data[:production_slug].to_s.downcase)
       production
     end
   end

@@ -139,10 +139,10 @@ module Scrapers
     end
 
     def assign_slug(production, desired_slug, title)
-      candidate = desired_slug.to_s.strip
+      candidate = desired_slug.to_s.strip.downcase
       return if candidate.blank?
 
-      if Production.where(slug: candidate).where.not(id: production.id).exists?
+      if Production.where("LOWER(slug) = ?", candidate).where.not(id: production.id).exists?
         Rails.logger.warn(
           "[VmtCatalogImporter] Slug collision #{candidate.inspect} for #{title.inspect} — " \
           "FriendlyId will assign from title"

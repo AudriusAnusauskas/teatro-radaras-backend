@@ -14,6 +14,12 @@ module Scrapers
         name: "Valstybinis jaunimo teatras",
         catalog: { scraper: Scrapers::JaunimoTeatrasCatalogScraper, importer: Scrapers::JaunimoTeatrasCatalogImporter },
         schedule: { scraper: Scrapers::JaunimoTeatrasScheduleScraper, importer: Scrapers::JaunimoTeatrasScheduleImporter }
+      },
+      {
+        key: "vmt",
+        name: "Valstybinis Vilniaus mažasis teatras",
+        catalog: { scraper: Scrapers::VmtCatalogScraper, importer: Scrapers::VmtCatalogImporter },
+        schedule: { scraper: Scrapers::VmtScheduleScraper, importer: Scrapers::VmtScheduleImporter }
       }
     ].freeze
 
