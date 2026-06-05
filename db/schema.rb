@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_06_03_120000) do
+ActiveRecord::Schema[7.2].define(version: 2026_06_04_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -90,8 +90,10 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_03_120000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status", default: "active", null: false
+    t.boolean "is_guest", default: false, null: false
     t.index ["director_id"], name: "index_productions_on_director_id"
     t.index ["genre"], name: "index_productions_on_genre"
+    t.index ["is_guest"], name: "index_productions_on_is_guest"
     t.index ["premiere_date"], name: "index_productions_on_premiere_date"
     t.index ["slug"], name: "index_productions_on_slug", unique: true
     t.index ["status"], name: "index_productions_on_status"
