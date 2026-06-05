@@ -1,6 +1,6 @@
 class Production < ApplicationRecord
     extend FriendlyId
-    friendly_id :title, use: :slugged
+    friendly_id :title, use: :scoped, scope: :theater
   
     belongs_to :theater
     belongs_to :director
@@ -14,7 +14,7 @@ class Production < ApplicationRecord
     enum :status, { active: "active", archived: "archived" }, default: "active", validate: true
   
     validates :slug, :title, presence: true
-    validates :slug, uniqueness: true
+    validates :slug, uniqueness: { scope: :theater_id }
   
     scope :by_city,        ->(city)  { joins(:theater).where(theaters: { city: city }) }
     scope :by_genre,       ->(genre) { where(genre: genre) }
