@@ -1,5 +1,7 @@
 module Scrapers
   class LndtCatalogImporter
+    include DirectorResolver
+
     LNDT_THEATER_SLUG = "lietuvos-nacionalinis-dramos-teatras"
 
     def initialize(productions_data)
@@ -31,7 +33,7 @@ module Scrapers
     end
 
     def import_one(data)
-      director = find_or_create_director(name: data[:director_name], source_url: data[:director_url])
+      director = resolve_director(data[:director_name], data[:director_url])
       raw_title = data[:full_title].presence || data[:title]
       parsed = Scrapers::TitleParser.parse(raw_title)
       production = Production.find_or_initialize_by(source_url: data[:source_url])
@@ -63,17 +65,13 @@ module Scrapers
       is_new ? :created : :updated
     end
 
-    def find_or_create_director(name:, source_url: nil)
-      return nil if name.blank?
-
-      normalized = normalize_director_name(name)
-      Director.find_by(name: normalized) || Director.create!(name: normalized, source_url: source_url)
-    end
-
-    def normalize_director_name(name)
-      return nil if name.blank?
-
-      name.split(/\s+/).map { |word| word.downcase.capitalize }.join(" ")
+    # Preserves LNDT director source_url on newly created records only (detail API field).
+    def resolve_director(raw_name, source_url = nil)
+      director, created = find_or_create_director(raw_name)
+      if director && created == 1 && source_url.present?
+        director.update!(source_url: source_url)
+      end
+      director
     end
 
     def mutable_attributes(data)

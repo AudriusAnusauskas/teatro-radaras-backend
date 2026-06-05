@@ -1,5 +1,7 @@
 module Scrapers
   class VmtCatalogImporter
+    include DirectorResolver
+
     THEATER_SLUG = "valstybinis-vilniaus-mazasis-teatras"
     DIRECTOR_COUNTRY_SUFFIX_PATTERN = /\s*\([^)]+\)\z/
 
@@ -38,18 +40,16 @@ module Scrapers
     def import_one(data)
       directors_created = 0
 
-      director_name = first_director_name(data[:director_name])
-      if director_name.blank?
-        Rails.logger.warn("[VmtCatalogImporter] Skipping #{data[:slug]} — no director")
-        return [:skipped, 0]
-      end
-
       if data[:title].blank?
         Rails.logger.warn("[VmtCatalogImporter] Skipping #{data[:source_url]} — no title")
         return [:skipped, 0]
       end
 
-      director, created = find_or_create_director(director_name)
+      director, created = find_or_create_director(data[:director_name])
+      if director.nil?
+        Rails.logger.warn("[VmtCatalogImporter] Skipping #{data[:slug]} — no director")
+        return [:skipped, 0]
+      end
       directors_created += created
 
       production = Production.find_or_initialize_by(source_url: data[:source_url])
@@ -107,35 +107,8 @@ module Scrapers
       genre.match?(/\ATeatras\b/i) || genre.include?("„") || genre.include?('"')
     end
 
-    def find_or_create_director(name)
-      normalized = normalize_director_name(name)
-      existing = Director.where("LOWER(name) = ?", normalized.downcase).first
-      return [existing, 0] if existing
-
-      [Director.create!(name: normalized), 1]
-    end
-
-    def normalize_director_name(name)
-      return nil if name.blank?
-
-      cleaned = strip_country_suffix(name)
-      cleaned.split(/\s+/).map { |word| word.downcase.capitalize }.join(" ")
-    end
-
-    def strip_country_suffix(name)
-      name.gsub(DIRECTOR_COUNTRY_SUFFIX_PATTERN, "").strip
-    end
-
-    def first_director_name(raw)
-      return nil if raw.blank?
-
-      parts = raw.split(",").map { |part| strip_country_suffix(part) }.map(&:strip).reject(&:blank?)
-      if parts.size > 1
-        Rails.logger.info(
-          "[VmtCatalogImporter] Multiple directors #{raw.inspect} — using first: #{parts.first.inspect}"
-        )
-      end
-      parts.first
+    def strip_director_suffix(name)
+      name.to_s.gsub(DIRECTOR_COUNTRY_SUFFIX_PATTERN, "").strip
     end
 
     def assign_slug(production, desired_slug, title)

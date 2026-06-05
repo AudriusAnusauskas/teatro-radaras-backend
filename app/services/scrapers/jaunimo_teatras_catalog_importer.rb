@@ -1,5 +1,7 @@
 module Scrapers
   class JaunimoTeatrasCatalogImporter
+    include DirectorResolver
+
     THEATER_SLUG = "valstybinis-jaunimo-teatras"
 
     def initialize(scraped_data)
@@ -37,14 +39,6 @@ module Scrapers
     def import_one(data)
       directors_created = 0
 
-      director_name = first_director_name(data[:director_name])
-      if director_name.blank?
-        Rails.logger.warn(
-          "[JaunimoTeatrasCatalogImporter] Skipping #{data[:slug]} — no director"
-        )
-        return [:skipped, 0]
-      end
-
       if data[:title].blank?
         Rails.logger.warn(
           "[JaunimoTeatrasCatalogImporter] Skipping #{data[:source_url]} — no title"
@@ -52,7 +46,13 @@ module Scrapers
         return [:skipped, 0]
       end
 
-      director, created = find_or_create_director(director_name)
+      director, created = find_or_create_director(data[:director_name])
+      if director.nil?
+        Rails.logger.warn(
+          "[JaunimoTeatrasCatalogImporter] Skipping #{data[:slug]} — no director"
+        )
+        return [:skipped, 0]
+      end
       directors_created += created
 
       production = Production.find_or_initialize_by(source_url: data[:source_url])
@@ -84,35 +84,6 @@ module Scrapers
         cast_members: data[:cast] || [],
         status: "active"
       }.compact
-    end
-
-    # Directors are shared across theaters — match case-insensitively on normalized name
-    # (DB has unique index on lower(name)). Returns [director, created_count].
-    def find_or_create_director(name)
-      normalized = normalize_director_name(name)
-      existing = Director.where("LOWER(name) = ?", normalized.downcase).first
-      return [existing, 0] if existing
-
-      [Director.create!(name: normalized), 1]
-    end
-
-    def normalize_director_name(name)
-      return nil if name.blank?
-
-      name.split(/\s+/).map { |word| word.downcase.capitalize }.join(" ")
-    end
-
-    # Schema allows one director_id — take first when comma-separated, log the rest.
-    def first_director_name(raw)
-      return nil if raw.blank?
-
-      parts = raw.split(",").map(&:strip).reject(&:blank?)
-      if parts.size > 1
-        Rails.logger.info(
-          "[JaunimoTeatrasCatalogImporter] Multiple directors #{raw.inspect} — using first: #{parts.first.inspect}"
-        )
-      end
-      parts.first
     end
 
     # Production slugs are globally unique (not per theater). Prefer the scraper's slug;
