@@ -10,17 +10,17 @@ production:
 
 :scheduler:
   :schedule:
-    scrape_lndt_catalog:
-      cron: "0 4 * * 1"  # Monday 4:00 AM Vilnius time
-      class: ScrapeLndtCatalogJob
+    scrape_catalogs:
+      cron: "0 4 * * 1"  # Weekly, Monday 04:00
+      class: ScrapeCatalogsJob
       queue: scrapers
-      description: "Weekly LNDT catalog scrape"
+      description: "Weekly catalog scrape for all registered theaters"
 
-    scrape_lndt_schedule:
-      cron: "0 5 * * *"  # Daily 5:00 AM Vilnius time
-      class: ScrapeLndtScheduleJob
+    scrape_schedules:
+      cron: "0 5 * * *"  # Daily 05:00
+      class: ScrapeSchedulesJob
       queue: scrapers
-      description: "Daily LNDT schedule scrape"
+      description: "Daily schedule scrape for all registered theaters"
 
     scrape_reviews:
       cron: "0 6 * * 1"  # Monday 6:00 AM Vilnius time
