@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_06_05_120000) do
+ActiveRecord::Schema[7.2].define(version: 2026_06_06_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "unaccent"
 
   create_table "click_events", force: :cascade do |t|
     t.bigint "production_id", null: false

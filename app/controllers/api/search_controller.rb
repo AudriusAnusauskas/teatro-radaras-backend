@@ -18,24 +18,29 @@ class Api::SearchController < Api::BaseController
   
     def search_productions(query)
       return Production.none if query.blank?
-  
+
       Production.includes(:theater)
-                .where("productions.title ILIKE ?", "%#{Production.sanitize_sql_like(query)}%")
+                .where(diacritic_insensitive_match("productions.title", query))
                 .limit(10)
     end
-  
+
     def search_theaters(query)
       return Theater.none if query.blank?
-  
-      Theater.where("theaters.name ILIKE ?", "%#{Theater.sanitize_sql_like(query)}%")
+
+      Theater.where(diacritic_insensitive_match("theaters.name", query))
              .limit(10)
     end
-  
+
     def search_directors(query)
       return Director.none if query.blank?
-  
-      Director.where("directors.name ILIKE ?", "%#{Director.sanitize_sql_like(query)}%")
+
+      Director.where(diacritic_insensitive_match("directors.name", query))
               .limit(10)
+    end
+
+    def diacritic_insensitive_match(column, query)
+      pattern = "%#{ActiveRecord::Base.sanitize_sql_like(query)}%"
+      ["unaccent(LOWER(#{column})) LIKE unaccent(LOWER(?))", pattern]
     end
   
     def serialize_production(production)
