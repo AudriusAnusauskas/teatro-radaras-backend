@@ -1,0 +1,26 @@
+# Bypass nixpacks Ruby provider (rbenv compile) — use Nix ruby_3_3 instead.
+providers = []
+
+[variables]
+BUNDLE_GEMFILE = "/app/Gemfile"
+GEM_HOME = "/usr/local/bundle"
+GEM_PATH = "/usr/local/bundle"
+
+[phases.setup]
+nixPkgs = ["ruby_3_3", "postgresql", "gcc", "gnumake", "libyaml", "procps"]
+
+[phases.install]
+paths = ["/usr/local/bundle/bin"]
+cmds = [
+  "mkdir -p /usr/local/bundle",
+  "gem install bundler:2.5.22 --no-document",
+  "bundle install",
+  "bundle exec bootsnap precompile --gemfile"
+]
+
+[phases.build]
+cmds = ["bundle exec bootsnap precompile app/ lib/"]
+
+# Railway web service uses Procfile `web:` when set; this matches that fallback.
+[start]
+cmd = "bundle exec puma -C config/puma.rb"
