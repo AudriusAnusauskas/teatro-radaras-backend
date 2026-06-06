@@ -8,14 +8,16 @@ GEM_PATH = "/usr/local/bundle"
 
 [phases.setup]
 nixpkgsArchive = "c5dd43934613ae0f8ff37c59f61c507c2e8f980d"
-nixPkgs = ["ruby_3_3", "postgresql", "gcc", "gnumake", "libyaml", "pkg-config", "procps"]
+nixPkgs = ["ruby_3_3", "postgresql", "gcc", "gnumake", "procps"]
+aptPkgs = ["libyaml-dev", "pkg-config"]
 
 [phases.install]
 paths = ["/usr/local/bundle/bin"]
 cmds = [
   "mkdir -p /usr/local/bundle",
   "gem install bundler:2.5.22 --no-document",
-  "bundle config build.psych --enable-bundled-libyaml",
+  "bundle config set --local without 'development test'",
+  "bundle config build.psych --with-libyaml-include=/usr/include --with-libyaml-lib=/usr/lib/x86_64-linux-gnu",
   "bundle install",
   "bundle exec bootsnap precompile --gemfile"
 ]
