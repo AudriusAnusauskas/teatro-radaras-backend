@@ -20,6 +20,12 @@ module Scrapers
         name: "Valstybinis Vilniaus mažasis teatras",
         catalog: { scraper: Scrapers::VmtCatalogScraper, importer: Scrapers::VmtCatalogImporter },
         schedule: { scraper: Scrapers::VmtScheduleScraper, importer: Scrapers::VmtScheduleImporter }
+      },
+      {
+        key: "okt",
+        name: "OKT / Vilniaus miesto teatras",
+        catalog: { scraper: Scrapers::OktCatalogScraper, importer: Scrapers::OktCatalogImporter },
+        schedule: { scraper: Scrapers::OktScheduleScraper, importer: Scrapers::OktScheduleImporter }
       }
     ].freeze
 

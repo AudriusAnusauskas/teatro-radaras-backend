@@ -53,8 +53,10 @@ module Scrapers
 
     def find_production(data)
       production = Production.find_by(source_url: data[url_key])
-      if slug_key && data[slug_key]
-        production ||= Production.find_by("LOWER(slug) = ?", data[slug_key].to_s.downcase)
+      if production.nil? && slug_key && data[slug_key].present?
+        rel = Production.where("LOWER(slug) = ?", data[slug_key].to_s.downcase)
+        rel = rel.joins(:theater).where(theaters: { slug: theater_slug }) if theater_slug
+        production = rel.first
       end
       production
     end
