@@ -38,6 +38,12 @@ module Scrapers
         name: "Klaipėdos dramos teatras",
         catalog: { scraper: Scrapers::KlaipedosCatalogScraper, importer: Scrapers::KlaipedosCatalogImporter },
         schedule: { scraper: Scrapers::KlaipedosScheduleScraper, importer: Scrapers::KlaipedosScheduleImporter }
+      },
+      {
+        key: "juozo_miltinio",
+        name: "Juozo Miltinio dramos teatras",
+        catalog: { scraper: Scrapers::MiltinioCatalogScraper, importer: Scrapers::MiltinioCatalogImporter },
+        schedule: { scraper: Scrapers::MiltinioScheduleScraper, importer: Scrapers::MiltinioScheduleImporter }
       }
     ].freeze
 
