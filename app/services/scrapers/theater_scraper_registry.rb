@@ -32,6 +32,12 @@ module Scrapers
         name: "Nacionalinis Kauno dramos teatras",
         catalog: { scraper: Scrapers::KaunoCatalogScraper, importer: Scrapers::KaunoCatalogImporter },
         schedule: { scraper: Scrapers::KaunoScheduleScraper, importer: Scrapers::KaunoScheduleImporter }
+      },
+      {
+        key: "klaipedos_dramos",
+        name: "Klaipėdos dramos teatras",
+        catalog: { scraper: Scrapers::KlaipedosCatalogScraper, importer: Scrapers::KlaipedosCatalogImporter },
+        schedule: { scraper: Scrapers::KlaipedosScheduleScraper, importer: Scrapers::KlaipedosScheduleImporter }
       }
     ].freeze
 
