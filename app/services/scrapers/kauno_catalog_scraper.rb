@@ -34,7 +34,8 @@ module Scrapers
     }.freeze
 
     def initialize(http: nil)
-      @http = http || Faraday.new(url: BASE_URL) do |f|
+      # dramosteatras.lt omits the intermediate cert; read-only public HTML scrape only.
+      @http = http || Faraday.new(url: BASE_URL, ssl: { verify: false }) do |f|
         f.headers["User-Agent"] = USER_AGENT
         f.request :retry, max: 3, interval: 1, backoff_factor: 2
         f.response :raise_error

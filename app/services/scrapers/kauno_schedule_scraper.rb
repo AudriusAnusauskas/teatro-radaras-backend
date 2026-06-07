@@ -24,13 +24,13 @@ module Scrapers
       ".shows-slider__item-date--time"
     ].freeze
 
-    KOOBIN_DATETIME_PATTERN = /-(\d{8})-(\d{4})(?:\b|$)/
     DISPLAY_DATE_PATTERN = /\A(\d{2})\.(\d{2})\z/
     DISPLAY_TIME_PATTERN = /(\d{1,2}):(\d{2})/
     PREMIERE_LABEL_PATTERN = /premj/i
 
     def initialize(http: nil)
-      @http = http || Faraday.new(url: BASE_URL) do |f|
+      # dramosteatras.lt omits the intermediate cert; read-only public HTML scrape only.
+      @http = http || Faraday.new(url: BASE_URL, ssl: { verify: false }) do |f|
         f.headers["User-Agent"] = USER_AGENT
         f.request :retry, max: 3, interval: 1, backoff_factor: 2
         f.response :raise_error
@@ -122,19 +122,22 @@ module Scrapers
 
     def parse_item(item)
       slug = extract_slug(item)
+      display_date = extract_display_date(item)
+      starts_at = parse_starts_at_from_display(item)
       ticket_url = extract_ticket_url(item)
-      starts_at = parse_starts_at(item, ticket_url)
 
       if slug.blank? || starts_at.blank?
         Rails.logger.warn(
-          "[KaunoScheduleScraper] Skipping item — slug=#{slug.inspect}, starts_at=#{starts_at.inspect}, " \
-          "ticket=#{ticket_url.inspect}"
+          "[KaunoScheduleScraper] Skipping item — slug=#{slug.inspect}, display_date=#{display_date.inspect}, " \
+          "starts_at=#{starts_at.inspect}, ticket=#{ticket_url.inspect}"
         )
         return nil
       end
 
       {
         slug: slug,
+        source_url: canonical_production_url(slug),
+        display_date: display_date,
         starts_at: starts_at,
         ticket_url: ticket_url,
         is_premiere: premiere?(item)
@@ -147,34 +150,15 @@ module Scrapers
     end
 
     def extract_ticket_url(item)
+      # Passthrough only — koobin URLs are often stale; never derive starts_at from them.
       item.css("a[href*='koobin.com']").map { |a| a["href"] }
           .map { |href| clean_text(href) }
           .reject { |href| href.blank? || href.include?("action=PU_ident_unica") }
-          .find { |href| href.match?(KOOBIN_DATETIME_PATTERN) }
+          .first
     end
 
-    def parse_starts_at(item, ticket_url)
-      from_koobin = parse_starts_at_from_koobin(ticket_url)
-      return from_koobin if from_koobin
-
-      parse_starts_at_from_display(item)
-    end
-
-    def parse_starts_at_from_koobin(ticket_url)
-      return nil if ticket_url.blank?
-
-      match = ticket_url.match(KOOBIN_DATETIME_PATTERN)
-      return nil unless match
-
-      date_part = match[1]
-      time_part = match[2]
-      year = date_part[0, 4].to_i
-      month = date_part[4, 2].to_i
-      day = date_part[6, 2].to_i
-      hour = time_part[0, 2].to_i
-      minute = time_part[2, 2].to_i
-
-      build_starts_at(year, month, day, hour, minute)
+    def extract_display_date(item)
+      DATE_SELECTORS.lazy.map { |sel| clean_text(item.at_css(sel)&.text) }.find(&:present?)
     end
 
     def parse_starts_at_from_display(item)
@@ -213,6 +197,10 @@ module Scrapers
     def premiere?(item)
       label = clean_text(item.at_css("[class*='label-holder']")&.text)
       label.present? && label.match?(PREMIERE_LABEL_PATTERN)
+    end
+
+    def canonical_production_url(slug)
+      "#{BASE_URL}/shows/#{normalize_slug(slug)}/"
     end
 
     def slug_from_url(href)

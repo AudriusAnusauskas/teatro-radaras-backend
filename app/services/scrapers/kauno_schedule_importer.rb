@@ -10,26 +10,24 @@ module Scrapers
       THEATER_SLUG
     end
 
-    def slug_key
-      :slug
-    end
-
     def city_for(_data)
       CITY
+    end
+
+    def theater
+      @theater ||= Theater.find_by!(slug: THEATER_SLUG)
+    end
+
+    def find_production(data)
+      return nil if data[:source_url].blank?
+
+      Production.find_by(theater_id: theater.id, source_url: data[:source_url])
     end
 
     def import_one(data)
       production = find_production(data)
       unless production
-        Rails.logger.warn("[KaunoScheduleImporter] no production match: #{data[:slug]}")
-        return :skipped
-      end
-
-      if production.theater&.slug != theater_slug
-        Rails.logger.warn(
-          "[KaunoScheduleImporter] Skipping screening - wrong theater (#{production.theater&.slug}) " \
-          "for #{data.slice(:slug).inspect}"
-        )
+        Rails.logger.warn("[KaunoScheduleImporter] no production match: #{data[:source_url]}")
         return :skipped
       end
 

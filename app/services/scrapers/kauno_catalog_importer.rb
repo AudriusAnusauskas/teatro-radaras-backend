@@ -30,8 +30,9 @@ module Scrapers
         director, dirs_created = find_or_create_director(data[:director])
         production.director = director
       end
+      # Existing productions with director_id: do not resolve or touch director.
 
-      assign_scraped_attributes(production, data)
+      assign_scraped_attributes(production, data, is_new: is_new)
       production.save!
 
       [is_new ? :created : :updated, dirs_created]
@@ -62,7 +63,10 @@ module Scrapers
 
       production.cast_members = data[:cast_members] if data[:cast_members].present?
       production.creative_team = data[:creative_team] if data[:creative_team].present?
-      production.awards = data[:awards] if data[:awards].present?
+
+      if data[:awards].present? && (is_new || production.awards.blank?)
+        production.awards = data[:awards]
+      end
     end
 
     def production_attributes(_data, _director)
