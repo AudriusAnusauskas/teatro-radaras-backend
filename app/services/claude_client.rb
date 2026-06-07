@@ -17,11 +17,11 @@ class ClaudeClient
   end
 
   # Returns Claude's response text (caller parses JSON if needed)
-  def complete(system:, user:, max_tokens: 1024)
+  def complete(system:, user:, max_tokens: 1024, model: MODEL)
     attempt = 0
 
     loop do
-      response = post_message(system: system, user: user, max_tokens: max_tokens)
+      response = post_message(system: system, user: user, max_tokens: max_tokens, model: model)
 
       return extract_text(response) if response.status == 200
 
@@ -43,7 +43,7 @@ class ClaudeClient
 
   private
 
-  def post_message(system:, user:, max_tokens:)
+  def post_message(system:, user:, max_tokens:, model: MODEL)
     # Faraday :retry handles transient network/timeout errors only (not 429,
     # which we honor explicitly via the retry-after header above).
     conn = Faraday.new do |f|
@@ -57,7 +57,7 @@ class ClaudeClient
       req.headers["anthropic-version"] = "2023-06-01"
       req.headers["content-type"] = "application/json"
       req.body = {
-        model: MODEL,
+        model: model,
         max_tokens: max_tokens,
         system: system,
         messages: [{ role: "user", content: user }]
