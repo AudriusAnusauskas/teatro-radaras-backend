@@ -22,7 +22,9 @@ module Scrapers
     DIRECTOR_EXCLUDE_PATTERN = /PADĖJĖJ|ASISTENT/i
     AUTHOR_LABEL_PATTERN = /AUTORIUS/i
     TRANSLATOR_LABEL_PATTERN = /VERTĖ|VERTIMAS/i
-    CAST_LABEL_PATTERN = /VAIDINA/i
+    CAST_LABEL_PATTERN = /VAIDINA|EDUKACINĖS PROGRAMOS VEIKĖJAI/i
+    CAST_MARKER_LINE = /\A(?:vaidina:?|edukacinės programos veikėjai:)/i
+    ROLE_ACTOR_SEPARATOR = /\s[–-]\s/
     PREMIERE_LABEL_PATTERN = /PREMJERA/i
     GENRE_LINE_PATTERN = /\A\d+\s+DALIŲ\s+/i
 
@@ -97,9 +99,9 @@ module Scrapers
         runtime: meta[:runtime],
         runtime_minutes: parse_runtime_minutes(meta[:runtime]),
         age_rating: meta[:age_rating],
-        cast_members: parse_cast_members(credits),
+        cast_members: parse_cast_members(doc),
         creative_team: parse_creative_team(credits),
-        description: parse_description(doc, credits),
+        description: parse_description(doc),
         poster_url: extract_poster_url(doc),
         is_guest: guest_production?(title, organizer),
         status: "active"
@@ -301,46 +303,100 @@ module Scrapers
       nil
     end
 
-    def parse_cast_members(credits)
-      cast = []
-      in_cast = false
+    def content_paragraph_nodes(doc)
+      doc.css(".tribe-events-single-event-description p, .tribe-events-content p")
+    end
 
-      credits.each do |row|
-        if row[:label].to_s.match?(CAST_LABEL_PATTERN)
-          in_cast = true
-          inline_cast = row[:raw].to_s.sub(/vaidina:?\s*/i, "").strip
-          if inline_cast.present? && inline_cast != row[:raw].to_s
-            cast.concat(inline_cast.split(",").map { |name| clean_text(name) })
-          end
-          next
-        end
+    def description_prose_paragraph?(paragraph)
+      return false if paragraph.at_css("strong")
 
-        next unless in_cast
-        break unless cast_entry_row?(row)
+      clean_text(paragraph.text).length >= 60
+    end
 
-        if row[:value].present? && row[:raw].to_s.match?(/[–-]/)
-          cast.concat(split_alternate_actors(row[:value]))
-        elsif person_name_line?(row[:raw])
-          cast << clean_text(row[:raw])
-        elsif row[:type] == :text && person_name_line?(row[:label])
-          cast << clean_text(row[:label])
-        end
-      end
+    def parse_cast_members(doc)
+      cast_block = extract_cast_block_paragraphs(doc)
+      return [] if cast_block.empty?
+
+      cast = parse_role_actor_cast(cast_block)
+      cast = parse_comma_separated_cast(cast_block) if cast.empty?
 
       cast.map { |name| clean_text(name) }.reject(&:blank?).uniq
     end
 
-    def cast_entry_row?(row)
-      raw = row[:raw].to_s
-      return false if raw.length > 100
-      return false if raw.match?(DIRECTOR_LABEL_PATTERN) && !row[:label].to_s.match?(/asistent/i)
+    def extract_cast_block_paragraphs(doc)
+      block = []
+      in_cast = false
 
-      return true if row[:label].to_s.match?(/[–-]\s*\z/)
-      return true if row[:value].present? && raw.match?(/[–-]/)
-      return true if person_name_line?(raw)
-      return true if row[:type] == :text && person_name_line?(row[:label])
+      content_paragraph_nodes(doc).each do |paragraph|
+        break if in_cast && description_prose_paragraph?(paragraph)
 
-      false
+        text = clean_text(paragraph.text)
+        if cast_marker_paragraph?(text)
+          in_cast = true
+          block << paragraph if cast_marker_inline_content?(text)
+          next
+        end
+
+        block << paragraph if in_cast
+      end
+
+      block
+    end
+
+    def cast_marker_paragraph?(text)
+      text.match?(CAST_MARKER_LINE)
+    end
+
+    def cast_marker_inline_content?(text)
+      cast_marker_paragraph?(text) && strip_cast_marker_prefix(text).present?
+    end
+
+    def strip_cast_marker_prefix(text)
+      clean_text(text).sub(CAST_MARKER_LINE, "").strip
+    end
+
+    def parse_role_actor_cast(paragraphs)
+      cast = []
+
+      paragraphs.each do |paragraph|
+        row = parse_credit_paragraph(paragraph)
+        next unless row
+        next unless row[:raw].to_s.match?(ROLE_ACTOR_SEPARATOR)
+
+        if row[:value].present?
+          cast.concat(split_alternate_actors(row[:value]))
+        else
+          actor_part = row[:raw].to_s.split(ROLE_ACTOR_SEPARATOR, 2).last.to_s
+          cast.concat(split_alternate_actors(actor_part))
+        end
+      end
+
+      cast
+    end
+
+    def parse_comma_separated_cast(paragraphs)
+      cast = []
+
+      paragraphs.each do |paragraph|
+        strong_texts = paragraph.css("strong").map { |node| strip_cast_marker_prefix(node.text) }.reject(&:blank?)
+        if strong_texts.any?
+          strong_texts.each { |text| cast.concat(split_comma_actors(text)) }
+          next
+        end
+
+        stripped = strip_cast_marker_prefix(paragraph.text)
+        if stripped.include?(",") && !stripped.match?(ROLE_ACTOR_SEPARATOR)
+          cast.concat(split_comma_actors(stripped))
+        elsif stripped.match?(/\A[A-ZĄČĘĖĮŠŲŪŽ]/)
+          cast << stripped
+        end
+      end
+
+      cast
+    end
+
+    def split_comma_actors(text)
+      clean_text(text).split(/[,\/]/).map(&:strip).reject(&:blank?)
     end
 
     def person_name_line?(text)
@@ -374,25 +430,12 @@ module Scrapers
       team.presence
     end
 
-    def parse_description(doc, credits)
-      credit_texts = credits.map { |c| c[:raw] }.to_set
-      paragraphs = doc.css(".tribe-events-single-event-description p, .tribe-events-content p")
-                      .map { |p| clean_text(p.text) }
-                      .reject(&:blank?)
-                      .reject { |text| credit_texts.include?(text) }
-                      .reject { |text| credit_line?(text) }
-
-      paragraphs.join("\n\n").presence
-    end
-
-    def credit_line?(text)
-      text.match?(PREMIERE_LABEL_PATTERN) ||
-        text.match?(AUTHOR_LABEL_PATTERN) ||
-        text.match?(TRANSLATOR_LABEL_PATTERN) ||
-        text.match?(DIRECTOR_LABEL_PATTERN) ||
-        text.match?(CAST_LABEL_PATTERN) ||
-        text.match?(GENRE_LINE_PATTERN) ||
-        CREW_LABEL_MAPPINGS.any? { |m| text.match?(m[:pattern]) }
+    def parse_description(doc)
+      content_paragraph_nodes(doc)
+        .select { |paragraph| description_prose_paragraph?(paragraph) }
+        .map { |paragraph| clean_text(paragraph.text) }
+        .join("\n\n")
+        .presence
     end
 
     def parse_show_meta(doc)
