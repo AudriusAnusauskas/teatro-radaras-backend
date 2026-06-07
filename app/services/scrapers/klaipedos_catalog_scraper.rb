@@ -24,7 +24,10 @@ module Scrapers
     TRANSLATOR_LABEL_PATTERN = /VERTĖ|VERTIMAS/i
     CAST_LABEL_PATTERN = /VAIDINA|EDUKACINĖS PROGRAMOS VEIKĖJAI/i
     CAST_MARKER_LINE = /\A(?:vaidina:?|edukacinės programos veikėjai:)/i
-    ROLE_ACTOR_SEPARATOR = /\s[–-]\s/
+    ROLE_ACTOR_SEPARATOR = /\s[–—-]\s/
+    FLIKO_POSTER_PATTERN = %r{/fliko-api/}i
+    CONTENT_POSTER_IMG_SELECTOR = "div.relative.col-span-full.overflow-hidden img, " \
+                                  ".tribe-events-single-event-description img, .tribe-events-content img"
     PREMIERE_LABEL_PATTERN = /PREMJERA/i
     GENRE_LINE_PATTERN = /\A\d+\s+DALIŲ\s+/i
 
@@ -159,7 +162,7 @@ module Scrapers
         puts "Sitemap fallback: events-sitemap.xml + events-sitemap2.xml (top-level /renginiai/{slug}/ only)"
       end
       puts "Selectors:"
-      puts "  poster: meta[property='og:image']"
+      puts "  poster: meta[property='og:image'] when /fliko-api/, else first content img with /fliko-api/"
       puts "  title: h1 (strip leading PREMJERA.)"
       puts "  category filter: .grid.grid-cols-12.bg-white text (#spektakliai keep, #Kiti renginiai skip)"
       puts "  credits: .tribe-events-single-event-description p / .tribe-events-content p (LABEL + strong)"
@@ -317,10 +320,10 @@ module Scrapers
       cast_block = extract_cast_block_paragraphs(doc)
       return [] if cast_block.empty?
 
-      cast = parse_role_actor_cast(cast_block)
-      cast = parse_comma_separated_cast(cast_block) if cast.empty?
-
-      cast.map { |name| clean_text(name) }.reject(&:blank?).uniq
+      cast_block.flat_map { |paragraph| cast_actors_from_paragraph(paragraph) }
+                .map { |name| clean_text(name) }
+                .reject(&:blank?)
+                .uniq
     end
 
     def extract_cast_block_paragraphs(doc)
@@ -355,58 +358,58 @@ module Scrapers
       clean_text(text).sub(CAST_MARKER_LINE, "").strip
     end
 
-    def parse_role_actor_cast(paragraphs)
-      cast = []
+    def cast_actors_from_paragraph(paragraph)
+      text = clean_text(paragraph.text)
+      return [] if text.blank?
 
-      paragraphs.each do |paragraph|
-        row = parse_credit_paragraph(paragraph)
-        next unless row
-        next unless row[:raw].to_s.match?(ROLE_ACTOR_SEPARATOR)
+      strong_text = cast_line_strong_text(paragraph)
 
-        if row[:value].present?
-          cast.concat(split_alternate_actors(row[:value]))
-        else
-          actor_part = row[:raw].to_s.split(ROLE_ACTOR_SEPARATOR, 2).last.to_s
-          cast.concat(split_alternate_actors(actor_part))
-        end
+      # Format 1: spaced dash — actor is always in <strong>, split alternates on "/".
+      if text.match?(ROLE_ACTOR_SEPARATOR)
+        return split_slash_actors(strong_text)
       end
 
-      cast
+      remainder = cast_line_actor_remainder(paragraph)
+
+      # Format 2: <strong>ROLE</strong> plain ACTOR — actor is the plain remainder.
+      if remainder.present?
+        return split_comma_actors(remainder)
+      end
+
+      # Format 3: entirely bold — actor list lives in <strong>, split on "," (and "/" alternates).
+      if cast_line_entirely_bold?(paragraph) && strong_text.present?
+        return split_cast_list_actors(strong_text)
+      end
+
+      strong_text.present? ? split_cast_list_actors(strong_text) : []
     end
 
-    def parse_comma_separated_cast(paragraphs)
-      cast = []
+    def cast_line_strong_text(paragraph)
+      strip_cast_marker_prefix(paragraph.css("strong").map(&:text).join(" "))
+    end
 
-      paragraphs.each do |paragraph|
-        strong_texts = paragraph.css("strong").map { |node| strip_cast_marker_prefix(node.text) }.reject(&:blank?)
-        if strong_texts.any?
-          strong_texts.each { |text| cast.concat(split_comma_actors(text)) }
-          next
-        end
+    def cast_line_entirely_bold?(paragraph)
+      text = clean_text(paragraph.text)
+      strong_text = clean_text(paragraph.css("strong").map(&:text).join)
+      strong_text.present? && strong_text == text
+    end
 
-        stripped = strip_cast_marker_prefix(paragraph.text)
-        if stripped.include?(",") && !stripped.match?(ROLE_ACTOR_SEPARATOR)
-          cast.concat(split_comma_actors(stripped))
-        elsif stripped.match?(/\A[A-ZĄČĘĖĮŠŲŪŽ]/)
-          cast << stripped
-        end
-      end
+    def cast_line_actor_remainder(paragraph)
+      fragment = paragraph.dup
+      fragment.css("strong").remove
+      clean_text(fragment.text)
+    end
 
-      cast
+    def split_slash_actors(text)
+      clean_text(text).split(/\s*\/\s*/).map(&:strip).reject(&:blank?)
     end
 
     def split_comma_actors(text)
+      clean_text(text).split(/,/).map(&:strip).reject(&:blank?)
+    end
+
+    def split_cast_list_actors(text)
       clean_text(text).split(/[,\/]/).map(&:strip).reject(&:blank?)
-    end
-
-    def person_name_line?(text)
-      clean_text(text).match?(
-        /\A(?:Ponas|Namsargė|Pirmas kraustytojas\s+)?[A-ZĄČĘĖĮŠŲŪŽ][a-ząčęėįšųūž]+(?:\s+[A-ZĄČĘĖĮŠŲŪŽ][a-ząčęėįšųūž-]+)+\z/
-      )
-    end
-
-    def split_alternate_actors(text)
-      clean_text(text).split(/\s*\/\s*/).map(&:strip).reject(&:blank?)
     end
 
     def parse_creative_team(credits)
@@ -455,7 +458,14 @@ module Scrapers
 
     def extract_poster_url(doc)
       og_image = doc.at_css('meta[property="og:image"]')&.[]("content")
-      absolute_url(og_image) if og_image.present?
+      return absolute_url(og_image) if og_image.present? && og_image.match?(FLIKO_POSTER_PATTERN)
+
+      content_img = doc.css(CONTENT_POSTER_IMG_SELECTOR).find do |img|
+        img["src"].to_s.match?(FLIKO_POSTER_PATTERN)
+      end
+
+      src = content_img&.[]("src")
+      absolute_url(src) if src.present?
     end
 
     def clean_title(text)
