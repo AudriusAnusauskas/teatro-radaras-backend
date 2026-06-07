@@ -26,6 +26,12 @@ module Scrapers
         name: "OKT / Vilniaus miesto teatras",
         catalog: { scraper: Scrapers::OktCatalogScraper, importer: Scrapers::OktCatalogImporter },
         schedule: { scraper: Scrapers::OktScheduleScraper, importer: Scrapers::OktScheduleImporter }
+      },
+      {
+        key: "kauno_dramos",
+        name: "Nacionalinis Kauno dramos teatras",
+        catalog: { scraper: Scrapers::KaunoCatalogScraper, importer: Scrapers::KaunoCatalogImporter },
+        schedule: { scraper: Scrapers::KaunoScheduleScraper, importer: Scrapers::KaunoScheduleImporter }
       }
     ].freeze
 
