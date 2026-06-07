@@ -27,6 +27,7 @@ module Scrapers
     TRANSLATOR_PATTERN = /kalbos vertė/i
     DIRECTOR_PATTERN = /režisier/i
     DIRECTOR_EXCLUDE_PATTERN = /asistent|padėjėj/i
+    CO_DIRECTOR_SPLIT_PATTERN = /,|\s+ir\s+/i
     CAST_HEADER_PATTERN = /\AVaidina:?\z/i
     RUNTIME_PATTERN = /Trukmė\s*[–-]/i
     PREMIERE_PATTERN = /Premjera\s*[–-]/i
@@ -83,9 +84,9 @@ module Scrapers
 
       title = clean_text(doc.at_css("h1")&.text)
       lines = metadata_lines(doc)
-      director = apply_director_alias(parse_director(lines))
-      creative_team = parse_creative_team(lines) || {}
-      director, creative_team = apply_director_override(slug, director, creative_team)
+      director, director_team = parse_director_info(lines)
+      creative_team = merge_creative_team(parse_creative_team(lines), director_team)
+      director, creative_team = apply_director_override(slug, director, creative_team || {})
 
       if director.blank?
         Rails.logger.warn("[MiltinioCatalogScraper] SKIP (no director): #{slug}")
@@ -205,11 +206,33 @@ module Scrapers
       extract_value_after_dash(line) || line.sub(/.*vertė\s*/i, "").strip.presence
     end
 
-    def parse_director(lines)
+    def parse_director_info(lines)
       line = lines.find do |l|
         l.match?(DIRECTOR_PATTERN) && !l.match?(DIRECTOR_EXCLUDE_PATTERN)
       end
-      extract_value_after_dash(line) if line
+      raw = extract_value_after_dash(line) if line
+      return [nil, {}] if raw.blank?
+
+      names = split_co_directors(raw).map { |name| apply_director_alias(title_case_director_name(name)) }
+      director = names.first
+      team = {}
+      team["coDirector"] = names[1..].join(", ") if names.size > 1
+
+      [director, team]
+    end
+
+    def split_co_directors(value)
+      clean_text(value).split(CO_DIRECTOR_SPLIT_PATTERN).map(&:strip).reject(&:blank?)
+    end
+
+    def title_case_director_name(name)
+      clean_text(name).split(/\s+/).map do |word|
+        word.split("-").map(&:capitalize).join("-")
+      end.join(" ")
+    end
+
+    def merge_creative_team(base_team, extra_team)
+      (base_team || {}).merge(extra_team.compact).presence
     end
 
     def apply_director_alias(name)

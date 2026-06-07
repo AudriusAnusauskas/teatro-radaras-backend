@@ -20,6 +20,9 @@ module Scrapers
 
     DIRECTOR_LABEL_PATTERN = /REŽISIER/i
     DIRECTOR_EXCLUDE_PATTERN = /PADĖJĖJ|ASISTENT/i
+    DIRECTOR_SOUND_PATTERN = /garso\s*režisier/i
+    DIRECTOR_FALLBACK_LABEL_PATTERN = /pastatymas|režisūra/i
+    CO_DIRECTOR_SPLIT_PATTERN = /,|\s+ir\s+/i
     AUTHOR_LABEL_PATTERN = /AUTORIUS/i
     TRANSLATOR_LABEL_PATTERN = /VERTĖ|VERTIMAS/i
     CAST_LABEL_PATTERN = /VAIDINA|EDUKACINĖS PROGRAMOS VEIKĖJAI/i
@@ -81,7 +84,7 @@ module Scrapers
 
       credits = parse_credit_paragraphs(doc)
       title = clean_title(doc.at_css("h1")&.text)
-      director = resolve_director(credits)
+      director, director_team = resolve_director_info(credits)
       if director.blank?
         Rails.logger.warn("[KlaipedosCatalogScraper] SKIP (no director): #{slug}")
         return nil
@@ -103,7 +106,7 @@ module Scrapers
         runtime_minutes: parse_runtime_minutes(meta[:runtime]),
         age_rating: meta[:age_rating],
         cast_members: parse_cast_members(doc),
-        creative_team: parse_creative_team(credits),
+        creative_team: merge_creative_team(parse_creative_team(credits), director_team),
         description: parse_description(doc),
         poster_url: extract_poster_url(doc),
         is_guest: guest_production?(title, organizer),
@@ -179,7 +182,7 @@ module Scrapers
 
       credits = parse_credit_paragraphs(doc)
       return true if sidebar_text.match?(SPEKTAKLIAI_TAG_PATTERN)
-      return true if resolve_director(credits).present?
+      return true if resolve_director_info(credits).first.present?
 
       credits.any? { |c| c[:label].to_s.match?(CAST_LABEL_PATTERN) || c[:label].to_s.match?(AUTHOR_LABEL_PATTERN) }
     end
@@ -257,23 +260,45 @@ module Scrapers
       clean_text(row[:value]) if row
     end
 
-    def resolve_director(credits)
-      credits.each do |row|
-        label = row[:label].to_s
-        next unless label.match?(DIRECTOR_LABEL_PATTERN)
-        next if label.match?(DIRECTOR_EXCLUDE_PATTERN)
+    def resolve_director_info(credits)
+      team = {}
 
-        value = row[:value].presence
-        if value.present?
-          return clean_text(value)
-        end
+      sound_row = credits.find { |row| row[:label].to_s.match?(DIRECTOR_SOUND_PATTERN) && row[:value].present? }
+      team["soundDesigner"] = title_case_director_name(sound_row[:value]) if sound_row
 
-        if row[:type] == :colon
-          return clean_text(row[:value])
-        end
+      row = credits.find { |r| director_candidate_row?(r) && r[:value].present? }
+      row ||= credits.find { |r| r[:label].to_s.match?(DIRECTOR_FALLBACK_LABEL_PATTERN) && r[:value].present? }
+
+      return [nil, team] unless row
+
+      names = split_co_directors(row[:value])
+      director = title_case_director_name(names.first)
+      if names.size > 1
+        team["coDirector"] = names[1..].map { |name| title_case_director_name(name) }.join(", ")
       end
 
-      nil
+      [director, team]
+    end
+
+    def director_candidate_row?(row)
+      label = row[:label].to_s
+      label.match?(DIRECTOR_LABEL_PATTERN) &&
+        !label.match?(DIRECTOR_EXCLUDE_PATTERN) &&
+        !label.match?(DIRECTOR_SOUND_PATTERN)
+    end
+
+    def split_co_directors(value)
+      clean_text(value).split(CO_DIRECTOR_SPLIT_PATTERN).map(&:strip).reject(&:blank?)
+    end
+
+    def title_case_director_name(name)
+      clean_text(name).split(/\s+/).map do |word|
+        word.split("-").map(&:capitalize).join("-")
+      end.join(" ")
+    end
+
+    def merge_creative_team(base_team, extra_team)
+      (base_team || {}).merge(extra_team.compact).presence
     end
 
     def parse_genre(credits)
