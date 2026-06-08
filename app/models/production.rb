@@ -6,10 +6,10 @@ class Production < ApplicationRecord
     belongs_to :director
   
     has_many :screenings,   dependent: :destroy
-    has_many :reviews,      dependent: :nullify    # recenzija autonomiška (gali likti archyvinė)
+    has_many :reviews,      dependent: :destroy
     has_many :user_ratings, dependent: :destroy
     has_many :comments,     dependent: :destroy
-    has_many :click_events, dependent: :nullify    # analytics archyvas
+    has_many :click_events, dependent: :nullify    # analytics archyvas — production_id lieka NULL (nekeisti be patvirtinimo)
 
     enum :status, { active: "active", archived: "archived" }, default: "active", validate: true
   
