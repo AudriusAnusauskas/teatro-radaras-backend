@@ -71,4 +71,4 @@ gem "faker", "~> 3.8", :groups => [:development, :test]
 gem "sidekiq-scheduler", "~> 6.0"
 
 # Sidekiq 7.3.x requires connection_pool < 3.0
-gem "connection_pool", "~> 2.5"
+gem "connection_pool", "~> 3.0"
