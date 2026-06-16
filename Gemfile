@@ -56,7 +56,7 @@ gem "rack-cors", "~> 2.0"
 gem "friendly_id", "~> 5.5"
 
 # --- HTTP klientai
-gem "faraday", "~> 2.12"
+gem "faraday", "~> 2.14"
 gem "faraday-retry", "~> 2.2"
 
 # --- ENV

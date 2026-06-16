@@ -119,11 +119,11 @@ GEM
       railties (>= 6.1.0)
     faker (3.8.0)
       i18n (>= 1.8.11, < 2)
-    faraday (2.14.2)
+    faraday (2.14.3)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
-    faraday-net_http (3.4.3)
+    faraday-net_http (3.4.4)
       net-http (~> 0.5)
     faraday-retry (2.4.0)
       faraday (~> 2.0)
@@ -150,7 +150,7 @@ GEM
       prism (>= 1.3.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    json (2.19.5)
+    json (2.19.9)
     jwt (3.2.0)
       base64
     language_server-protocol (3.17.0.5)
@@ -409,7 +409,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails (~> 6.5)
   faker (~> 3.8)
-  faraday (~> 2.12)
+  faraday (~> 2.14)
   faraday-retry (~> 2.2)
   ferrum (~> 0.16)
   friendly_id (~> 5.5)
