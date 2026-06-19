@@ -43,7 +43,7 @@ gem "sidekiq", "~> 7.3"
 gem "redis", "~> 5.3"
 
 # --- Scraping
-gem "nokogiri", "~> 1.17"
+gem "nokogiri", "~> 1.19"
 gem "ferrum", "~> 0.16"
 
 # --- Auth
