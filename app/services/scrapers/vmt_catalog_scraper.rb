@@ -26,9 +26,19 @@ module Scrapers
       "gruodžio" => 12
     }.freeze
 
-    DIRECTOR_COMBINED_PATTERN = /(?:Autorius ir režisierius|Pjesės autorius ir režisierius)\s*[–—-]\s*(.+)/i
+    DIRECTOR_COMBINED_PATTERN = /
+      (?:
+        Autor(?:ė|ius)\s+ir\s+režisier(?:ė|ius)
+        |Pjesės\s+autorius\s+ir\s+režisierius
+      )
+      \s*[–—-]\s*(.+)
+    /ix
     # VMT director lives in the header block above "Artimiausios datos", not in "Komanda".
     DIRECTOR_HEADER_PATTERN = /Režisier[iųė][a-zų]*\s*[–—-]\s*(.+)/i
+    AUTHOR_PAGAL_PATTERN = /\Apagal\s+(.+?)\s+(?:pjesę|pjese|apysaką|apsakymą|romaną|kūrinį|kūrybą)/i
+    AUTHOR_ROMANO_MOTYVAIS_PATTERN = /(.+?)\s+romano(?:\s+.+?)?\s+motyvais/i
+    GENRE_LINE_PREFIX_PATTERN = /\A(?:Vienos|Dviejų|Trijų)\s+(?:dalies|dalių)|Kamerinis|Socialinis|Teatras|Premjera|Trukmė/i
+    GENRE_KEYWORD_PATTERN = /\b(?:spektaklis|komedija|drama|tragedija|tragikomedija|melodrama|etiudai|pamąstymai)\b/i
     KOMANDA_DIRECTOR_LABEL_PATTERN = /\ARežisier(?:ius|ė|iai)\z/i
     CO_DIRECTOR_IR_PATTERN = /\s+ir\s+/i
     DIRECTOR_COUNTRY_SUFFIX_PATTERN = /\s*\([^)]+\)\z/
@@ -241,15 +251,15 @@ module Scrapers
     end
 
     def parse_author_and_director(lines)
-      author_lines = []
       director_name = nil
       director_team = {}
       idea_author_name = nil
+      author = nil
 
       lines.each do |line|
         if (match = line.match(DIRECTOR_COMBINED_PATTERN))
           director_name, director_team = parse_header_director_value(match[1])
-          author_lines << match.pre_match.strip if match.pre_match.present?
+          author = director_name
           next
         end
 
@@ -257,7 +267,6 @@ module Scrapers
           parsed_director, parsed_team = parse_header_director_value(match[1])
           director_name = parsed_director
           director_team = parsed_team
-          author_lines << match.pre_match.strip if match.pre_match.present?
           next
         end
 
@@ -265,20 +274,71 @@ module Scrapers
           idea_author_name ||= title_case_director_name(strip_director_suffix(match[1]))
           next
         end
-
-        next if line.match?(/\ATrukmė\s*[–—-]/i)
-        next if line.match?(/\APremjeros?\s+data\s*[–—-]|\APremjera\s*[–—-]/i)
-
-        author_lines << line
       end
 
       director_name ||= idea_author_name
+      author ||= extract_author_from_header_position(lines)
 
       {
-        author: author_lines.join(" ").presence,
+        author: author.presence,
         director_name: director_name.presence,
         director_team: director_team
       }
+    end
+
+    def extract_author_from_header_position(lines)
+      director_index = lines.index { |line| director_line?(line) }
+      return nil unless director_index&.positive?
+
+      candidate = lines[director_index - 1]
+      extract_author_from_candidate(candidate)
+    end
+
+    def extract_author_from_candidate(line)
+      text = clean_text(line)
+      return nil if text.blank?
+      return nil if genre_line?(text)
+      return nil if runtime_or_premiere_line?(text)
+      return nil if director_line?(text)
+
+      if (match = text.match(AUTHOR_PAGAL_PATTERN))
+        return normalize_author_name(match[1])
+      end
+
+      if (match = text.match(AUTHOR_ROMANO_MOTYVAIS_PATTERN))
+        return normalize_author_name(match[1])
+      end
+
+      normalize_author_name(text)
+    end
+
+    def director_line?(line)
+      line.match?(DIRECTOR_HEADER_PATTERN) || line.match?(DIRECTOR_COMBINED_PATTERN)
+    end
+
+    def runtime_or_premiere_line?(line)
+      line.match?(/\ATrukmė\s*[–—:]/i) ||
+        line.match?(/\APremjeros?\s+data\s*[–—-]|\APremjera\s*[–—:]/i)
+    end
+
+    def genre_line?(line)
+      text = clean_text(line)
+      return true if text.match?(GENRE_LINE_PREFIX_PATTERN)
+      return true if text.match?(GENRE_KEYWORD_PATTERN)
+
+      false
+    end
+
+    def normalize_author_name(name)
+      cleaned = clean_text(name)
+      return nil if cleaned.blank?
+
+      all_caps_name?(cleaned) ? title_case_director_name(cleaned) : cleaned
+    end
+
+    def all_caps_name?(text)
+      letters = text.gsub(/[^\p{L}]/, "")
+      letters.present? && letters == letters.upcase
     end
 
     def parse_runtime_premiere(lines)

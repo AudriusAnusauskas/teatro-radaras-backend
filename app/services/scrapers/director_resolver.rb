@@ -1,7 +1,7 @@
 module Scrapers
   module DirectorResolver
-    # Global director name aliases — applied before find/create in all catalog importers
-    # (VMT, LNDT, Kaunas, OKT, Jaunimo, KDT, Miltinio via BaseCatalogImporter or include).
+    # Global name aliases — exact match before find/create (directors) or assign (author string).
+    # VMT, LNDT, Kaunas, OKT, Jaunimo, KDT, Miltinio via BaseCatalogImporter or include.
     NAME_ALIASES = {
       "Aleksandr Špilevoj" => "Aleksandras Špilevojus"
     }.freeze
@@ -22,6 +22,13 @@ module Scrapers
     def resolve_director_alias(raw_name)
       key = raw_name.to_s.strip
       NAME_ALIASES.fetch(key, key)
+    end
+
+    # Exact-match alias for production.author (same NAME_ALIASES; no partial/fuzzy rewrite).
+    def resolve_author(raw_author)
+      return nil if raw_author.blank?
+
+      resolve_director_alias(raw_author)
     end
 
     def normalize_director_name(name)

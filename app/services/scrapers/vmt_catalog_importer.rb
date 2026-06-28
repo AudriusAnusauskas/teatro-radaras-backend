@@ -11,7 +11,7 @@ module Scrapers
       {
         title: data[:title],
         director: director,
-        author: data[:author],
+        author: resolve_author(data[:author]),
         translator: data[:translator],
         genre: genre,
         age_rating: data[:age_rating],

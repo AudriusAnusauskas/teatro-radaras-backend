@@ -69,7 +69,7 @@ module Scrapers
 
       scalar_fields = {
         title: data[:title],
-        author: data[:author],
+        author: resolve_author(data[:author]),
         genre: data[:genre],
         runtime: data[:runtime],
         runtime_minutes: data[:runtime_minutes],

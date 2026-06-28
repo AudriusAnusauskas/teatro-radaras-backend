@@ -8,7 +8,7 @@ module Scrapers
       {
         title: data[:title],
         director: director,
-        author: data[:author],
+        author: resolve_author(data[:author]),
         premiere_date: parse_premiere_date(data[:premiere_date]),
         runtime: data[:runtime],
         runtime_minutes: data[:runtime_minutes],

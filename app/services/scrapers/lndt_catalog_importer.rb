@@ -46,7 +46,7 @@ module Scrapers
         production.director = director
         production.title = parsed.title
         production.full_title = raw_title
-        production.author = parsed.author
+        production.author = resolve_author(parsed.author)
         production.based_on = parsed.based_on
       else
         production.full_title = raw_title if raw_title.present?
