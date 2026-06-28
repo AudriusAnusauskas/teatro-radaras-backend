@@ -1,15 +1,27 @@
 module Scrapers
   module DirectorResolver
+    # Global director name aliases — applied before find/create in all catalog importers
+    # (VMT, LNDT, Kaunas, OKT, Jaunimo, KDT, Miltinio via BaseCatalogImporter or include).
+    NAME_ALIASES = {
+      "Aleksandr Špilevoj" => "Aleksandras Špilevojus"
+    }.freeze
+
     # Returns [director, created_count]
     def find_or_create_director(raw_name)
       name = first_director_name(raw_name)
       return [nil, 0] if name.blank?
 
-      normalized = normalize_director_name(name)
+      resolved = resolve_director_alias(name)
+      normalized = normalize_director_name(resolved)
       existing = Director.where("LOWER(name) = ?", normalized.downcase).first
       return [existing, 0] if existing
 
       [Director.create!(name: normalized), 1]
+    end
+
+    def resolve_director_alias(raw_name)
+      key = raw_name.to_s.strip
+      NAME_ALIASES.fetch(key, key)
     end
 
     def normalize_director_name(name)

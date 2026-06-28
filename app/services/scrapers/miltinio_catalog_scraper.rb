@@ -9,10 +9,6 @@ module Scrapers
     USER_AGENT = "TeatroRadarasBot/1.0 (+https://teatroradaras.lt)"
     DELAY_BETWEEN_REQUESTS = 0.3
 
-    NAME_ALIASES = {
-      "Aleksandr Špilevoj" => "Aleksandras Špilevojus"
-    }.freeze
-
     DIRECTOR_OVERRIDES = {
       "kunai" => { director: "Marius Pinigis", co_director: "Adrian Carlo Bibiano" }
     }.freeze
@@ -213,7 +209,7 @@ module Scrapers
       raw = extract_value_after_dash(line) if line
       return [nil, {}] if raw.blank?
 
-      names = split_co_directors(raw).map { |name| apply_director_alias(title_case_director_name(name)) }
+      names = split_co_directors(raw).map { |name| title_case_director_name(name) }
       director = names.first
       team = {}
       team["coDirector"] = names[1..].join(", ") if names.size > 1
@@ -235,12 +231,6 @@ module Scrapers
       (base_team || {}).merge(extra_team.compact).presence
     end
 
-    def apply_director_alias(name)
-      return nil if name.blank?
-
-      NAME_ALIASES.fetch(clean_text(name), clean_text(name))
-    end
-
     def apply_director_override(slug, director, creative_team)
       return [director, creative_team] if director.present?
 
@@ -252,7 +242,7 @@ module Scrapers
         team["coDirector"] = override[:co_director]
       end
 
-      [apply_director_alias(override[:director]), team]
+      [override[:director], team]
     end
 
     def parse_creative_team(lines)
