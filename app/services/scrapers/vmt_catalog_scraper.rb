@@ -26,9 +26,13 @@ module Scrapers
       "gruodžio" => 12
     }.freeze
 
-    DIRECTOR_COMBINED_PATTERN = /(?:Autorius ir režisierius|Pjesės autorius ir režisierius)\s*[–-]\s*(.+)/i
-    DIRECTOR_PATTERN = /Režisier(?:ius|ė|iai)\s*[–-]\s*(.+)/i
-    IDEA_AUTHOR_PATTERN = /\AIdėjos\s+autor(?:ė|ius)\s*[–-]\s*(.+)\z/i
+    DIRECTOR_COMBINED_PATTERN = /(?:Autorius ir režisierius|Pjesės autorius ir režisierius)\s*[–—-]\s*(.+)/i
+    # VMT director lives in the header block above "Artimiausios datos", not in "Komanda".
+    DIRECTOR_HEADER_PATTERN = /Režisier[iųė][a-zų]*\s*[–—-]\s*(.+)/i
+    KOMANDA_DIRECTOR_LABEL_PATTERN = /\ARežisier(?:ius|ė|iai)\z/i
+    CO_DIRECTOR_IR_PATTERN = /\s+ir\s+/i
+    DIRECTOR_COUNTRY_SUFFIX_PATTERN = /\s*\([^)]+\)\z/
+    IDEA_AUTHOR_PATTERN = /\AIdėjos\s+autor(?:ė|ius)\s*[–—-]\s*(.+)\z/i
     PREMIERE_PATTERN = /(\d{4})\s*m\.\s*([a-ząčęėįšųūž]+)\s+(\d{1,2})\s*d\./i
     AGE_RATING_PATTERN = /\(N-?\s*(\d+)\)|\bN-?\s*(\d+)\b/i
     TRANSLATOR_LABEL_PATTERN = /vertė/i
@@ -58,10 +62,11 @@ module Scrapers
       layer = doc.at_css("div.layer .small-wrap")
       tags = extract_tags(doc)
       intro_text = clean_text(layer&.at_css("div.intro p")&.text)
-      author_block, meta_block = metadata_row_blocks(layer)
-      author_info = parse_author_director_block(author_block)
-      runtime_text, premiere_text = parse_runtime_premiere_block(meta_block)
+      header_lines = header_metadata_lines(layer)
+      author_info = parse_author_and_director(header_lines)
+      runtime_text, premiere_text = parse_runtime_premiere(header_lines)
       sections = parse_heading_sections(layer)
+      creative_team = sections[:creative_team].merge(author_info[:director_team])
       description = extract_description(layer)
       age_source = [intro_text, description].compact.join("\n")
       raw_title = clean_text(doc.at_css("div.performance .content h1")&.text)
@@ -87,7 +92,7 @@ module Scrapers
         premiere_date: parse_premiere_date(premiere_text),
         description: description,
         cast: flatten_cast(sections[:cast_rows]),
-        creative_team: sections[:creative_team],
+        creative_team: creative_team,
         poster_url: extract_poster_url(doc),
         is_guest: tags.include?("Svečiai"),
         tags: tags
@@ -213,39 +218,56 @@ module Scrapers
       end.uniq
     end
 
-    def metadata_row_blocks(layer)
-      row = layer&.at_css("div.row")
-      return [nil, nil] unless row
+    # Lines from intro + metadata row, stopping before "Artimiausios datos" (header block).
+    def header_metadata_lines(layer)
+      lines = []
 
-      divs = row.element_children.select { |node| node.name == "div" }
-      [divs[0]&.at_css("p"), divs[1]&.at_css("p")]
+      layer&.element_children&.each do |child|
+        break if child.name == "h2" && clean_text(child.text) == "Artimiausios datos"
+
+        next unless child.name == "div"
+        next if child["class"].to_s.include?("row-cta")
+        next unless child["class"].to_s.include?("intro") || child["class"].to_s.include?("row")
+
+        child.css("p").each do |paragraph|
+          paragraph.inner_html.split(/<br\s*\/?>/i).each do |fragment|
+            line = clean_text(Nokogiri::HTML.fragment(fragment).text)
+            lines << line unless line.blank?
+          end
+        end
+      end
+
+      lines
     end
 
-    def parse_author_director_block(node)
-      return { author: nil, director_name: nil } unless node
-
-      lines = node.inner_html.split(/<br\s*\/?>/i).map { |line| clean_text(Nokogiri::HTML.fragment(line).text) }
-                      .reject(&:blank?)
-
+    def parse_author_and_director(lines)
       author_lines = []
       director_name = nil
+      director_team = {}
       idea_author_name = nil
 
       lines.each do |line|
         if (match = line.match(DIRECTOR_COMBINED_PATTERN))
-          director_name = clean_text(match[1])
+          director_name, director_team = parse_header_director_value(match[1])
+          author_lines << match.pre_match.strip if match.pre_match.present?
           next
         end
 
-        if (match = line.match(DIRECTOR_PATTERN))
-          director_name = clean_text(match[1])
+        if (match = line.match(DIRECTOR_HEADER_PATTERN))
+          parsed_director, parsed_team = parse_header_director_value(match[1])
+          director_name = parsed_director
+          director_team = parsed_team
+          author_lines << match.pre_match.strip if match.pre_match.present?
           next
         end
 
         if (match = line.match(IDEA_AUTHOR_PATTERN))
-          idea_author_name ||= clean_text(match[1])
+          idea_author_name ||= title_case_director_name(strip_director_suffix(match[1]))
           next
         end
+
+        next if line.match?(/\ATrukmė\s*[–—-]/i)
+        next if line.match?(/\APremjeros?\s+data\s*[–—-]|\APremjera\s*[–—-]/i)
 
         author_lines << line
       end
@@ -254,23 +276,52 @@ module Scrapers
 
       {
         author: author_lines.join(" ").presence,
-        director_name: director_name.presence
+        director_name: director_name.presence,
+        director_team: director_team
       }
     end
 
-    def parse_runtime_premiere_block(node)
-      return [nil, nil] unless node
+    def parse_runtime_premiere(lines)
+      runtime_text = lines.find { |line| line.match?(/\ATrukmė\s*[–—-]/i) }
+      premiere_text = lines.find { |line| line.match?(/\APremjeros?\s+data\s*[–—-]|\APremjera\s*[–—-]/i) }
 
-      lines = node.inner_html.split(/<br\s*\/?>/i).map { |line| clean_text(Nokogiri::HTML.fragment(line).text) }
-                      .reject(&:blank?)
-
-      runtime_text = lines.find { |line| line.match?(/\ATrukmė\s*[–-]/i) }
-      premiere_text = lines.find { |line| line.match?(/\APremjeros?\s+data\s*[–-]|\APremjera\s*[–-]/i) }
-
-      runtime_text = runtime_text&.sub(/\ATrukmė\s*[–-]\s*/i, "")&.presence
-      premiere_text = premiere_text&.sub(/\APremjeros?\s+data\s*[–-]\s*|\APremjera\s*[–-]\s*/i, "")&.presence
+      runtime_text = runtime_text&.sub(/\ATrukmė\s*[–—-]\s*/i, "")&.presence
+      premiere_text = premiere_text&.sub(/\APremjeros?\s+data\s*[–—-]\s*|\APremjera\s*[–—-]\s*/i, "")&.presence
 
       [runtime_text, premiere_text]
+    end
+
+    # Header director value: strip country suffix, then split.
+    # Comma-separated names are treated as separate production versions (ambiguous) — first only.
+    # " ir " without commas means shared co-direction (e.g. Miltinio MAHAMAYA pattern).
+    def parse_header_director_value(raw)
+      value = clean_text(raw)
+      return [nil, {}] if value.blank?
+
+      if value.include?(",")
+        director = title_case_director_name(strip_director_suffix(value.split(",").first))
+        return [director, {}]
+      end
+
+      stripped = strip_director_suffix(value)
+      names = stripped.split(CO_DIRECTOR_IR_PATTERN).map(&:strip).reject(&:blank?)
+      director = title_case_director_name(strip_director_suffix(names.first))
+      team = {}
+      if names.size > 1
+        team["coDirector"] = names[1..].map { |name| title_case_director_name(strip_director_suffix(name)) }.join(", ")
+      end
+
+      [director, team]
+    end
+
+    def strip_director_suffix(name)
+      name.to_s.gsub(DIRECTOR_COUNTRY_SUFFIX_PATTERN, "").strip
+    end
+
+    def title_case_director_name(name)
+      clean_text(name).split(/\s+/).map do |word|
+        word.split("-").map(&:capitalize).join("-")
+      end.join(" ")
     end
 
     def parse_heading_sections(layer)
@@ -296,6 +347,8 @@ module Scrapers
 
           case current_section
           when :komanda
+            next if komanda_director_label?(label)
+
             creative_team[label] = value
           when :vaidina
             cast_rows << { role: label, actors: value }
@@ -304,6 +357,10 @@ module Scrapers
       end
 
       { creative_team: creative_team, cast_rows: cast_rows }
+    end
+
+    def komanda_director_label?(label)
+      clean_text(label).match?(KOMANDA_DIRECTOR_LABEL_PATTERN)
     end
 
     def row_label_value(row)
