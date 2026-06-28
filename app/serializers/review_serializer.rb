@@ -6,9 +6,10 @@ class ReviewSerializer
         publication:  review.publication,
         issue:        review.issue,
         published_at: review.published_at,
-        url:          review.url,
-        rating:       review.rating,
-        rating_max:   review.rating_max,
+        url:           review.url,
+        radaras_score: review.radaras_score,
+        rating:        review.rating,
+        rating_max:    review.rating_max,
         note:         review.note,
         production:   serialize_production(review.production)
       }

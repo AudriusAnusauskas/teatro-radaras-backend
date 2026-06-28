@@ -83,15 +83,16 @@ class ProductionSerializer
   
     def self.serialize_review(review)
       {
-        author:       review.author,
-        title:        review.title,
-        publication:  review.publication,
-        issue:        review.issue,
-        published_at: review.published_at,
-        url:          review.url,
-        rating:       review.rating,
-        rating_max:   review.rating_max,
-        note:         review.note          # excerpt only — never full text
+        author:        review.author,
+        title:         review.title,
+        publication:   review.publication,
+        issue:         review.issue,
+        published_at:  review.published_at,
+        url:           review.url,
+        radaras_score: review.radaras_score,
+        rating:        review.rating,
+        rating_max:    review.rating_max,
+        note:          review.note          # excerpt only — never full text
       }
     end
   end

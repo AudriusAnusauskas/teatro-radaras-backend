@@ -31,9 +31,9 @@ class Api::ProductionsController < Api::BaseController
       if params[:min_rating].present?
         min = params[:min_rating].to_f
         qualified_ids = Review.matched
-                              .where.not(rating: nil)
+                              .where.not(radaras_score: nil)
                               .group(:production_id)
-                              .having("AVG(rating) >= ?", min)
+                              .having("AVG(radaras_score) >= ?", min)
                               .pluck(:production_id)
         scope = scope.where(id: qualified_ids)
       end
